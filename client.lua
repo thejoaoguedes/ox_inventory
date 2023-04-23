@@ -187,7 +187,8 @@ function client.openInventory(inv, data)
 					index = data.index,
 					slots = right.slots,
 					items = right.items,
-					coords = coords
+					coords = coords,
+					distance = right.zones[data.index].distance
 				}
 			end
 		elseif invOpen ~= nil then
@@ -227,6 +228,7 @@ function client.openInventory(inv, data)
 			closeTrunk()
 			currentInventory = right or defaultInventory
 			left.items = PlayerData.inventory
+			left.groups = PlayerData.groups
 			SendNUIMessage({
 				action = 'setupInventory',
 				data = {
@@ -338,7 +340,7 @@ local function useItem(data, cb)
 	if canUseItem(data.ammo and true) then
 		if currentWeapon and currentWeapon?.timer > 100 then return end
 
-		invBusy = true
+		plyState.invBusy = true
 		result = lib.callback.await('ox_inventory:useItem', 200, data.name, data.slot, slotData.metadata)
 
 		if not result then
@@ -356,9 +358,10 @@ local function useItem(data, cb)
 		end
 	end
 
-	Wait(200)
+	Wait(500)
 	plyState.invBusy = false
 end
+
 AddEventHandler('ox_inventory:item', useItem)
 exports('useItem', useItem)
 
@@ -919,8 +922,9 @@ RegisterNetEvent('ox_inventory:updateSlots', function(items, weights, count, rem
 	if currentWeapon?.slot == item?.slot and item.metadata then
 		-- Potential race condition w/ poor connection may lead to ammo/durability values
 		-- getting desynced or updated out-of-order?
+		---@todo look into updating ammo handling
 		item.metadata.ammo = currentWeapon.metadata.ammo
-		item.metadata.durability = currentWeapon.metadata.durability
+		-- item.metadata.durability = currentWeapon.metadata.durability
 		currentWeapon.metadata = item.metadata
 		TriggerEvent('ox_inventory:currentWeapon', currentWeapon)
 	end
@@ -1153,7 +1157,7 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 
 		if buttons then
 			for i = 1, #v.buttons do
-				buttons[i] = v.buttons[i].label
+				buttons[i] = {label = v.buttons[i].label, group = v.buttons[i].group}
 			end
 		end
 
@@ -1479,7 +1483,7 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 							TriggerEvent('ox_inventory:currentWeapon')
 						end)
 					end
-				elseif IsControlJustReleased(0, 24) and IsPedPerformingMeleeAction(playerPed) then
+				elseif currentWeapon.melee and IsControlJustReleased(0, 24) and IsPedPerformingMeleeAction(playerPed) then
 					currentWeapon.melee += 1
 					currentWeapon.timer = GetGameTimer() + 200
 				end
