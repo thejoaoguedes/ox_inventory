@@ -180,6 +180,7 @@ function client.openInventory(inv, data)
 			if left then
 				right = CraftingBenches[data.id]
 				local coords = shared.target == 'ox_target' and right.zones[data.index].coords or right.points[data.index]
+				local distance = shared.target == 'ox_target' and right.zones[data.index].distance or 2
 
 				right = {
 					type = 'crafting',
@@ -189,7 +190,7 @@ function client.openInventory(inv, data)
 					slots = right.slots,
 					items = right.items,
 					coords = coords,
-					distance = right.zones[data.index].distance
+					distance = distance
 				}
 			end
 		elseif invOpen ~= nil then
@@ -865,15 +866,13 @@ RegisterNetEvent('ox_inventory:closeInventory', client.closeInventory)
 ---@param data updateSlot[]
 ---@param weight number | table<string, number>
 local function updateInventory(data, weight)
-	-- todo: combine iterators
 	local changes = {}
 	local itemCount = {}
-	local isSwapSlot = type(weight) == 'number'
 
 	for i = 1, #data do
 		local v = data[i]
 
-		if v.inventory == cache.serverId then
+		if not v.inventory or v.inventory == cache.serverId then
 			v.inventory = 'player'
 			local item = v.item
 			local curItem = PlayerData.inventory[item.slot]
@@ -893,7 +892,7 @@ local function updateInventory(data, weight)
 	end
 
 	SendNUIMessage({ action = 'refreshSlots', data = { items = data, itemCount = itemCount} })
-	client.setPlayerData('weight', isSwapSlot and weight or weight.left)
+	client.setPlayerData('weight', type(weight) == 'number' and weight or weight.left)
 
 	for item, count in pairs(itemCount) do
 		local data = Items[item]
@@ -1087,12 +1086,6 @@ local function setStateBagHandler(stateId)
 
 	AddStateBagChangeHandler('invBusy', stateId, function(_, _, value)
 		invBusy = value
-
-		if value then
-			return lib.disableControls:Add(23, 36)
-		end
-
-		lib.disableControls:Remove(23, 36)
 	end)
 
 	AddStateBagChangeHandler('instance', stateId, function(_, _, value)
@@ -1130,7 +1123,9 @@ end
 
 lib.onCache('seat', function(seat)
 	if seat then
-		if DoesVehicleHaveWeapons(cache.vehicle) then
+		local hasWeapon = GetCurrentPedVehicleWeapon(cache.ped)
+
+		if hasWeapon then
 			return Utils.WeaponWheel(true)
 		end
 	end
@@ -1376,7 +1371,6 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 	local DisableAllControlActions = DisableAllControlActions
 	local HideHudAndRadarThisFrame = HideHudAndRadarThisFrame
 	local EnableControlAction = EnableControlAction
-	local disableControls = lib.disableControls
 	local DisablePlayerFiring = DisablePlayerFiring
 	local HudWeaponWheelIgnoreSelection = HudWeaponWheelIgnoreSelection
 	local DisableControlAction = DisableControlAction
@@ -1399,7 +1393,10 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 				EnableControlAction(0, 31, true)
 			end
 		else
-			disableControls()
+			if invBusy then
+				DisableControlAction(0, 23, true)
+				DisableControlAction(0, 36, true)
+			end
 
 			if invBusy == true or IsPedCuffed(playerPed) then
 				DisablePlayerFiring(playerId, true)
