@@ -68,6 +68,30 @@ end
 exports('setPlayerInventory', server.setPlayerInventory)
 AddEventHandler('ox_inventory:setPlayerInventory', server.setPlayerInventory)
 
+---@param playerPed number
+---@param coordinates vector3|table[]
+---@param distance? number
+---@return vector3|false
+local function getClosestStashCoords(playerPed, coordinates, distance)
+	local playerCoords = GetEntityCoords(playerPed)
+
+	if not distance then distance = 10 end
+
+	if type(coordinates) == 'table' then
+		for i = 1, #coordinates do
+			local coords = coordinates[i]
+
+			if #(coords - playerCoords) < distance then
+				return coords
+			end
+		end
+
+		return false
+	end
+
+	return #(coordinates - playerCoords) < distance and coordinates
+end
+
 ---@param source number
 ---@param invType string
 ---@param data string|number|table
@@ -78,7 +102,7 @@ local function openInventory(source, invType, data, ignoreSecurityChecks)
 	if Inventory.Lock then return false end
 
 	local left = Inventory(source) --[[@as OxInventory]]
-	local right
+	local right, closestCoords
 
 	Inventory.CloseAll(left, (invType == 'drop' or invType == 'container' or not invType) and source)
 
@@ -124,29 +148,33 @@ local function openInventory(source, invType, data, ignoreSecurityChecks)
 			else left.containerSlot = nil end
 		else right = Inventory(data) end
 
-		if right then
-			if not ignoreSecurityChecks and right.groups and not server.hasGroup(left, right.groups) then return end
+		if not right then return end
 
-			local hookPayload = {
-				source = source,
-				inventoryId = right.id,
-				inventoryType = right.type,
-			}
+		if not ignoreSecurityChecks and right.groups and not server.hasGroup(left, right.groups) then return end
 
-			if invType == 'container' then hookPayload.slot = left.containerSlot end
+		local hookPayload = {
+			source = source,
+			inventoryId = right.id,
+			inventoryType = right.type,
+		}
 
-			if not TriggerEventHooks('openInventory', hookPayload) then return end
+		if invType == 'container' then hookPayload.slot = left.containerSlot end
 
-			if right.player then
-				if right.open then return end
+		if not TriggerEventHooks('openInventory', hookPayload) then return end
 
-				right.coords = not ignoreSecurityChecks and GetEntityCoords(right.player.ped) or nil
-			end
+		if right.player then
+			if right.open then return end
 
-			if right.coords == nil or #(right.coords - GetEntityCoords(GetPlayerPed(source))) < 10 then
-				left:openInventory(right)
-			else return end
-		else return end
+			right.coords = not ignoreSecurityChecks and GetEntityCoords(right.player.ped) or nil
+		end
+
+		if not ignoreSecurityChecks and right.coords then
+			closestCoords = getClosestStashCoords(left.player.ped, right.coords)
+
+			if not closestCoords then return end
+		end
+
+		left:openInventory(right)
 	else
 		left:openInventory(left)
 	end
@@ -166,7 +194,7 @@ local function openInventory(source, invType, data, ignoreSecurityChecks)
 		weight = right.weight,
 		maxWeight = right.maxWeight,
 		items = right.items,
-		coords = right.coords,
+		coords = closestCoords or right.coords,
 		distance = right.distance
 	}
 end
@@ -231,12 +259,12 @@ lib.callback.register('ox_inventory:useItem', function(source, itemName, slot, m
 
 	if inventory.player then
 		local item = Items(itemName)
-		local data = item and (slot and inventory.items[slot] or Inventory.GetItem(source, item, metadata))
+		local data = item and (slot and inventory.items[slot] or Inventory.GetSlotWithItem(inventory, item.name, metadata, true))
 
 		if not data then return end
 
 		slot = data.slot
-		local durability = data.metadata?.durability --[[@as number|boolean|nil]]
+		local durability = data.metadata.durability --[[@as number|boolean|nil]]
 		local consume = item.consume
 		local label = data.metadata.label or item.label
 
@@ -552,6 +580,10 @@ lib.addCommand('viewinv', {
 }, function(source, args)
 	local invId = tonumber(args.invId) or args.invId
 	local inventory = invId ~= source and Inventory(invId)
+	local playerInventory = Inventory(source)
 
-	if inventory then TriggerClientEvent('ox_inventory:viewInventory', source, inventory) end
+	if playerInventory and inventory then
+		playerInventory:openInventory(inventory)
+		TriggerClientEvent('ox_inventory:viewInventory', source, inventory)
+	end
 end)
