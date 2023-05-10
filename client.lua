@@ -392,7 +392,7 @@ local function useItem(data, cb)
 	if durability and durability <= 100 or consume then
 		if durability <= 0 then
 			return lib.notify({ type = 'error', description = locale('no_durability', label) })
-		elseif consume ~= 0 and consume < 1 and durability < consume * 100 then
+		elseif consume and consume ~= 0 and consume < 1 and durability < consume * 100 then
 			return lib.notify({ type = 'error', description = locale('not_enough_durability', label) })
 		end
 	end
