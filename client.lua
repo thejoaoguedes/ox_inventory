@@ -1625,7 +1625,7 @@ RegisterNUICallback('giveItem', function(data, cb)
 
 		lib.registerMenu({
 			id = 'ox_inventory:givePlayerList',
-			title = 'Give item',
+			title = 'Dar Item',
 			options = nearbyPlayers,
 			onClose = function() p:resolve() end,
 		}, function(selected) p:resolve(selected and nearbyPlayers[selected].id) end)

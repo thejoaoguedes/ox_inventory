@@ -158,7 +158,7 @@ const InventorySlot: React.FC<SlotProps> = ({ inventory, item }) => {
                 {item.weight > 0 && (
                 <p>
                   {item.weight > 0
-                    ? `${(item.weight / 100).toLocaleString('en-us', {
+                    ? `${(item.weight / 1000).toLocaleString('en-us', {
                         minimumFractionDigits: 2,
                       })}`
                     : ''}

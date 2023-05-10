@@ -1,14 +1,14 @@
-$mainColor: #16161aef;
+$mainColor: #1A1B1EE6;
 $textColor: #c1c2c5;
 $mainFont: Roboto;
 
-$seconaryColor: #16161aef;
-$secondaryColorLight: #16161aef;
-$secondaryColorDark: #16161aef;
+$seconaryColor: #1A1B1EE6;
+$secondaryColorLight: #1A1B1EE6;
+$secondaryColorDark: #1A1B1EE6;
 
-$gridCols: 6;
-$gridRows: 6;
-$gridCols-right: 4;
+$gridCols: 5;
+$gridRows: 5;
+$gridCols-right: 5;
 $gridRows-right: 5;
 $gridSize: 10.2vh;
 $gridGap: 0.5rem;
@@ -112,7 +112,7 @@ button:active {
 }
 
 .inventory-wrapper-container {
-  background-color: rgba(12, 12, 17, 0.966);
+  background-color: rgba(20, 21, 23, 0.966);
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -239,7 +239,7 @@ button:active {
   position: relative;
   background-size: 5.5vh;
   color: $textColor;
-  border: 1px solid #25272bd5;
+  border: 2px solid #25262B;
 }
 
 .inventory-slot-label-box {
@@ -306,7 +306,7 @@ button:active {
   gap: 3px;
   p {
     font-size: 11px;
-    background-color: #28272acb;
+    background-color: #1A1B1EE6;
     padding: 5px;
     border-radius: 1rem;
   }
