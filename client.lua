@@ -383,17 +383,11 @@ local function useItem(data, cb)
 	local slotData, result = PlayerData.inventory[data.slot]
 
 	local durability = slotData.metadata.durability --[[@as number?]]
-	local consume = data.consume --[[@as number?]]
 	local label = slotData.metadata.label or data.label --[[@as string]]
 
-	-- Naive durability check to get an early exit
-	-- People often don't call the 'useItem' export and then complain about "broken" items being usable
-	-- This won't work with degradation since we need access to os.time on the server
-	if durability and durability <= 100 or consume then
+	if durability and durability <= 100 then
 		if durability <= 0 then
 			return lib.notify({ type = 'error', description = locale('no_durability', label) })
-		elseif consume and consume ~= 0 and consume < 1 and durability < consume * 100 then
-			return lib.notify({ type = 'error', description = locale('not_enough_durability', label) })
 		end
 	end
 

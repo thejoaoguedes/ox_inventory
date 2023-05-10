@@ -26,7 +26,7 @@ return {
 			-- { name = 'fingerprinttape', price = 5, },
 			-- { name = 'mikrosil', price = 5, },
 			-- { name = 'fingerprintkit', price = 5, },
-			-- { name = 'accesstool', price = 5, },
+			{ name = 'accesstool', price = 100, },
 			{ name = 'fingerprintreader', price = 1000, },
 			-- { name = 'breathalyzer', price = 5, },
 			{ name = 'drugtestkit', price = 20, },
