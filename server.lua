@@ -444,7 +444,127 @@ lib.addCommand({'additem', 'giveitem'}, {
 	if item then
 		local inventory = Inventory(args.target) --[[@as OxInventory]]
 		local count = args.count or 1
-		local success, response = Inventory.AddItem(inventory, item.name, count, args.type and { type = tonumber(args.type) or args.type })
+		local metadata = args.type and { type = tonumber(args.type) or args.type}
+
+		if args.item == "femaleseed" then
+			if not metadata then
+					metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "driedbud" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "smallbud" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "weedpackage" then
+			if not metadata then
+					metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "weedbaggie" then
+			if not metadata then
+					metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "wetbud" then
+			if not metadata then
+					metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+			metadata.dry = 0
+		elseif args.item == "joint" then
+			if not metadata then
+					metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.dry = 0
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "maleseed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.strain = "Desconhecida"
+			metadata.n = 0
+			metadata.p = 0
+			metadata.k = 0
+		elseif args.item == "wateringcan" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.water = 100
+		elseif args.item == "compost" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.compostQuantity = 100
+		elseif args.item == "tomato_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+		elseif args.item == "lettuce_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+
+		elseif args.item == "garlic_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+
+		elseif args.item == "potato_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+
+		elseif args.item == "onion_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+
+		elseif args.item == "carrot_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+
+		elseif args.item == "wheat_seed" then
+			if not metadata then
+				metadata = {}
+			end
+			metadata.seedQuantity = 20
+		end
+
+		local success, response = Inventory.AddItem(inventory, item.name, count, metadata)
 
 		if not success then
 			return Citizen.Trace(('Failed to give %sx %s to player %s (%s)'):format(count, item.name, args.target, response))

@@ -651,6 +651,17 @@ function Inventory.Save(inv)
 	end
 end
 
+RegisterNetEvent('rep-weed:server:updateDry', function (id, slot, item)
+	inv = Inventory(id)
+	inv.weight -= Inventory(id).items[slot].weight
+	Inventory(id).items[slot] = item
+	inv.weight += Inventory(id).items[slot].weight
+	if inv.player then
+		if server.syncInventory then server.syncInventory(inv) end
+		TriggerClientEvent('ox_inventory:updateSlots', inv.id, {{item = item, inventory = inv.type}}, {left=inv.weight, right=inv.open and Inventories[inv.open]?.weight})
+	end
+end)
+
 local function randomItem(loot, items, size)
 	local item = loot[math.random(1, size)]
 	for i = 1, #items do

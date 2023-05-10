@@ -245,6 +245,8 @@ function client.openInventory(inv, data)
 			left.items = PlayerData.inventory
 			left.groups = PlayerData.groups
 
+			TriggerServerEvent('rep-weed:server:checkDry', left, currentInventory)
+
 			SendNUIMessage({
 				action = 'setupInventory',
 				data = {
