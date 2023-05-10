@@ -49,4 +49,40 @@ return {
 		weight = 70000,
 		groups = {['ambulance'] = 0}
 	},
+
+	{
+		coords = vec3(-1529.3020019531,-403.0094909668,34.802623748779),
+		target = {
+			loc = vec3(-1529.3020019531,-403.0094909668,34.802623748779),
+			length = 0.6,
+			width = 2.8,
+			heading = 50.46,
+			minZ = 33.34,
+			maxZ = 35.00,
+			label = 'Abrir Balcão'
+		},
+		name = 'trayDigitalDen',
+		label = 'Balcão - Digital Den',
+		owner = false,
+		slots = 10,
+		weight = 100000
+	},
+
+	{
+		coords = vec3(174.4289855957,-1322.7375488281,29.35618019104),
+		target = {
+			loc = vec3(174.4289855957,-1322.7375488281,29.35618019104),
+			length = 0.6,
+			width = 2.8,
+			heading = 50.46,
+			minZ = 33.34,
+			maxZ = 35.00,
+			label = 'Abrir Balcão'
+		},
+		name = 'trayPawnShop',
+		label = 'Balcão - Pawn Shop',
+		owner = false,
+		slots = 10,
+		weight = 100000
+	},
 }
