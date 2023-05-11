@@ -52,8 +52,8 @@ local function setContainerProperties(itemName, properties)
 end
 
 setContainerProperties('paperbag', {
-	slots = 5,
-	maxWeight = 1000,
+	slots = 8,
+	maxWeight = 10000,
 	blacklist = { 'testburger' }
 })
 
