@@ -20,7 +20,7 @@ return {
             {
                 name = 'plastic',
                 ingredients = {
-                    recyclablematerial = 20,
+                    recyclablematerial = 10,
                 },
                 duration = 10000,
                 count = 10,
@@ -28,7 +28,7 @@ return {
             {
                 name = 'copper',
                 ingredients = {
-                    recyclablematerial = 30,
+                    recyclablematerial = 10,
                 },
                 duration = 10000,
                 count = 10,
@@ -36,7 +36,7 @@ return {
             {
                 name = 'rubber',
                 ingredients = {
-                    recyclablematerial = 30,
+                    recyclablematerial = 10,
                 },
                 duration = 10000,
                 count = 10,
@@ -44,7 +44,7 @@ return {
             {
                 name = 'glass',
                 ingredients = {
-                    recyclablematerial = 30,
+                    recyclablematerial = 10,
                 },
                 duration = 10000,
                 count = 10,
@@ -75,7 +75,7 @@ return {
             {
                 name = 'aluminionaval',
                 ingredients = {
-                    aluminum = 6,
+                    aluminum = 4,
                 },
                 duration = 10000,
                 count = 1,
@@ -83,7 +83,7 @@ return {
             {
                 name = 'titanio',
                 ingredients = {
-                    metal = 6,
+                    metal = 4,
                 },
                 duration = 10000,
                 count = 1,
@@ -99,7 +99,7 @@ return {
             {
                 name = 'cobalto',
                 ingredients = {
-                    copper = 2,
+                    copper = 4,
                 },
                 duration = 10000,
                 count = 1,
@@ -107,7 +107,7 @@ return {
             {
                 name = 'borrachafluorada',
                 ingredients = {
-                    rubber = 2,
+                    rubber = 4,
                 },
                 duration = 10000,
                 count = 1,
@@ -115,7 +115,7 @@ return {
             {
                 name = 'vidrotemperado',
                 ingredients = {
-                    glass = 2,
+                    glass = 4,
                 },
                 duration = 10000,
                 count = 1,
@@ -123,7 +123,7 @@ return {
             {
                 name = 'steel',
                 ingredients = {
-                    iron = 6,
+                    iron = 4,
                 },
                 duration = 10000,
                 count = 1,
@@ -185,12 +185,13 @@ return {
             {
                 name = 'phone',
                 ingredients = {
-                    ['aluminum'] = 15,
-                    ['metal'] = 15,
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
                     ['plastic'] = 15,
-                    ['copper'] = 20,
-                    ['glass'] = 15,
-                    ['iron'] = 3
+                    ['copper'] = 10,
+                    ['rubber'] = 5,
+                    ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -198,11 +199,13 @@ return {
             {
                 name = 'radio',
                 ingredients = {
-                    ['aluminum'] = 15,
+                    ['aluminum'] = 10,
                     ['metal'] = 10,
-                    ['plastic'] = 35,
-                    ['copper'] = 15,
-                    ['glass'] = 10
+                    ['plastic'] = 15,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -210,11 +213,13 @@ return {
             {
                 name = 'tablet',
                 ingredients = {
-                    ['aluminum'] = 25,
-                    ['plastic'] = 25,
-                    ['copper'] = 15,
-                    ['rubber'] = 20,
-                    ['glass'] = 13
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 15,
+                    ['iron'] = 10
                 },
                 duration = 20000,
                 count = 1,
@@ -222,10 +227,13 @@ return {
             {
                 name = 'vpn',
                 ingredients = {
-                    ['aluminum'] = 30,
-                    ['metal'] = 30,
-                    ['plastic'] = 40,
-                    ['copper'] = 15
+                    ['aluminum'] = 15,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 10
                 },
                 duration = 20000,
                 count = 1,
@@ -233,10 +241,13 @@ return {
             {
                 name = 'vpnadvanced',
                 ingredients = {
-                    ['aluminum'] = 40,
-                    ['metal'] = 40,
-                    ['plastic'] = 50,
-                    ['copper'] = 25
+                    ['aluminum'] = 10,
+                    ['metal'] = 15,
+                    ['plastic'] = 15,
+                    ['copper'] = 15,
+                    ['rubber'] = 15,
+                    ['glass'] = 15,
+                    ['iron'] = 15
                 },
                 duration = 20000,
                 count = 1,
@@ -244,11 +255,13 @@ return {
             {
                 name = 'dongle',
                 ingredients = {
-                    ['aluminum'] = 25,
-                    ['metal'] = 20,
-                    ['plastic'] = 25,
-                    ['rubber'] = 5,
-                    ['glass'] = 10
+                    ['aluminum'] = 2,
+                    ['metal'] = 10,
+                    ['plastic'] = 5,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -256,13 +269,13 @@ return {
             {
                 name = 'laptop',
                 ingredients = {
-                    ['aluminum'] = 35,
-                    ['metal'] = 22,
-                    ['plastic'] = 20,
-                    ['copper'] = 20,
-                    ['rubber'] = 24,
+                    ['aluminum'] = 15,
+                    ['metal'] = 15,
+                    ['plastic'] = 15,
+                    ['copper'] = 15,
+                    ['rubber'] = 15,
                     ['glass'] = 20,
-                    ['iron'] = 10
+                    ['iron'] = 15
                 },
                 duration = 20000,
                 count = 1,
@@ -270,11 +283,13 @@ return {
             {
                 name = 'hacking_device',
                 ingredients = {
-                    ['aluminum'] = 25,
-                    ['metal'] = 20,
-                    ['plastic'] = 25,
-                    ['rubber'] = 5,
+                    ['aluminum'] = 10,
+                    ['metal'] = 5,
+                    ['plastic'] = 5,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
                     ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -283,11 +298,12 @@ return {
                 name = 'transponder',
                 ingredients = {
                     ['aluminum'] = 5,
-                    ['plastic'] = 10,
-                    ['copper'] = 2,
-                    ['rubber'] = 5,
+                    ['metal'] = 5,
+                    ['plastic'] = 2,
+                    ['copper'] = 5,
+                    ['rubber'] = 2,
                     ['glass'] = 5,
-                    ['iron'] = 10
+                    ['iron'] = 2
                 },
                 duration = 20000,
                 count = 1,
@@ -314,11 +330,12 @@ return {
                 name = 'carpart', -- peça do motor
                 ingredients = {
                     ['aluminum'] = 1,
-                    ['metal'] = 3,
-                    ['plastic'] = 2,
+                    ['metal'] = 1,
+                    ['plastic'] = 1,
                     ['copper'] = 1,
-                    ['rubber'] = 2,
-                    ['iron'] = 2
+                    ['rubber'] = 1,
+                    ['glass'] = 1,
+                    ['iron'] = 1
                 },
                 duration = 60000,
                 count = 1,
@@ -326,12 +343,13 @@ return {
             {
                 name = 'ducttape', -- lataria do carro
                 ingredients = {
-                    ['aluminum'] = 4,
-                    ['metal'] = 4,
-                    ['plastic'] = 4,
-                    ['rubber'] = 2,
-                    ['glass'] = 4,
-                    ['iron'] = 4
+                    ['aluminum'] = 1,
+                    ['metal'] = 1,
+                    ['plastic'] = 1,
+                    ['copper'] = 1,
+                    ['rubber'] = 1,
+                    ['glass'] = 1,
+                    ['iron'] = 1
                 },
                 duration = 60000,
                 count = 1,
@@ -339,28 +357,29 @@ return {
             {
                 name = 'lockpick',
                 ingredients = {
-                    ['aluminum'] = 1,
-                    ['metal'] = 1,
-                    ['plastic'] = 3,
-                    ['copper'] = 1,
-                    ['rubber'] = 2,
-                    ['iron'] = 10
+                    ['aluminum'] = 2,
+                    ['metal'] = 2,
+                    ['plastic'] = 2,
+                    ['copper'] = 2,
+                    ['rubber'] = 1,
+                    ['glass'] = 1,
+                    ['iron'] = 2
                 },
-                duration = 30000,
+                duration = 20000,
                 count = 1,
             },
             {
                 name = 'flipper',
                 ingredients = {
-                    ['aluminum'] = 3,
-                    ['metal'] = 3,
-                    ['plastic'] = 6,
-                    ['copper'] = 3,
+                    ['aluminum'] = 1,
+                    ['metal'] = 5,
+                    ['plastic'] = 3,
+                    ['copper'] = 5,
                     ['rubber'] = 5,
-                    ['glass'] = 2,
-                    ['iron'] = 15
+                    ['glass'] = 3,
+                    ['iron'] = 2
                 },
-                duration = 60000,
+                duration = 30000,
                 count = 1,
             },
         },
@@ -392,12 +411,13 @@ return {
             {
                 name = 'phone',
                 ingredients = {
-                    ['aluminum'] = 15,
-                    ['metal'] = 15,
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
                     ['plastic'] = 15,
-                    ['copper'] = 20,
-                    ['glass'] = 15,
-                    ['iron'] = 3
+                    ['copper'] = 10,
+                    ['rubber'] = 5,
+                    ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -405,11 +425,13 @@ return {
             {
                 name = 'radio',
                 ingredients = {
-                    ['aluminum'] = 15,
+                    ['aluminum'] = 10,
                     ['metal'] = 10,
-                    ['plastic'] = 35,
-                    ['copper'] = 15,
-                    ['glass'] = 10
+                    ['plastic'] = 15,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -417,11 +439,13 @@ return {
             {
                 name = 'tablet',
                 ingredients = {
-                    ['aluminum'] = 25,
-                    ['plastic'] = 25,
-                    ['copper'] = 15,
-                    ['rubber'] = 20,
-                    ['glass'] = 13
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 15,
+                    ['iron'] = 10
                 },
                 duration = 20000,
                 count = 1,
@@ -429,10 +453,13 @@ return {
             {
                 name = 'vpn',
                 ingredients = {
-                    ['aluminum'] = 30,
-                    ['metal'] = 30,
-                    ['plastic'] = 40,
-                    ['copper'] = 15
+                    ['aluminum'] = 15,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 10
                 },
                 duration = 20000,
                 count = 1,
@@ -440,10 +467,13 @@ return {
             {
                 name = 'vpnadvanced',
                 ingredients = {
-                    ['aluminum'] = 40,
-                    ['metal'] = 40,
-                    ['plastic'] = 50,
-                    ['copper'] = 25
+                    ['aluminum'] = 10,
+                    ['metal'] = 15,
+                    ['plastic'] = 15,
+                    ['copper'] = 15,
+                    ['rubber'] = 15,
+                    ['glass'] = 15,
+                    ['iron'] = 15
                 },
                 duration = 20000,
                 count = 1,
@@ -451,11 +481,13 @@ return {
             {
                 name = 'dongle',
                 ingredients = {
-                    ['aluminum'] = 25,
-                    ['metal'] = 20,
-                    ['plastic'] = 25,
-                    ['rubber'] = 5,
-                    ['glass'] = 10
+                    ['aluminum'] = 2,
+                    ['metal'] = 10,
+                    ['plastic'] = 5,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -463,13 +495,13 @@ return {
             {
                 name = 'laptop',
                 ingredients = {
-                    ['aluminum'] = 35,
-                    ['metal'] = 22,
-                    ['plastic'] = 20,
-                    ['copper'] = 20,
-                    ['rubber'] = 24,
+                    ['aluminum'] = 15,
+                    ['metal'] = 15,
+                    ['plastic'] = 15,
+                    ['copper'] = 15,
+                    ['rubber'] = 15,
                     ['glass'] = 20,
-                    ['iron'] = 10
+                    ['iron'] = 15
                 },
                 duration = 20000,
                 count = 1,
@@ -477,11 +509,13 @@ return {
             {
                 name = 'hacking_device',
                 ingredients = {
-                    ['aluminum'] = 25,
-                    ['metal'] = 20,
-                    ['plastic'] = 25,
-                    ['rubber'] = 5,
+                    ['aluminum'] = 10,
+                    ['metal'] = 5,
+                    ['plastic'] = 5,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
                     ['glass'] = 10,
+                    ['iron'] = 5
                 },
                 duration = 20000,
                 count = 1,
@@ -490,11 +524,12 @@ return {
                 name = 'transponder',
                 ingredients = {
                     ['aluminum'] = 5,
-                    ['plastic'] = 10,
-                    ['copper'] = 2,
-                    ['rubber'] = 5,
+                    ['metal'] = 5,
+                    ['plastic'] = 2,
+                    ['copper'] = 5,
+                    ['rubber'] = 2,
                     ['glass'] = 5,
-                    ['iron'] = 10
+                    ['iron'] = 2
                 },
                 duration = 20000,
                 count = 1,
