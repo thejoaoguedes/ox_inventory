@@ -57,6 +57,11 @@ local function playerDropped(source)
 	end
 end
 
+remInventory = function(source)
+	playerDropped(source)
+end
+exports('remInventory',remInventory)
+
 AddEventHandler('playerDropped', function()
 	playerDropped(source)
 end)
