@@ -2632,4 +2632,26 @@ return {
 			image = "carpart.png",
 		}
 	},
+
+	["bodyparts"] = {
+		label = "Peça de Funilaria",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "Material necessário para reparar a funilaria de um veículo.",
+		client = {
+			image = "bodypart.png",
+		}
+	},
+
+	["engineparts"] = {
+		label = "Peça Mecânica",
+		weight = 100,
+		stack = true,
+		close = false,
+		description = "Material necessário para reparar o motor de um veículo.",
+		client = {
+			image = "carpart.png",
+		}
+	},
 }
