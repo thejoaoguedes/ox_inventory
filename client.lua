@@ -412,7 +412,6 @@ local function useItem(data, cb)
 		end
 	end
 
-	Wait(500)
 	plyState.invBusy = false
 end
 

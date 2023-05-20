@@ -823,11 +823,14 @@ function Inventory.GetItem(inv, item, metadata, returnsCount)
 
 			for _, v in pairs(inv.items) do
 				if v and v.name == item.name and (not metadata or table.contains(v.metadata, metadata)) then
-					count += v.count
 					local durability = v.metadata.durability
 
 					if durability and durability > 100 and ostime >= durability then
 						v.metadata.durability = 0
+					end
+
+					if not (durability and v.metadata.durability <= 0) then
+						count += v.count
 					end
 				end
 			end
