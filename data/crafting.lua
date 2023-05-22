@@ -748,4 +748,27 @@ return {
             },
         },
     },
+    {
+        items = { -- FERTILIZANTES
+            {
+                name = 'fertilizer',
+                ingredients = {
+                    ['maleseed'] = 4,
+                },
+                duration = 10000,
+                count = 1,
+            },
+        },
+        points = {
+            vec3(138.5686340332, 2295.8557128906, 94.083709716797)
+        },
+        zones = {
+            {
+                coords = vec3(138.5686340332, 2295.8557128906, 94.083709716797),
+                size = vec3(3.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 315.0,
+            },
+        },
+    },
 }

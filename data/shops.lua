@@ -109,4 +109,18 @@ return {
 		{ loc = vec3(3596.48828125,3664.8825683594,34.096088409424), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
+
+	SementeShop = {
+		name = 'Sementes',
+		inventory = {
+			{ name = 'femaleseed', price = 200 },
+			{ name = 'maleseed', price = 200 },
+		},
+		locations = {
+			vec3(137.97848510742, 2294.3767089844, 94.080696105957)
+		},
+		 targets = {
+		{ loc = vec3(137.97848510742, 2294.3767089844, 94.080696105957), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+		}
+	},
 }
