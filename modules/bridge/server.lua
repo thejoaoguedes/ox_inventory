@@ -56,14 +56,11 @@ local function playerDropped(source)
 		Inventory.Remove(inv, true)
 	end
 end
-
-remInventory = function(source)
-	playerDropped(source)
-end
-exports('remInventory',remInventory)
+exports('remInventory', playerDropped)
 
 AddEventHandler('playerDropped', function()
-	playerDropped(source)
+	local src = source
+	playerDropped(src)
 end)
 
 local scriptPath = ('modules/bridge/%s/server.lua'):format(shared.framework)
