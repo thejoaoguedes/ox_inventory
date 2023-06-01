@@ -44,9 +44,11 @@ return {
 			-- { name = 'WEAPON_TACTICALRIFLE', price = 1000, metadata = { registered = true, serial = 'POL' } },
 
 		}, locations = {
-			vec3(482.53, -995.16, 30.68)
+			vec3(482.53, -995.16, 30.68),
+			vec3(1839.04, 3686.73, 33.97)
 		}, targets = {
-			{ loc = vec3(482.50, -995.50, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ loc = vec3(482.50, -995.50, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
+			{ loc = vec3(1839.04, 3686.73, 33.97), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 35.0, distance = 6 }
 		}
 	},
 
