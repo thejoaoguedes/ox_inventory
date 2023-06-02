@@ -1169,6 +1169,7 @@ return {
 		label = "Meth 1g",
 		weight = 100,
 		stack = true,
+		degrade = 21600,
 		close = false,
 		description = "",
 		client = {
@@ -1603,6 +1604,7 @@ return {
 		description = "Usado para cortar metal.",
 		client = {
 			image = "kq_angle_grinder.png",
+			export = 'actx-chopshop.BreakNearDoor'
 		}
 	},
 
@@ -2447,13 +2449,15 @@ return {
 	},
 
 	["mechanic_tools"] = {
-		label = "Mechanic tools",
+		label = "Ferramentas",
 		weight = 0,
 		stack = true,
+		degrade = 10080,
 		close = true,
-		description = "Needed for vehicle repairs",
+		description = "Chave de Boca e umas coisitas mais...",
 		client = {
 			image = "mechanic_tools.png",
+			export = 'actx-chopshop.BreakNearWheel'
 		}
 	},
 
