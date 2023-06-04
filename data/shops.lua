@@ -7,7 +7,7 @@
 ---@field inventory { name: string, price: number, count?: number, currency?: string }
 ---@field locations? vector3[]
 ---@field targets? { loc: vector3, length: number, width: number, heading: number, minZ: number, maxZ: number, distance: number, debug?: boolean, drawSprite?: boolean }[]
----@field groups? string | string[] | table<string, number> }
+---@field groups? string | string[] | table<string, number>
 ---@field model? number[]
 
 return {
@@ -16,6 +16,7 @@ return {
 		groups = shared.police,
 		inventory = {
 			{ name = 'ammo-9', price = 5, },
+			{ name = 'screwdriverset', price = 300, },
 			{ name = 'radio', price = 1500, },
 			-- { name = 'ammo-44', price = 5, },
 			-- { name = 'ammo-rifle', price = 5, },
