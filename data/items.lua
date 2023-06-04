@@ -2658,4 +2658,48 @@ return {
 			image = "carpart.png",
 		}
 	},
+
+	["blueprintamerican"] = {
+		label = "Blueprint American",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol_mk2.png",
+		}
+	},
+
+	["blueprintbereta"] = {
+		label = "Blueprint Beretta",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol.png",
+		}
+	},
+
+	["blueprint9mm"] = {
+		label = "Blueprint 9mm",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-ammo-9-box.png",
+		}
+	},
+
+	["fakeplate"] = {
+		label = "Placa Fria",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "fakeplate.png",
+		}
+	},
 }
