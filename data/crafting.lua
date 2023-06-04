@@ -593,11 +593,11 @@ return {
             ['bikers'] = 0,
         },
         points = {
-            vec3(60.571746826172,2792.0737304688,57.67240524292),
+            vec3(1953.1072998047,3759.0676269531,32.496250152588),
         },
         zones = {
             {
-                coords = vec3(60.571746826172,2792.0737304688,57.67240524292),
+                coords = vec3(1953.1072998047,3759.0676269531,32.496250152588),
                 size = vec3(3.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 315.0,
@@ -768,6 +768,150 @@ return {
                 size = vec3(3.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 315.0,
+            },
+        },
+    },
+    {
+        items = { -- Armas The Lost
+            {
+                name = 'WEAPON_PISTOL',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintbereta'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_PISTOL_MK2',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintamerican'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['thelost'] = 0,
+        },
+        points = {
+            vec3(983.34033203125,-93.251052856445,74.904335021973)
+        },
+        zones = {
+            {
+                coords = vec3(983.34033203125,-93.251052856445,74.904335021973),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Armas Irish
+            {
+                name = 'WEAPON_PISTOL',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintbereta'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_PISTOL_MK2',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintamerican'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['irish'] = 0,
+        },
+        points = {
+            vec3(1653.7000732422,4853.2265625,45.341373443604)
+        },
+        zones = {
+            {
+                coords = vec3(1653.7000732422,4853.2265625,45.341373443604),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Armas Cartel
+            {
+                name = 'WEAPON_PISTOL',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintbereta'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_PISTOL_MK2',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintamerican'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['cartel'] = 0,
+        },
+        points = {
+            vec3(1405.7258300781,1113.4256591797,114.81206512451)
+        },
+        zones = {
+            {
+                coords = vec3(1405.7258300781,1113.4256591797,114.81206512451),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
             },
         },
     },
