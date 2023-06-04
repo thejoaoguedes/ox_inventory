@@ -60,8 +60,8 @@ function OxInventory:closeInventory(noEvent)
 
 	if not inv then return end
 
-	inv:set('open', false)
 	inv.openedBy[self.id] = nil
+	inv:set('open', false)
 	self.open = false
 	self.currentShop = nil
 	self.containerSlot = nil
@@ -329,7 +329,7 @@ function Inventory.Set(inv, k, v)
 			if inv.type ~= 'player' then
 				if inv.player then
 					inv.type = 'player'
-				elseif inv.type == 'drop' and not next(inv.items) then
+				elseif inv.type == 'drop' and not next(inv.items) and not next(inv.openedBy) then
 					return Inventory.Remove(inv)
 				else
 					inv.time = os.time()
@@ -408,57 +408,9 @@ function Inventory.SetSlot(inv, item, count, metadata, slot)
 	return currentSlot
 end
 
-local Items
+local Items = require 'modules.items.server'
 
-CreateThread(function()
-	TriggerEvent('ox_inventory:loadInventory', Inventory)
-	Items = require 'modules.items.server'
-
-	-- Require "set inventory:weaponmismatch 1" to enable experimental weapon checks.
-	-- Maybe need some tweaks, and will definitely need more hashes added to the ignore list.
-	-- May even use weaponDamageEvent, depending on performance..
-	-- if GetConvarInt('inventory:weaponmismatch', 0) == 0 then return end
-
-	-- Disable this loop, client-side handling should be "good enough".
-	do return end
-
-	local ignore = {
-		[0] = 1, -- GetSelectedPedWeapon returns 0 when using a firetruk; likely some other cases
-		[966099553] = 1, -- I don't know
-		[`WEAPON_UNARMED`] = 1,
-		[`WEAPON_ANIMAL`] = 1,
-		[`WEAPON_COUGAR`] = 1,
-	}
-
-	while true do
-		Wait(30000)
-
-		for id, inv in pairs(Inventories) do
-			if inv.player then
-				local hash = GetSelectedPedWeapon(inv.player.ped)
-
-				if not ignore[hash] then
-					local currentWeapon = inv.items[inv.weapon]?.name
-
-					if currentWeapon then
-						local currentHash = Items(currentWeapon).hash
-
-						if currentHash ~= hash then
-							inv.weapon = nil
-							print(('Player.%s weapon mismatch (%s). Current weapon: %s (%s)'):format(id, hash, currentWeapon, currentHash))
-						end
-					else
-						print(('Player.%s weapon mismatch (%s)'):format(id, hash, currentWeapon))
-					end
-
-					if not inv.weapon then
-						TriggerClientEvent('ox_inventory:disarm', id)
-					end
-				end
-			end
-		end
-	end
-end)
+CreateThread(function() TriggerEvent('ox_inventory:loadInventory', Inventory) end)
 
 ---@param item table
 ---@param slot table
@@ -514,8 +466,24 @@ local function hasActiveInventory(playerId, owner)
 		local inventory = Inventory(activePlayer)
 
 		if inventory then
-			if GetPlayerEndpoint(activePlayer) then
+			local endpoint = GetPlayerEndpoint(activePlayer)
+
+			if endpoint then
 				DropPlayer(playerId, ("Character identifier '%s' is already active."):format(owner))
+
+                -- Supposedly still getting stuck? Print info and hope somebody reports back (lol)
+				print(('kicked player.%s (charid is already in use)'):format(playerId), json.encode({
+					oldId = activePlayer,
+					newId = playerId,
+					charid = owner,
+					endpoint = endpoint,
+					playerName = GetPlayerName(activePlayer),
+					fivem = GetPlayerIdentifierByType(activePlayer, 'fivem'),
+					license = GetPlayerIdentifierByType(activePlayer, 'license2') or GetPlayerIdentifierByType(activePlayer, 'license'),
+				}, {
+					indent = true,
+                    sort_keys = true
+				}))
 
 				return true
 			end
@@ -529,6 +497,41 @@ local function hasActiveInventory(playerId, owner)
 
 	activeIdentifiers[owner] = playerId
 end
+
+---Manually clear an inventory state tied to the given identifier.
+---Temporary workaround until somebody actually gives me info.
+RegisterCommand('clearActiveIdentifier', function(source, args)
+    ---Server console only.
+    if source ~= 0 then return end
+
+	local activePlayer = activeIdentifiers[args[1]] or activeIdentifiers[tonumber(args[1])]
+    local inventory = activePlayer and Inventory(activePlayer)
+
+    if not inventory then return end
+
+    local endpoint = GetPlayerEndpoint(activePlayer)
+
+    if endpoint then
+        DropPlayer(activePlayer, 'Kicked')
+
+        -- Supposedly still getting stuck? Print info and hope somebody reports back (lol)
+        print(('kicked player.%s (clearActiveIdentifier)'):format(activePlayer), json.encode({
+            oldId = activePlayer,
+            charid = inventory.owner,
+            endpoint = endpoint,
+            playerName = GetPlayerName(activePlayer),
+            fivem = GetPlayerIdentifierByType(activePlayer, 'fivem'),
+            license = GetPlayerIdentifierByType(activePlayer, 'license2') or GetPlayerIdentifierByType(activePlayer, 'license'),
+        }, {
+            indent = true,
+            sort_keys = true
+        }))
+    end
+
+    Inventory.CloseAll(inventory)
+    db.savePlayer(inventory.owner, json.encode(inventory:minimal()))
+    Inventory.Remove(inventory)
+end, true)
 
 ---@param id string|number
 ---@param label string|nil
@@ -1494,14 +1497,28 @@ end)
 
 local TriggerEventHooks = require 'modules.hooks.server'
 
-local function dropItem(source, data)
-	local playerInventory = Inventory(source)
+---@class SwapSlotData
+---@field count number
+---@field fromSlot number
+---@field toSlot number
+---@field instance any
+---@field fromType string
+---@field toType string
+---@field coords? vector3
 
-	if not playerInventory then return end
+---@param source number
+---@param playerInventory OxInventory
+---@param fromData SlotWithItem?
+---@param data SwapSlotData
+local function dropItem(source, playerInventory, fromData, data)
+    if not fromData then return end
 
-	local fromData = playerInventory.items[data.fromSlot]
+	local toData = table.clone(fromData)
+	toData.slot = data.toSlot
+	toData.count = data.count
+	toData.weight = Inventory.SlotWeight(Items(toData.name), toData)
 
-	if not fromData then return end
+    if toData.weight > shared.playerweight then return end
 
 	if not TriggerEventHooks('swapItems', {
 		source = source,
@@ -1512,21 +1529,20 @@ local function dropItem(source, data)
 		toSlot = data.toSlot,
 		toType = 'drop',
 		count = data.count,
+        action = 'move',
 	}) then return end
 
-	if data.count > fromData.count then data.count = fromData.count end
+    fromData.count -= data.count
+    fromData.weight = Inventory.SlotWeight(Items(fromData.name), fromData)
 
-	local toData = table.clone(fromData)
-	toData.slot = data.toSlot
-	toData.count = data.count
-	fromData.count -= data.count
-	fromData.weight = Inventory.SlotWeight(Items(fromData.name), fromData)
-	toData.weight = Inventory.SlotWeight(Items(toData.name), toData)
+    if fromData.count < 0 then
+        fromData = nil
+    else
+        toData.metadata = table.clone(toData.metadata)
+    end
 
-	if fromData.count < 1 then fromData = nil end
-
-	playerInventory.weight -= toData.weight
 	local slot = data.fromSlot
+	playerInventory.weight -= toData.weight
 	playerInventory.items[slot] = fromData
 
 	if slot == playerInventory.weapon then
@@ -1563,12 +1579,10 @@ end
 
 local activeSlots = {}
 
+---@param source number
+---@param data SwapSlotData
 lib.callback.register('ox_inventory:swapItems', function(source, data)
 	if data.count < 1 then return end
-
-	if data.toType == 'newdrop' then
-		return dropItem(source, data)
-	end
 
 	local playerInventory = Inventory(source)
 
@@ -1636,9 +1650,15 @@ lib.callback.register('ox_inventory:swapItems', function(source, data)
 			}
 		end
 
-		if fromData and (not fromData.metadata.container or fromData.metadata.container and toInventory.type ~= 'container') then
-			if data.count > fromData.count then data.count = fromData.count end
+        if data.count > fromData.count then
+            data.count = fromData.count
+        end
 
+        if data.toType == 'newdrop' then
+            return dropItem(source, playerInventory, fromData, data)
+        end
+
+		if fromData and (not fromData.metadata.container or fromData.metadata.container and toInventory.type ~= 'container') then
 			local container, containerItem = (not sameInventory and playerInventory.containerSlot) and (fromInventory.type == 'container' and fromInventory or toInventory)
 
 			if container then
@@ -2139,7 +2159,7 @@ function Inventory.GetSlotsWithItem(inv, itemName, metadata, strict)
 	local ostime = os.time()
 
 	for _, slotData in pairs(inventory.items) do
-		if slotData and slotData.name == item.name and tablematch(slotData.metadata, metadata) then
+		if slotData and slotData.name == item.name and (not metadata or tablematch(slotData.metadata, metadata)) then
 			n += 1
 
 			local durability = slotData.metadata.durability

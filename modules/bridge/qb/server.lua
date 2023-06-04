@@ -1,10 +1,6 @@
 local playerDropped = ...
-local Inventory, Items
-
-CreateThread(function()
-	Inventory = require 'modules.inventory.server'
-	Items = require 'modules.items.server'
-end)
+local Inventory = require 'modules.inventory.server'
+local Items = require 'modules.items.server'
 
 local QBCore
 
@@ -46,7 +42,7 @@ local function setupPlayer(Player)
 	QBCore.Functions.AddPlayerField(Player.PlayerData.source, 'syncInventory', function(_, _, items, money)
 		Player.Functions.SetPlayerData('items', items)
 
-		if money.money then
+		if money.money and money.money ~= Player.Functions.GetMoney('cash') then
 			Player.Functions.SetMoney('cash', money.money, "Sync money with inventory")
 		end
 	end)
@@ -120,7 +116,11 @@ end
 
 AddEventHandler('QBCore:Server:OnMoneyChange', function(src, account, amount, changeType)
 	if account ~= "cash" then return end
+
 	local item = Inventory.GetItem(src, 'money', nil, false)
+
+    if not item then return end
+
 	Inventory.SetItem(src, 'money', changeType == "set" and amount or changeType == "remove" and item.count - amount or changeType == "add" and item.count + amount)
 end)
 
