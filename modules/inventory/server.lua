@@ -1497,28 +1497,14 @@ end)
 
 local TriggerEventHooks = require 'modules.hooks.server'
 
----@class SwapSlotData
----@field count number
----@field fromSlot number
----@field toSlot number
----@field instance any
----@field fromType string
----@field toType string
----@field coords? vector3
+local function dropItem(source, data)
+	local playerInventory = Inventory(source)
 
----@param source number
----@param playerInventory OxInventory
----@param fromData SlotWithItem?
----@param data SwapSlotData
-local function dropItem(source, playerInventory, fromData, data)
-    if not fromData then return end
+	if not playerInventory then return end
 
-	local toData = table.clone(fromData)
-	toData.slot = data.toSlot
-	toData.count = data.count
-	toData.weight = Inventory.SlotWeight(Items(toData.name), toData)
+	local fromData = playerInventory.items[data.fromSlot]
 
-    if toData.weight > shared.playerweight then return end
+	if not fromData then return end
 
 	if not TriggerEventHooks('swapItems', {
 		source = source,
@@ -1529,20 +1515,21 @@ local function dropItem(source, playerInventory, fromData, data)
 		toSlot = data.toSlot,
 		toType = 'drop',
 		count = data.count,
-        action = 'move',
 	}) then return end
 
-    fromData.count -= data.count
-    fromData.weight = Inventory.SlotWeight(Items(fromData.name), fromData)
+	if data.count > fromData.count then data.count = fromData.count end
 
-    if fromData.count < 0 then
-        fromData = nil
-    else
-        toData.metadata = table.clone(toData.metadata)
-    end
+	local toData = table.clone(fromData)
+	toData.slot = data.toSlot
+	toData.count = data.count
+	fromData.count -= data.count
+	fromData.weight = Inventory.SlotWeight(Items(fromData.name), fromData)
+	toData.weight = Inventory.SlotWeight(Items(toData.name), toData)
 
-	local slot = data.fromSlot
+	if fromData.count < 1 then fromData = nil end
+
 	playerInventory.weight -= toData.weight
+	local slot = data.fromSlot
 	playerInventory.items[slot] = fromData
 
 	if slot == playerInventory.weapon then
@@ -1579,10 +1566,12 @@ end
 
 local activeSlots = {}
 
----@param source number
----@param data SwapSlotData
 lib.callback.register('ox_inventory:swapItems', function(source, data)
 	if data.count < 1 then return end
+
+	if data.toType == 'newdrop' then
+		return dropItem(source, data)
+	end
 
 	local playerInventory = Inventory(source)
 
@@ -1650,15 +1639,9 @@ lib.callback.register('ox_inventory:swapItems', function(source, data)
 			}
 		end
 
-        if data.count > fromData.count then
-            data.count = fromData.count
-        end
-
-        if data.toType == 'newdrop' then
-            return dropItem(source, playerInventory, fromData, data)
-        end
-
 		if fromData and (not fromData.metadata.container or fromData.metadata.container and toInventory.type ~= 'container') then
+			if data.count > fromData.count then data.count = fromData.count end
+
 			local container, containerItem = (not sameInventory and playerInventory.containerSlot) and (fromInventory.type == 'container' and fromInventory or toInventory)
 
 			if container then
