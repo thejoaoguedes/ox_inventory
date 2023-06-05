@@ -45,7 +45,7 @@ return {
 			-- { name = 'WEAPON_TACTICALRIFLE', price = 1000, metadata = { registered = true, serial = 'POL' } },
 
 		}, locations = {
-			vec3(609.18,1.80,87.87),
+			vec3(609.18, 1.80, 87.87),
 			vec3(1839.04, 3686.73, 33.97)
 		}, targets = {
 			{ loc = vec3(609.18,1.80,87.87), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
@@ -61,9 +61,9 @@ return {
 		inventory = {
 			{ name = 'painkillers', price = 100 }
 		}, locations = {
-			vec3(306.3687, -601.5139, 43.28406)
+			vec3(-820.15, -1242.57, 7.34)
 		}, targets = {
-			{ loc = vec3(306.33, -601.66, 43.28), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ loc = vec3(-820.15, -1242.57, 7.34), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
 
