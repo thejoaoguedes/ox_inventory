@@ -92,8 +92,11 @@ return {
         label = 'Ferramenta de Acesso',
         weight = 200,
         stack = false,
+		degrade = 7200,
         description = '',
-        server = {export = 'r14-evidence.accesstool'},
+        server = {
+			export = "qb-vehiclekeys.Lockpick"
+		}
     },
 
     ['fingerprintkit'] = {
@@ -164,7 +167,12 @@ return {
 	['lockpick'] = {
 		label = 'Lockpick',
 		weight = 160,
+		stack = false,
 		degrade = 7200,
+		close = true,
+		server = {
+			export = "qb-vehiclekeys.Lockpick"
+		}
 	},
 
 	['phone'] = {
@@ -1778,6 +1786,9 @@ return {
 		description = "Quem vê, se pergunta, qual o uso isso tem?!",
 		client = {
 			image = "flipper.png",
+		},
+		server = {
+			export = "qb-vehiclekeys.Lockpick"
 		}
 	},
 
