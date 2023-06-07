@@ -75,58 +75,58 @@ return {
             {
                 name = 'aluminionaval',
                 ingredients = {
-                    aluminum = 4,
+                    aluminum = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
             {
                 name = 'titanio',
                 ingredients = {
-                    metal = 4,
+                    metal = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
             {
                 name = 'polietileno',
                 ingredients = {
-                    plastic = 4,
+                    plastic = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
             {
                 name = 'cobalto',
                 ingredients = {
-                    copper = 4,
+                    copper = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
             {
                 name = 'borrachafluorada',
                 ingredients = {
-                    rubber = 4,
+                    rubber = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
             {
                 name = 'vidrotemperado',
                 ingredients = {
-                    glass = 4,
+                    glass = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
             {
                 name = 'steel',
                 ingredients = {
-                    iron = 4,
+                    iron = 20,
                 },
                 duration = 10000,
-                count = 1,
+                count = 5,
             },
         },
         points = {
@@ -135,7 +135,7 @@ return {
         zones = {
             {
                 coords = vec3(1084.84, -2002.67, 31.38),
-                size = vec3(1084.84, -2002.67, 31.38),
+                size = vec3(3.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 315.0,
             },
