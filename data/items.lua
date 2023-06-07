@@ -1612,7 +1612,7 @@ return {
 		description = "Usado para cortar metal.",
 		client = {
 			image = "kq_angle_grinder.png",
-			export = 'guedes-chopshop.BreakNearDoor'
+			export = 'guedes-scrapyard.BreakNearDoor'
 		}
 	},
 
@@ -2468,7 +2468,7 @@ return {
 		description = "Chave de Boca e umas coisitas mais...",
 		client = {
 			image = "mechanic_tools.png",
-			export = 'guedes-chopshop.BreakNearWheel'
+			export = 'guedes-scrapyard.BreakNearWheel'
 		}
 	},
 
