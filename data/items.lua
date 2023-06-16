@@ -2423,6 +2423,7 @@ return {
 		description = "",
 		client = {
 			image = "mechboard.png",
+			export = 'customs.useOS'
 		}
 	},
 
@@ -2711,6 +2712,188 @@ return {
 		description = "",
 		client = {
 			image = "fakeplate.png",
+		}
+	},
+
+	["Desktop"] = {
+		label = "Computer Equipment",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Computer Equipment",
+		client = {
+			image = "flightpcequipment.png",
+		}
+	},
+
+	["flight_painting2"] = {
+		label = "Quadro",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Just a work of art,",
+		client = {
+			image = "flightpainting2.png",
+		}
+	},
+
+	["flight_guitar"] = {
+		label = "Guitarra",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Music Equipment",
+		client = {
+			image = "flightguitar.png",
+		}
+	},
+
+	["microwave"] = {
+		label = "Microondas",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Heats things up",
+		client = {
+			image = "flightmicrowave.png",
+		}
+	},
+
+	["flight_television"] = {
+		label = "TV",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Flat Screen TV",
+		client = {
+			image = "flighttelevision.png",
+		}
+	},
+
+	["flight_artpiece"] = {
+		label = "Art",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Some fancy Art",
+		client = {
+			image = "flightartpiece.png",
+		}
+	},
+
+	["Equipamento de Música"] = {
+		label = "Music Equipment",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Music Equipment",
+		client = {
+			image = "musicequipment.png",
+		}
+	},
+
+	["flight_painting"] = {
+		label = "Quadro",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Just a work of art,",
+		client = {
+			image = "flightpainting.png",
+		}
+	},
+
+	["flight_suitcase"] = {
+		label = "Maleta",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Work Suitcase",
+		client = {
+			image = "flightsuitcase.png",
+		}
+	},
+
+	["coffeemaker"] = {
+		label = "Maquina de Café",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Makes a delicious expresso",
+		client = {
+			image = "flightcoffeemaker.png",
+		}
+	},
+
+	["tequila"] = {
+		label = "Tequila",
+		weight = 200,
+		stack = false,
+		degrade = 4320,
+		close = true,
+		description = "",
+		client = {
+			image = "tequila.png",
+		}
+	},
+
+	["cerveja"] = {
+		label = "Cerveja",
+		weight = 200,
+		stack = false,
+		degrade = 4320,
+		close = true,
+		description = "",
+		client = {
+			image = "cerveja.png",
+		}
+	},
+
+	["whisky"] = {
+		label = "Whisky",
+		weight = 200,
+		stack = false,
+		degrade = 4320,
+		close = true,
+		description = "",
+		client = {
+			image = "whisky.png",
+		}
+	},
+
+	["gim"] = {
+		label = "Gim",
+		weight = 200,
+		stack = false,
+		degrade = 4320,
+		close = true,
+		description = "",
+		client = {
+			image = "gim.png",
+		}
+	},
+
+	["saque"] = {
+		label = "Saque",
+		weight = 200,
+		stack = false,
+		degrade = 4320,
+		close = true,
+		description = "",
+		client = {
+			image = "saque.png",
+		}
+	},
+
+	["vodka"] = {
+		label = "Vodka",
+		weight = 200,
+		stack = false,
+		degrade = 4320,
+		close = true,
+		description = "",
+		client = {
+			image = "vodka.png",
 		}
 	},
 }

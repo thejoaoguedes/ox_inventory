@@ -856,14 +856,506 @@ return {
             ['irish'] = 0,
         },
         points = {
-            vec3(1645.1124267578,4849.7368164063,45.310447692871)
+            vec3(1702.4853515625,4763.0922851563,42.045761108398)
         },
         zones = {
             {
-                coords = vec3(1645.1124267578,4849.7368164063,45.310447692871),
+                coords = vec3(1702.4853515625,4763.0922851563,42.045761108398),
                 size = vec3(2.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Bebidas Irish
+            {
+                name = 'cerveja',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['wheat'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'whisky',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['tomato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'vodka',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['potato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'saque',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['lettuce'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'gim',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['carrot'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'tequila',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['onion'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['irish'] = 0,
+        },
+        points = {
+            vec3(1709.9652099609,4782.7666015625,42.401054382324),
+            vec3(1713.9436035156,4782.7666015625,42.425388336182)
+        },
+        zones = {
+            {
+                coords = vec3(1709.9652099609,4782.7666015625,42.401054382324),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+            {
+                coords = vec3(1713.9436035156,4782.7666015625,42.425388336182),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Bebidas Demon
+            {
+                name = 'cerveja',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['wheat'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'whisky',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['tomato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'vodka',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['potato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'saque',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['lettuce'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'gim',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['carrot'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'tequila',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['onion'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['demon'] = 0,
+        },
+        points = {
+            vec3(-67.574317932129,6519.3212890625,31.647975921631),
+            vec3(-64.951622009277,6521.9970703125,31.641555786133)
+        },
+        zones = {
+            {
+                coords = vec3(-67.574317932129,6519.3212890625,31.647975921631),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+            {
+                coords = vec3(-64.951622009277,6521.9970703125,31.641555786133),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Bebidas Angels
+            {
+                name = 'cerveja',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['wheat'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'whisky',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['tomato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'vodka',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['potato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'saque',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['lettuce'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'gim',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['carrot'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'tequila',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['onion'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['angels'] = 0,
+        },
+        points = {
+            vec3(1982.5502929688,3049.5109863281,47.179412841797),
+        },
+        zones = {
+            {
+                coords = vec3(1982.5502929688,3049.5109863281,47.179412841797),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Bebidas Lost
+            {
+                name = 'cerveja',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['wheat'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'whisky',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['tomato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'vodka',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['potato'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'saque',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['lettuce'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'gim',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['carrot'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'tequila',
+                ingredients = {
+                    ['glass'] = 1,
+                    ['onion'] = 1,
+                    ['water'] = 1,
+                },
+                duration = 20000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['thelost'] = 0,
+        },
+        points = {
+            vec3(1451.5460205078,-2610.2282714844,48.918491363525),
+            vec3(1455.4653320313,-2611.1994628906,48.91907119751)
+        },
+        zones = {
+            {
+                coords = vec3(1451.5460205078,-2610.2282714844,48.918491363525),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+            {
+                coords = vec3(1455.4653320313,-2611.1994628906,48.91907119751),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- IMPORTS
+            {
+                name = 'phone',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 15,
+                    ['copper'] = 10,
+                    ['rubber'] = 5,
+                    ['glass'] = 10,
+                    ['iron'] = 5
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'radio',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 15,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'tablet',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 15,
+                    ['iron'] = 10
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'vpn',
+                ingredients = {
+                    ['aluminum'] = 15,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 10
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'vpnadvanced',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 15,
+                    ['plastic'] = 15,
+                    ['copper'] = 15,
+                    ['rubber'] = 15,
+                    ['glass'] = 15,
+                    ['iron'] = 15
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'dongle',
+                ingredients = {
+                    ['aluminum'] = 2,
+                    ['metal'] = 10,
+                    ['plastic'] = 5,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'laptop',
+                ingredients = {
+                    ['aluminum'] = 15,
+                    ['metal'] = 15,
+                    ['plastic'] = 15,
+                    ['copper'] = 15,
+                    ['rubber'] = 15,
+                    ['glass'] = 20,
+                    ['iron'] = 15
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'hacking_device',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 5,
+                    ['plastic'] = 5,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 5
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'transponder',
+                ingredients = {
+                    ['aluminum'] = 5,
+                    ['metal'] = 5,
+                    ['plastic'] = 2,
+                    ['copper'] = 5,
+                    ['rubber'] = 2,
+                    ['glass'] = 5,
+                    ['iron'] = 2
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_REVOLVER',
+                ingredients = {
+                    ['aluminionaval'] = 10,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 30,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 45,
+                    ['blueprintamerican'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['bikers'] = 2,
+        },
+        points = {
+            vec3(1975.8450927734,3817.7238769531,33.466110229492)
+        },
+        zones = {
+            {
+                coords = vec3(1975.8450927734,3817.7238769531,33.466110229492),
+                size = vec3(3.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 315.0,
             },
         },
     },
