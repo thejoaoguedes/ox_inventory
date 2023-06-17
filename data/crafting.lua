@@ -1343,6 +1343,20 @@ return {
                 duration = 120000,
                 count = 1,
             },
+            {
+                name = 'ammo-44',
+                ingredients = {
+                    ['aluminionaval'] = 1,
+                    ['titanio'] = 1,
+                    ['polietileno'] = 1,
+                    ['cobalto'] = 1,
+                    ['borrachafluorada'] = 1,
+                    ['vidrotemperado'] = 1,
+                    ['steel'] = 1,
+                },
+                duration = 60000,
+                count = 100,
+            },
         },
         groups = {
             ['bikers'] = 2,
@@ -1356,6 +1370,70 @@ return {
                 size = vec3(3.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 315.0,
+            },
+        },
+    },
+    {
+        items = { -- Muni Demon
+            {
+                name = 'ammo-9',
+                ingredients = {
+                    ['aluminionaval'] = 1,
+                    ['titanio'] = 1,
+                    ['polietileno'] = 1,
+                    ['cobalto'] = 1,
+                    ['borrachafluorada'] = 1,
+                    ['vidrotemperado'] = 1,
+                    ['steel'] = 1,
+                },
+                duration = 60000,
+                count = 100,
+            },
+        },
+        groups = {
+            ['demon'] = 0,
+        },
+        points = {
+            vec3(-76.409561157227,6512.013671875,31.565774917603),
+        },
+        zones = {
+            {
+                coords = vec3(-76.409561157227,6512.013671875,31.565774917603),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Muni Angels
+            {
+                name = 'ammo-9',
+                ingredients = {
+                    ['aluminionaval'] = 1,
+                    ['titanio'] = 1,
+                    ['polietileno'] = 1,
+                    ['cobalto'] = 1,
+                    ['borrachafluorada'] = 1,
+                    ['vidrotemperado'] = 1,
+                    ['steel'] = 1,
+                },
+                duration = 60000,
+                count = 100,
+            },
+        },
+        groups = {
+            ['angels'] = 0,
+        },
+        points = {
+            vec3(2001.1345214844,3041.6735839844,46.94063949585),
+        },
+        zones = {
+            {
+                coords = vec3(2001.1345214844,3041.6735839844,46.94063949585),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
             },
         },
     },
