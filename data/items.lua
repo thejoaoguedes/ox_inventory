@@ -2896,4 +2896,114 @@ return {
 			image = "vodka.png",
 		}
 	},
+
+	["carteira"] = {
+		label = "Carteira",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "carteira.png",
+		}
+	},
+
+	["goldchain"] = {
+		label = "Corrente de Ouro",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "goldchain.png",
+		}
+	},
+
+	["brinco"] = {
+		label = "Brinco",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "brinco.png",
+		}
+	},
+
+	["rolex"] = {
+		label = "Rolex",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "rolex.png",
+		}
+	},
+
+	["diamond"] = {
+		label = "Diamante",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "diamond.png",
+		}
+	},
+
+	["celularxingling"] = {
+		label = "Celular Xing Ling",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "celularxingling.png",
+		}
+	},
+
+	["colar"] = {
+		label = "Colar",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "colar.png",
+		}
+	},
+
+	["anel"] = {
+		label = "Anel",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "anel.png",
+		}
+	},
+
+	["tabletxingling"] = {
+		label = "Tablet Xing Ling",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "tabletxingling.png",
+		}
+	},
+
+	["relogio"] = {
+		label = "Relógio",
+		weight = 100,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "relogio.png",
+		}
+	},
 }
