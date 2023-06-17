@@ -2715,7 +2715,7 @@ return {
 		}
 	},
 
-	["Desktop"] = {
+	["pcequipment"] = {
 		label = "Computer Equipment",
 		weight = 25000,
 		stack = false,
@@ -2781,7 +2781,7 @@ return {
 		}
 	},
 
-	["Equipamento de Música"] = {
+	["musicequipment"] = {
 		label = "Music Equipment",
 		weight = 25000,
 		stack = false,
@@ -2821,7 +2821,7 @@ return {
 		close = true,
 		description = "Makes a delicious expresso",
 		client = {
-			image = "flightcoffeemaker.png",
+			image = "coffeemaker.png",
 		}
 	},
 
@@ -3004,6 +3004,28 @@ return {
 		description = "",
 		client = {
 			image = "relogio.png",
+		}
+	},
+
+	["Equipamento de Música"] = {
+		label = "Music Equipment",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Music Equipment",
+		client = {
+			image = "musicequipment.png",
+		}
+	},
+
+	["Desktop"] = {
+		label = "Computer Equipment",
+		weight = 25000,
+		stack = false,
+		close = true,
+		description = "Computer Equipment",
+		client = {
+			image = "flightpcequipment.png",
 		}
 	},
 }
