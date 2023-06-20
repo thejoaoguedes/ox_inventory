@@ -4,58 +4,58 @@ return {
             {
                 name = 'aluminum',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
             {
                 name = 'metal',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
             {
                 name = 'plastic',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
             {
                 name = 'copper',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
             {
                 name = 'rubber',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
             {
                 name = 'glass',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
             {
                 name = 'iron',
                 ingredients = {
-                    recyclablematerial = 10,
+                    recyclablematerial = 20,
                 },
-                duration = 10000,
-                count = 10,
+                duration = 5000,
+                count = 20,
             },
         },
         points = {
@@ -77,7 +77,7 @@ return {
                 ingredients = {
                     aluminum = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
             {
@@ -85,7 +85,7 @@ return {
                 ingredients = {
                     metal = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
             {
@@ -93,7 +93,7 @@ return {
                 ingredients = {
                     plastic = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
             {
@@ -101,7 +101,7 @@ return {
                 ingredients = {
                     copper = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
             {
@@ -109,7 +109,7 @@ return {
                 ingredients = {
                     rubber = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
             {
@@ -117,7 +117,7 @@ return {
                 ingredients = {
                     glass = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
             {
@@ -125,7 +125,7 @@ return {
                 ingredients = {
                     iron = 20,
                 },
-                duration = 10000,
+                duration = 5000,
                 count = 5,
             },
         },
