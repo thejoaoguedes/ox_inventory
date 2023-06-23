@@ -410,7 +410,26 @@ end
 
 local Items = require 'modules.items.server'
 
-CreateThread(function() TriggerEvent('ox_inventory:loadInventory', Inventory) end)
+CreateThread(function()
+    Inventory.accounts = server.accounts
+    TriggerEvent('ox_inventory:loadInventory', Inventory)
+end)
+
+function Inventory.GetAccountItemCounts(inv)
+    inv = Inventory(inv)
+
+    if not inv then return end
+
+    local accounts = table.clone(server.accounts)
+
+	for _, v in pairs(inv.items) do
+		if accounts[v.name] then
+			accounts[v.name] += v.count
+		end
+	end
+
+    return accounts
+end
 
 ---@param item table
 ---@param slot table
@@ -1519,14 +1538,11 @@ local function dropItem(source, data)
 
 	if data.count > fromData.count then data.count = fromData.count end
 
-	local toData = table.clone(fromData)
-	toData.slot = data.toSlot
-	toData.count = data.count
-	fromData.count -= data.count
-	fromData.weight = Inventory.SlotWeight(Items(fromData.name), fromData)
-	toData.weight = Inventory.SlotWeight(Items(toData.name), toData)
-
-	if fromData.count < 1 then fromData = nil end
+    if fromData.count < 1 then
+        fromData = nil
+    else
+        toData.metadata = table.clone(toData.metadata)
+    end
 
 	playerInventory.weight -= toData.weight
 	local slot = data.fromSlot
@@ -1604,7 +1620,6 @@ lib.callback.register('ox_inventory:swapItems', function(source, data)
 	local sameInventory = fromInventory.id == toInventory.id
 	local fromOtherPlayer = fromInventory.player and fromInventory ~= playerInventory
 	local toOtherPlayer = toInventory.player and toInventory ~= playerInventory
-
 	local toData = toInventory.items[data.toSlot]
 
 	if not sameInventory and (fromInventory.type == 'policeevidence' or (toInventory.type == 'policeevidence' and toData)) then
@@ -1623,7 +1638,7 @@ lib.callback.register('ox_inventory:swapItems', function(source, data)
 		activeSlots[toRef] = nil
 	end)
 
-	if toInventory and fromInventory and (fromInventory.id ~= toInventory.id or data.fromSlot ~= data.toSlot) then
+	if toInventory and (data.toType == 'newdrop' or fromInventory ~= toInventory or data.fromSlot ~= data.toSlot) then
 		local fromData = fromInventory.items[data.fromSlot]
 
 		if not fromData then
@@ -2204,72 +2219,99 @@ end
 
 exports('GetItemCount', Inventory.GetItemCount)
 
-local function prepareSave(inv)
-	inv.changed = false
+---@param inv OxInventory
+---@param buffer table
+---@param time integer
+---@return integer | false | nil
+---@return table | nil
+local function prepareInventorySave(inv, buffer, time)
+    local shouldSave = not inv.datastore and inv.changed
+    local n = 0
 
-	if inv.player then
-		if shared.framework ~= 'esx' then
-			return 1, { json.encode(minimal(inv)), inv.owner }
-		end
-	elseif inv.type == 'trunk' then
-		return 2, { json.encode(minimal(inv)), inv.dbId }
-	elseif inv.type == 'glovebox' then
-		return 3, { json.encode(minimal(inv)), inv.dbId }
-	else
-		return 4, { inv.owner or '', inv.dbId, json.encode(minimal(inv)) }
+    for k, v in pairs(inv.items) do
+        local durability = v.metadata.durability
+
+        if durability and durability > 100 and time >= durability then
+            v.metadata.durability = 0
+        end
+
+        if shouldSave then
+            n += 1
+            buffer[n] = {
+                name = v.name,
+                count = v.count,
+                slot = k,
+                metadata = next(v.metadata) and v.metadata or nil
+            }
+        end
 	end
+
+    if not shouldSave then return end
+
+    local data = json.encode(buffer)
+    inv.changed = false
+    table.wipe(buffer)
+
+    if inv.player then
+        if shared.framework == 'esx' then return end
+
+        return 1, { data, inv.owner }
+    end
+
+    if inv.type == 'trunk' then
+        return 2, { data, inv.dbId }
+    end
+
+    if inv.type == 'glovebox' then
+        return 3, { data, inv.dbId }
+    end
+
+    return 4, { inv.owner or '', inv.dbId, data }
 end
 
-lib.cron.new('*/5 * * * *', function()
+local function saveInventories(manual)
 	local time = os.time()
 	local parameters = { {}, {}, {}, {} }
 	local size = { 0, 0, 0, 0 }
+    local buffer = {}
 
 	for _, inv in pairs(Inventories) do
-		if not inv.open then
-			if not inv.datastore and inv.changed then
-				local i, data = prepareSave(inv)
+        local index, data = prepareInventorySave(inv, buffer, time)
 
-				if i then
-					size[i] += 1
-					parameters[i][size[i]] = data
-				end
-			end
-
-			if inv.datastore and inv.netid and (inv.type == 'trunk' or inv.type == 'glovebox') then
-				if NetworkGetEntityFromNetworkId(inv.netid) == 0 then
-					Inventory.Remove(inv)
-				end
-			elseif not inv.player and (inv.datastore or inv.owner) and time - inv.time >= 1200 then
-				-- inv.time is a timestamp for when the inventory was last closed
-				-- if unopened for n seconds, the inventory is unloaded (datastore/temp stash is deleted)
-				Inventory.Remove(inv)
-			end
-		end
+        if index then
+            size[index] += 1
+            parameters[index][size[index]] = data
+        end
 	end
 
 	db.saveInventories(parameters[1], parameters[2], parameters[3], parameters[4])
+
+    if not manual then return end
+
+    for _, inv in pairs(Inventories) do
+        if not inv.open then
+            if inv.datastore and inv.netid and (inv.type == 'trunk' or inv.type == 'glovebox') then
+                if NetworkGetEntityFromNetworkId(inv.netid) == 0 then
+                    Inventory.Remove(inv)
+                end
+            elseif not inv.player and (inv.datastore or inv.owner) and time - inv.time >= 1200 then
+                -- inv.time is a timestamp for when the inventory was last closed
+                -- if unopened for n seconds, the inventory is unloaded (datastore/temp stash is deleted)
+                Inventory.Remove(inv)
+            end
+        end
+    end
+end
+
+lib.cron.new('*/5 * * * *', function()
+    saveInventories()
 end)
 
 function Inventory.SaveInventories(lock)
-	local parameters = { {}, {}, {}, {} }
-	local size = { 0, 0, 0, 0 }
 	Inventory.Lock = lock or nil
 
 	Inventory.CloseAll()
-
-	for _, inv in pairs(Inventories) do
-		if not inv.datastore and inv.changed then
-			local i, data = prepareSave(inv)
-
-			if i then
-				size[i] += 1
-				parameters[i][size[i]] = data
-			end
-		end
-	end
-
-	db.saveInventories(parameters[1], parameters[2], parameters[3], parameters[4])
+    saveInventories(lock)
 end
 
 AddEventHandler('playerDropped', function()
@@ -2406,7 +2448,7 @@ local function updateWeapon(source, action, value, slot, specialAmmo)
 
 			if action == 'load' and weapon.metadata.durability > 0 then
 				local ammo = Items(weapon.name).ammoname
-				local diff = value - weapon.metadata.ammo
+				local diff = value - (weapon.metadata.ammo or 0)
 
 				if not Inventory.RemoveItem(inventory, ammo, diff, specialAmmo) then return end
 
@@ -2488,8 +2530,6 @@ lib.callback.register('ox_inventory:removeAmmoFromWeapon', function(source, slot
 		return true
 	end
 end)
-
-Inventory.accounts = server.accounts
 
 local function checkStashProperties(properties)
 	local name, slots, maxWeight, coords in properties

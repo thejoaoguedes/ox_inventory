@@ -301,15 +301,15 @@ end)
 
 local Animations = data 'animations'
 local Items = require 'modules.items.client'
+local usingItem = false
 
 lib.callback.register('ox_inventory:usingItem', function(data)
 	local item = Items[data.name]
 
-	if item and invBusy then
+	if item and usingItem then
 		if not item.client then return true end
 		---@cast item +OxClientProps
 		item = item.client
-		plyState.invBusy = true
 
 		if type(item.anim) == 'string' then
 			item.anim = Animations.anim[item.anim]
@@ -367,7 +367,8 @@ end)
 local function canUseItem(isAmmo)
 	local ped = cache.ped
 
-	return (not isAmmo or currentWeapon)
+	return not usingItem
+    and (not isAmmo or currentWeapon)
 	and PlayerData.loaded
 	and not PlayerData.dead
 	and not invBusy
@@ -379,7 +380,6 @@ end
 ---@param data table
 ---@param cb function?
 local function useItem(data, cb)
-	if invOpen and data.close then client.closeInventory() end
 	local slotData, result = PlayerData.inventory[data.slot]
 
 	local durability = slotData.metadata.durability --[[@as number?]]
@@ -391,20 +391,15 @@ local function useItem(data, cb)
 		end
 	end
 
-	if canUseItem(data.ammo and true) then
-		if currentWeapon and currentWeapon?.timer > 100 then return end
+	if not canUseItem(data.ammo and true) then return end
+	if currentWeapon and currentWeapon?.timer > 100 then return end
 
-		plyState.invBusy = true
-		result = lib.callback.await('ox_inventory:useItem', 200, data.name, data.slot, slotData.metadata)
+    if invOpen and data.close then client.closeInventory() end
 
-		if not result then
-			Wait(500)
-			plyState.invBusy = false
-			return
-		end
-	end
+    usingItem = true
+    result = lib.callback.await('ox_inventory:useItem', 200, data.name, data.slot, slotData.metadata)
 
-	if cb then
+	if result and cb then
 		local success, response = pcall(cb, result and slotData)
 
 		if not success and response then
@@ -412,7 +407,8 @@ local function useItem(data, cb)
 		end
 	end
 
-	plyState.invBusy = false
+	Wait(500)
+    usingItem = false
 end
 
 AddEventHandler('ox_inventory:item', useItem)
@@ -467,6 +463,15 @@ local function useSlot(slot)
 			if EnableWeaponWheel then return end
 
 			if IsCinematicCamRendering() then SetCinematicModeActive(false) end
+
+            GiveWeaponToPed(playerPed, data.hash, 0, false, true)
+            SetCurrentPedWeapon(playerPed, data.hash, true)
+
+            if data.hash ~= GetSelectedPedWeapon(playerPed) then
+                return lib.notify({ type = 'error', description = locale('cannot_use', data.label) })
+            end
+
+            RemoveAllPedWeapons(cache.ped, true)
 
 			if currentWeapon then
 				local weaponSlot = currentWeapon.slot
@@ -1715,8 +1720,14 @@ lib.callback.register('ox_inventory:startCrafting', function(id, recipe)
 	})
 end)
 
+local swapActive = false
+
 ---Synchronise and validate all item movement between the NUI and server.
 RegisterNUICallback('swapItems', function(data, cb)
+    if swapActive or not invOpen or invBusy then return end
+
+    swapActive = true
+
 	if data.toType == 'newdrop' then
 		if cache.vehicle or IsPedFalling(playerPed) then return cb(false) end
 
@@ -1754,15 +1765,16 @@ RegisterNUICallback('swapItems', function(data, cb)
 	end
 
 	local success, response, weaponSlot = lib.callback.await('ox_inventory:swapItems', false, data)
+    swapActive = false
 
 	cb(success or false)
 
 	if success then
-		if response then
-			if weaponSlot and currentWeapon then
-				currentWeapon.slot = weaponSlot
-			end
+        if weaponSlot and currentWeapon then
+            currentWeapon.slot = weaponSlot
+        end
 
+		if response then
 			updateInventory(response.items, response.weight)
 		end
 	elseif response then
