@@ -2320,6 +2320,15 @@ AddEventHandler('playerDropped', function()
 	end
 end)
 
+AddEventHandler('txAdmin:events:scheduledRestart', function(eventData)
+    if eventData.secondsRemaining == 60 then
+        CreateThread(function()
+            Wait(45000)
+            Inventory.SaveInventories(true)
+        end)
+    end
+end)
+
 AddEventHandler('txAdmin:events:serverShuttingDown', function()
 	Inventory.SaveInventories(true)
 end)

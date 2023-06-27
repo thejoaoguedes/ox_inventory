@@ -54,7 +54,7 @@ end
 setContainerProperties('paperbag', {
 	slots = 8,
 	maxWeight = 10000,
-	blacklist = { 'testburger' }
+	whitelist = {"water","pizza3","fritelle","galaxyveggie","garibaldi","cannoli","pizza1","fishburger","cosmic","tiramisu","bruschetta","veggieburger","saturnorings","milkshakeintergalact","candystars","aliensfinger","pulsarfish","pizza2","astroburger","fullmoon","acquaitaliana","sandwich","chocolate"}
 })
 
 setContainerProperties('pizzabox', {

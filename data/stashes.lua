@@ -85,4 +85,40 @@ return {
 		slots = 10,
 		weight = 100000
 	},
+
+	{
+		coords = vec3(176.34696960449,-1323.7326660156,29.356185913086),
+		target = {
+			loc = vec3(176.34696960449,-1323.7326660156,29.356185913086),
+			length = 0.6,
+			width = 2.8,
+			heading = 50.46,
+			minZ = 33.34,
+			maxZ = 35.00,
+			label = 'Abrir Balcão'
+		},
+		name = 'trayPawnShop2',
+		label = 'Balcão - Pawn Shop',
+		owner = false,
+		slots = 10,
+		weight = 100000
+	},
+
+	{
+		coords = vec3(173.80699157715,-1320.9068603516,29.356185913086),
+		target = {
+			loc = vec3(173.80699157715,-1320.9068603516,29.356185913086),
+			length = 0.6,
+			width = 2.8,
+			heading = 50.46,
+			minZ = 33.34,
+			maxZ = 35.00,
+			label = 'Abrir Balcão'
+		},
+		name = 'trayPawnShop3',
+		label = 'Balcão - Pawn Shop',
+		owner = false,
+		slots = 10,
+		weight = 100000
+	},
 }

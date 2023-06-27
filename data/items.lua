@@ -3028,4 +3028,103 @@ return {
 			image = "flightpcequipment.png",
 		}
 	},
+
+	["tuner_engine"] = {
+		label = "Kit Motor",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "tuner_engine.png",
+		}
+	},
+
+	["tuner_suspension"] = {
+		label = "Kit Suspensão",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "tuner_suspension.png",
+		}
+	},
+
+	["tuner_exterior"] = {
+		label = "Kit Estética",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "tuner_exterior.png",
+		}
+	},
+
+	["tuner_brake"] = {
+		label = "Kit Freio",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "tuner_brake.png",
+		}
+	},
+
+	["tuner_transmission"] = {
+		label = "Kit Transmissão",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "tuner_transmission.png",
+		}
+	},
+
+	["tuner_turbo"] = {
+		label = "Kit Turbo",
+		weight = 1000,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "tuner_turbo.png",
+		}
+	},
+
+	["hacking-laptop"] = {
+		label = "Laptop Hacker",
+		weight = 1500,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "hacking-laptop.png",
+		}
+	},
+
+	["gps-device"] = {
+		label = "Gps",
+		weight = 1500,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "gps-device.png",
+		}
+	},
+
+	["kthermite"] = {
+		label = "Thermite",
+		weight = 500,
+		stack = false,
+		close = true,
+		description = "",
+		client = {
+			image = "thermite.png",
+		}
+	},
 }
