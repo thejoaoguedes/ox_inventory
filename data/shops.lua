@@ -126,4 +126,27 @@ return {
 		{ loc = vec3(137.97848510742, 2294.3767089844, 94.080696105957), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
+
+	FestaJunina = {
+		name = 'Arraiá',
+		inventory = {
+			{ name = 'chocolate', price = 100, metadata = {image = 'cocada', label = 'Cocada', description = 'Uma cocada deliciosa e tradicional brasileira feita com coco!'} },
+			{ name = 'gim', price = 100, metadata = {image = 'cachaca', label = 'Cachaça', description = 'Uma bebida destilada brasileira popular feita a partir de cana-de-açúcar!'} },
+			{ name = 'acquaitaliana', price = 100, metadata = {image = 'guarana', label = 'Guaraná', description = 'Um refrigerante brasileiro refrescante feito a partir do fruto do guaraná!'} },
+			{ name = 'gim', price = 100, metadata = {image = 'quentao', label = 'Quentão', description = 'Uma bebida quente tradicional brasileira feita com cachaça e especiarias!'} },
+			{ name = 'chocolate', price = 100, metadata = {image = 'pedemoleque', label = 'Pé de Moleque', description = 'Um doce brasileiro delicioso feito com amendoim e rapadura!'} },
+			{ name = 'chocolate', price = 100, metadata = {image = 'macadoamor', label = 'Maçã do Amor', description = 'Uma maçã coberta de chocolate e caramelo, uma delícia!'} },
+			{ name = 'chocolate', price = 100, metadata = {image = 'canjica', label = 'Canjica', description = 'Um doce de milho tradicional brasileiro, perfeito para festas juninas!'} },
+			{ name = 'chocolate', price = 100, metadata = {image = 'curau', label = 'Curau', description = 'Uma sobremesa cremosa feita com milho verde, típica das festas juninas!'} },
+			{ name = 'sandwich', price = 100, metadata = {image = 'pipoca', label = 'Pipoca', description = 'Uma pipoca quentinha e crocante, ótima para curtir um filme!'} },
+			{ name = 'chocolate', price = 100, metadata = {image = 'pamonha', label = 'Pamonha', description = 'Uma delícia feita com milho verde e envolta em folha de bananeira!'} },
+			{ name = 'sandwich', price = 100, metadata = {image = 'milhocozido', label = 'Milho Cozido', description = 'Milho cozido na água e sal, uma opção deliciosa para festas!'} }
+		},
+		locations = {
+			vector3(386.53, -342.15, 46.81)
+		},
+		 targets = {
+			{ loc = vector3(386.53, -342.15, 46.81), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+		}
+	},
 }
