@@ -3053,8 +3053,8 @@ return {
 
 	["tuner_exterior"] = {
 		label = "Kit Estética",
-		weight = 1000,
-		stack = false,
+		weight = 200,
+		stack = true,
 		close = true,
 		description = "",
 		client = {
