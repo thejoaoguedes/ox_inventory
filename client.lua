@@ -43,14 +43,25 @@ plyState:set('invBusy', true, false)
 plyState:set('invHotkeys', false, false)
 
 local function canOpenInventory()
-	return PlayerData.loaded
-	and not invBusy
-	and not PlayerData.dead
-	and invOpen ~= nil
-	and (not currentWeapon or currentWeapon.timer == 0)
-	and not IsPedCuffed(playerPed)
-	and not IsPauseMenuActive()
-	and not IsPedFatallyInjured(playerPed)
+    if not PlayerData.loaded then
+        return shared.info('cannot open inventory', '(is not loaded)')
+    end
+
+    if IsPauseMenuActive() then return end
+
+    if invBusy or invOpen == nil or (currentWeapon and currentWeapon.timer ~= 0) then
+        return shared.info('cannot open inventory', '(is busy)')
+    end
+
+    if PlayerData.dead or IsPedFatallyInjured(playerPed) then
+        return shared.info('cannot open inventory', '(fatal injury)')
+    end
+
+    if PlayerData.cuffed or IsPedCuffed(playerPed) then
+        return shared.info('cannot open inventory', '(cuffed)')
+    end
+
+    return true
 end
 
 ---@param ped number
@@ -130,9 +141,11 @@ function client.openInventory(inv, data)
 		-- If triggering event from another nui such as qtarget, may need to wait for focus to end
 		Wait(100)
 
-		if IsNuiFocused() then
-			warn('other scripts have nui focus and may cause issues (e.g. disable focus, prevent input, overlap inventory window)')
-		end
+        -- People still complain about this being an "error" and ask "how fix" despite being a warning
+        -- for people with above room-temperature iqs to look into resource conflicts on their own.
+		-- if IsNuiFocused() then
+		-- 	warn('other scripts have nui focus and may cause issues (e.g. disable focus, prevent input, overlap inventory window)')
+		-- end
 	end
 
 	if inv == 'dumpster' and cache.vehicle then
@@ -267,7 +280,7 @@ function client.openInventory(inv, data)
 			if invOpen == false then lib.notify({ id = 'inventory_right_access', type = 'error', description = locale('inventory_right_access') }) end
 			if invOpen then client.closeInventory() end
 		end
-	elseif invBusy then lib.notify({ id = 'inventory_player_access', type = 'error', description = locale('inventory_player_access') }) end
+	else lib.notify({ id = 'inventory_player_access', type = 'error', description = locale('inventory_player_access') }) end
 end
 
 RegisterNetEvent('ox_inventory:openInventory', client.openInventory)
@@ -726,11 +739,7 @@ local function registerCommands()
 				return client.closeInventory()
 			end
 
-			if invBusy then
-				return lib.notify({ id = 'inventory_player_access', type = 'error', description = locale('inventory_player_access') })
-			end
-
-			if not canOpenInventory() then
+			if invBusy or not canOpenInventory() then
 				return lib.notify({ id = 'inventory_player_access', type = 'error', description = locale('inventory_player_access') })
 			end
 
@@ -917,6 +926,7 @@ exports('closeInventory', client.closeInventory)
 ---@param weight number | table<string, number>
 local function updateInventory(data, weight)
 	local changes = {}
+    ---@type table<string, number>
 	local itemCount = {}
 
 	for i = 1, #data do
@@ -950,38 +960,32 @@ local function updateInventory(data, weight)
 	SendNUIMessage({ action = 'refreshSlots', data = { items = data, itemCount = itemCount} })
 	client.setPlayerData('weight', type(weight) == 'number' and weight or weight.left)
 
-	for item, count in pairs(itemCount) do
-		local data = Items[item]
+	for itemName, count in pairs(itemCount) do
+		local item = Items(itemName)
 
-		if count < 0 then
-			if currentWeapon and not currentWeapon.throwable and currentWeapon.slot == data.slot then
-				currentWeapon = Weapon.Disarm(currentWeapon)
-			end
+        if item then
+            item.count += count
 
-			data.count += count
+            TriggerEvent('ox_inventory:itemCount', item.name, item.count)
 
-			if shared.framework == 'esx' then
-				TriggerEvent('esx:removeInventoryItem', data.name, data.count)
-			else
-				TriggerEvent('ox_inventory:itemCount', data.name, data.count)
-			end
+            if count < 0 then
+                if shared.framework == 'esx' then
+                    TriggerEvent('esx:removeInventoryItem', item.name, item.count)
+                end
 
-			if data.client?.remove then
-				data.client.remove(data.count)
-			end
-		elseif count > 0 then
-			data.count += count
+                if item.client?.remove then
+                    item.client.remove(item.count)
+                end
+            elseif count > 0 then
+                if shared.framework == 'esx' then
+                    TriggerEvent('esx:addInventoryItem', item.name, item.count)
+                end
 
-			if shared.framework == 'esx' then
-				TriggerEvent('esx:addInventoryItem', data.name, data.count)
-			else
-				TriggerEvent('ox_inventory:itemCount', data.name, data.count)
-			end
-
-			if data.client?.add then
-				data.client.add(data.count)
-			end
-		end
+                if item.client?.add then
+                    item.client.add(item.count)
+                end
+            end
+        end
 	end
 
 	client.setPlayerData('inventory', PlayerData.inventory)
@@ -1187,6 +1191,7 @@ RegisterNetEvent('ox_inventory:setPlayerInventory', function(currentDrops, inven
 	PlayerData = player
 	PlayerData.id = cache.playerId
 	PlayerData.source = cache.serverId
+    PlayerData.maxWeight = shared.playerweight
 
 	setmetatable(PlayerData, {
 		__index = function(self, key)

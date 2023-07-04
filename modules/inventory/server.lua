@@ -844,16 +844,8 @@ function Inventory.GetItem(inv, item, metadata, returnsCount)
 			metadata = assertMetadata(metadata)
 
 			for _, v in pairs(inv.items) do
-				if v and v.name == item.name and (not metadata or table.contains(v.metadata, metadata)) then
-					local durability = v.metadata.durability
-
-					if durability and durability > 100 and ostime >= durability then
-						v.metadata.durability = 0
-					end
-
-					if not (durability and v.metadata.durability <= 0) then
-						count += v.count
-					end
+				if v.name == item.name and (not metadata or table.contains(v.metadata, metadata)) and not Items.UpdateDurability(inv, v, item, nil, ostime) then
+                    count += v.count
 				end
 			end
 		end
@@ -935,96 +927,79 @@ end
 exports('GetCurrentWeapon', Inventory.GetCurrentWeapon)
 
 ---@param inv inventory
----@param slot number
+---@param slotId number
 ---@return table? item
-function Inventory.GetSlot(inv, slot)
+function Inventory.GetSlot(inv, slotId)
 	inv = Inventory(inv) --[[@as OxInventory]]
-	local slotData = inv and inv.items[slot]
+	local slot = inv and inv.items[slotId]
 
-	if slotData then
-		local durability = slotData.metadata.durability
-
-		if durability and durability > 100 and os.time() >= durability then
-			slotData.metadata.durability = 0
-		end
-
-		return slotData
+	if slot and not Items.UpdateDurability(inv, slot, Items(slot.name), nil, os.time()) then
+        return slot
 	end
 end
 exports('GetSlot', Inventory.GetSlot)
 
 ---@param inv inventory
----@param slot number
-function Inventory.SetDurability(inv, slot, durability)
+---@param slotId number
+function Inventory.SetDurability(inv, slotId, durability)
 	inv = Inventory(inv) --[[@as OxInventory]]
-	local slotData = inv and inv.items[slot]
+	local slot = inv and inv.items[slotId]
 
-	if inv and slotData then
-		inv.changed = true
-		slotData.metadata.durability = durability
+	if not slot then return end
 
-		if inv.player and server.syncInventory then
-			server.syncInventory(inv)
-		end
+    Items.UpdateDurability(inv, slot, Items(slot.name), durability)
 
-		inv:syncSlotsWithClients({
-			{
-				item = slotData,
-				inventory = inv.id
-			}
-		},
-		{
-			left = inv.weight,
-			right = inv.open and Inventories[inv.open]?.weight or nil
-		}, true)
-	end
+    if inv.player and server.syncInventory then
+        server.syncInventory(inv)
+    end
 end
 exports('SetDurability', Inventory.SetDurability)
 
 local Utils = require 'modules.utils.server'
 
 ---@param inv inventory
----@param slot number | false
+---@param slotId number
 ---@param metadata { [string]: any }
-function Inventory.SetMetadata(inv, slot, metadata)
+function Inventory.SetMetadata(inv, slotId, metadata)
 	inv = Inventory(inv) --[[@as OxInventory]]
-	local slotData = inv and type(slot) == 'number' and inv.items[slot]
+	local slot = inv and inv.items[slotId]
 
-	if inv and slotData then
-		inv.changed = true
-		local imageurl = slotData.metadata.imageurl
-		slotData.metadata = type(metadata) == 'table' and metadata or { type = metadata or nil }
+	if not slot then return end
 
-		if metadata.weight then
-			inv.weight -= slotData.weight
-			slotData.weight = Inventory.SlotWeight(Items(slotData.name), slotData)
-			inv.weight += slotData.weight
-		end
+    local item = Items(slot.name)
+    local imageurl = slot.metadata.imageurl
+    slot.metadata = type(metadata) == 'table' and metadata or { type = metadata or nil }
+    inv.changed = true
 
-		if inv.player and server.syncInventory then
-			server.syncInventory(inv)
-		end
+    if metadata.weight then
+        inv.weight -= slot.weight
+        slot.weight = Inventory.SlotWeight(item, slot)
+        inv.weight += slot.weight
+    end
 
-		inv:syncSlotsWithClients({
-			{
-				item = slotData,
-				inventory = inv.id
-			}
-		},
-		{
-			left = inv.weight,
-			right = inv.open and Inventories[inv.open]?.weight or nil
-		}, true)
+    if metadata.durability ~= slot.metadata.durability then
+        Items.UpdateDurability(inv, slot, item, metadata.durability)
+    else
+        inv:syncSlotsWithClients({
+            {
+                item = slot,
+                inventory = inv.id
+            }
+        }, { left = inv.weight }, true)
+    end
 
-		if metadata.imageurl ~= imageurl and Utils.IsValidImageUrl then
-			if Utils.IsValidImageUrl(metadata.imageurl) then
-				Utils.DiscordEmbed('Valid image URL', ('Updated item "%s" (%s) with valid url in "%s".\n%s\nid: %s\nowner: %s'):format(metadata.label or slotData.label, slotData.name, inv.label, metadata.imageurl, inv.id, inv.owner, metadata.imageurl), metadata.imageurl, 65280)
-			else
-				Utils.DiscordEmbed('Invalid image URL', ('Updated item "%s" (%s) with invalid url in "%s".\n%s\nid: %s\nowner: %s'):format(metadata.label or slotData.label, slotData.name, inv.label, metadata.imageurl, inv.id, inv.owner, metadata.imageurl), metadata.imageurl, 16711680)
-				metadata.imageurl = nil
-			end
-		end
-	end
+    if inv.player and server.syncInventory then
+        server.syncInventory(inv)
+    end
+
+    if metadata.imageurl ~= imageurl and Utils.IsValidImageUrl then
+        if Utils.IsValidImageUrl(metadata.imageurl) then
+            Utils.DiscordEmbed('Valid image URL', ('Updated item "%s" (%s) with valid url in "%s".\n%s\nid: %s\nowner: %s'):format(metadata.label or slot.label, slot.name, inv.label, metadata.imageurl, inv.id, inv.owner, metadata.imageurl), metadata.imageurl, 65280)
+        else
+            Utils.DiscordEmbed('Invalid image URL', ('Updated item "%s" (%s) with invalid url in "%s".\n%s\nid: %s\nowner: %s'):format(metadata.label or slot.label, slot.name, inv.label, metadata.imageurl, inv.id, inv.owner, metadata.imageurl), metadata.imageurl, 16711680)
+            metadata.imageurl = nil
+        end
+    end
 end
 
 exports('SetMetadata', Inventory.SetMetadata)
@@ -1052,9 +1027,16 @@ function Inventory.SetMaxWeight(inv, maxWeight)
 	if type(maxWeight) ~= 'number' then return end
 
 	inv.maxWeight = maxWeight
-	if not inv.open then return end
 
-	TriggerClientEvent('refreshMaxWeight', inv.open, {inventoryId = inv.id, maxWeight = inv.maxWeight})
+    if inv.player then
+        TriggerClientEvent('ox_inventory:refreshMaxWeight', inv.id, {inventoryId = inv.id, maxWeight = inv.maxWeight})
+    end
+
+    for playerId in pairs(inv.openedBy) do
+        if playerId ~= inv.id then
+            TriggerClientEvent('ox_inventory:refreshMaxWeight', playerId, {inventoryId = inv.id, maxWeight = inv.maxWeight})
+        end
+	end
 end
 
 exports('SetMaxWeight', Inventory.SetMaxWeight)
@@ -2135,13 +2117,9 @@ function Inventory.GetSlotWithItem(inv, itemName, metadata, strict)
 
 	for _, slotData in pairs(inventory.items) do
 		if slotData and slotData.name == item.name and (not metadata or tablematch(slotData.metadata, metadata)) then
-			local durability = slotData.metadata.durability
-
-			if durability and durability > 100 and os.time() >= durability then
-				slotData.metadata.durability = 0
-			end
-
-			return slotData
+            if not Items.UpdateDurability(inventory, slotData, item, nil, os.time()) then
+                return slotData
+            end
 		end
 	end
 end
@@ -2178,15 +2156,10 @@ function Inventory.GetSlotsWithItem(inv, itemName, metadata, strict)
 
 	for _, slotData in pairs(inventory.items) do
 		if slotData and slotData.name == item.name and (not metadata or tablematch(slotData.metadata, metadata)) then
-			n += 1
-
-			local durability = slotData.metadata.durability
-
-			if durability and durability > 100 and ostime >= durability then
-				slotData.metadata.durability = 0
-			end
-
-			response[n] = slotData
+            if not Items.UpdateDurability(inventory, slotData, item, nil, os.time()) then
+                n += 1
+                response[n] = slotData
+            end
 		end
 	end
 
@@ -2249,13 +2222,7 @@ local function prepareInventorySave(inv, buffer, time)
     local n = 0
 
     for k, v in pairs(inv.items) do
-        local durability = v.metadata.durability
-
-        if durability and durability > 100 and time >= durability then
-            v.metadata.durability = 0
-        end
-
-        if shouldSave then
+        if not Items.UpdateDurability(inv, v, Items(v.name), nil, time) and shouldSave then
             n += 1
             buffer[n] = {
                 name = v.name,
@@ -2268,7 +2235,7 @@ local function prepareInventorySave(inv, buffer, time)
 
     if not shouldSave then return end
 
-    local data = json.encode(buffer)
+    local data = next(buffer) and json.encode(buffer) or nil
     inv.changed = false
     table.wipe(buffer)
 
@@ -2286,7 +2253,7 @@ local function prepareInventorySave(inv, buffer, time)
         return 3, { data, inv.dbId }
     end
 
-    return 4, { inv.owner or '', inv.dbId, data }
+    return 4, { data, inv.owner and tostring(inv.owner) or '', inv.dbId }
 end
 
 local function saveInventories(manual)
