@@ -3127,4 +3127,125 @@ return {
 			image = "thermite.png",
 		}
 	},
+
+	["casino_coffee"] = {
+		label = "Casino Coffee",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Coffee",
+		client = {
+			image = "casino_coffee.png",
+		}
+	},
+
+	["casino_psqs"] = {
+		label = "Casino Ps & Qs",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Ps & Qs",
+		client = {
+			image = "casino_psqs.png",
+		}
+	},
+
+	["casino_chips"] = {
+		label = "Casino Chips",
+		weight = 0,
+		stack = true,
+		close = false,
+		description = "Casino Chips",
+		client = {
+			image = "casino_chips.png",
+		}
+	},
+
+	["casino_luckypotion"] = {
+		label = "Casino Lucky Potion",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Lucky Potion",
+		client = {
+			image = "casino_luckypotion.png",
+		}
+	},
+
+	["casino_beer"] = {
+		label = "Casino Beer",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Beer",
+		client = {
+			image = "casino_beer.png",
+		}
+	},
+
+	["casino_sandwitch"] = {
+		label = "Casino Sandwitch",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Sandwitch",
+		client = {
+			image = "casino_sandwitch.png",
+		}
+	},
+
+	["casino_sprite"] = {
+		label = "Casino Sprite",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Sprite",
+		client = {
+			image = "casino_sprite.png",
+		}
+	},
+
+	["casino_coke"] = {
+		label = "Casino Kofola",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Kofola",
+		client = {
+			image = "casino_coke.png",
+		}
+	},
+
+	["casino_donut"] = {
+		label = "Casino Donut",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Donut",
+		client = {
+			image = "casino_donut.png",
+		}
+	},
+
+	["casino_burger"] = {
+		label = "Casino Burger",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Burger",
+		client = {
+			image = "casino_burger.png",
+		}
+	},
+
+	["casino_ego_chaser"] = {
+		label = "Casino Ego Chaser",
+		weight = 0,
+		stack = false,
+		close = false,
+		description = "Casino Ego Chaser",
+		client = {
+			image = "casino_ego_chaser.png",
+		}
+	},
 }
