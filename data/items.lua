@@ -3248,4 +3248,16 @@ return {
 			image = "casino_ego_chaser.png",
 		}
 	},
+
+	["driftecu"] = {
+		label = "Módulo ECU",
+		weight = 0,
+		stack = false,
+		degrade = 4320,
+		close = false,
+		description = "Módulo necessário para ativar o modo drift no carro.",
+		client = {
+			image = "driftecu.png",
+		}
+	},
 }

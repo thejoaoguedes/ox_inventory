@@ -508,12 +508,10 @@ return {
         groups = {
             ['harmony'] = 0,
             ['ottos'] = 0,
-            ['xnoz'] = 0,
         },
         points = {
             vec3(-1420.3305664063,-455.33004760742,35.994064331055),
             vec3(1183.2635498047,2635.6645507813,37.980579376221),
-            vec3(-14.42, 6417.72, 31.91),
         },
         zones = {
             {
@@ -528,6 +526,210 @@ return {
                 distance = 1.5,
                 rotation = 315.0,
             },
+        },
+    },
+    {
+        items = { -- MECS
+            {
+                name = 'engineparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 2,
+                    ['metal'] = 2,
+                    ['plastic'] = 2,
+                    ['copper'] = 2,
+                    ['rubber'] = 2,
+                    ['glass'] = 2,
+                    ['iron'] = 2
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'D', image = 'epd' }
+            },
+            {
+                name = 'bodyparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 2,
+                    ['metal'] = 2,
+                    ['plastic'] = 2,
+                    ['copper'] = 2,
+                    ['rubber'] = 2,
+                    ['glass'] = 2,
+                    ['iron'] = 2
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'D', image = 'bpd' }
+            },
+            {
+                name = 'engineparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 4,
+                    ['metal'] = 4,
+                    ['plastic'] = 4,
+                    ['copper'] = 4,
+                    ['rubber'] = 4,
+                    ['glass'] = 4,
+                    ['iron'] = 4
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'C', image = 'epc' }
+            },
+            {
+                name = 'bodyparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 4,
+                    ['metal'] = 4,
+                    ['plastic'] = 4,
+                    ['copper'] = 4,
+                    ['rubber'] = 4,
+                    ['glass'] = 4,
+                    ['iron'] = 4
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'C', image = 'bpc' }
+            },
+            {
+                name = 'engineparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 6,
+                    ['metal'] = 6,
+                    ['plastic'] = 6,
+                    ['copper'] = 6,
+                    ['rubber'] = 6,
+                    ['glass'] = 6,
+                    ['iron'] = 6
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'B', image = 'epb' }
+            },
+            {
+                name = 'bodyparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 6,
+                    ['metal'] = 6,
+                    ['plastic'] = 6,
+                    ['copper'] = 6,
+                    ['rubber'] = 6,
+                    ['glass'] = 6,
+                    ['iron'] = 6
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'B', image = 'bpb' }
+            },
+            {
+                name = 'engineparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 8,
+                    ['metal'] = 8,
+                    ['plastic'] = 8,
+                    ['copper'] = 8,
+                    ['rubber'] = 8,
+                    ['glass'] = 8,
+                    ['iron'] = 8
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'A', image = 'epa' }
+            },
+            {
+                name = 'bodyparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 8,
+                    ['metal'] = 8,
+                    ['plastic'] = 8,
+                    ['copper'] = 8,
+                    ['rubber'] = 8,
+                    ['glass'] = 8,
+                    ['iron'] = 8
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'A', image = 'bpa' }
+            },
+            {
+                name = 'engineparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 10
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'S', image = 'eps' }
+            },
+            {
+                name = 'bodyparts', -- peça do motor
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 10,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 10,
+                    ['iron'] = 10
+                },
+                duration = 40000,
+                count = 10,
+                metadata = { vehClass = 'S', image = 'bps' }
+            },
+            {
+                name = 'lockpick',
+                ingredients = {
+                    ['aluminum'] = 2,
+                    ['metal'] = 2,
+                    ['plastic'] = 2,
+                    ['copper'] = 2,
+                    ['rubber'] = 1,
+                    ['glass'] = 1,
+                    ['iron'] = 2
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'flipper',
+                ingredients = {
+                    ['aluminum'] = 1,
+                    ['metal'] = 5,
+                    ['plastic'] = 3,
+                    ['copper'] = 5,
+                    ['rubber'] = 5,
+                    ['glass'] = 3,
+                    ['iron'] = 2
+                },
+                duration = 30000,
+                count = 1,
+            },
+            {
+                name = 'driftecu',
+                ingredients = {
+                    ['aluminum'] = 4,
+                    ['metal'] = 4,
+                    ['plastic'] = 4,
+                    ['copper'] = 4,
+                    ['rubber'] = 4,
+                    ['glass'] = 4,
+                    ['iron'] = 4
+                },
+                duration = 30000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['xnoz'] = 0,
+        },
+        points = {
+            vec3(-14.42, 6417.72, 31.91),
+        },
+        zones = {
             {
                 coords = vec3(-14.42, 6417.72, 31.91),
                 size = vec3(3.8, 1.05, 1.0),
