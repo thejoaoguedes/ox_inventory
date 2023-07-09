@@ -22,6 +22,20 @@ return {
 			ammoname = 'ammo-shotgun'
 		},
 
+		['WEAPON_PUMPSHOTGUN'] = {
+			label = 'Escopeta',
+			weight = 3100,
+			durability = 0.2,
+			ammoname = 'ammo-shotgun'
+		},
+
+		['WEAPON_SAWNOFFSHOTGUN'] = {
+			label = 'Escopeta Cano Cerrado',
+			weight = 3100,
+			durability = 0.2,
+			ammoname = 'ammo-shotgun'
+		},
+
 		['WEAPON_CARBINERIFLE'] = {
 			label = 'M4A1',
 			weight = 3100,
@@ -602,6 +616,11 @@ return {
 		['ammo-sniper'] = {
 			label = '7.62 NATO',
 			weight = 11,
+		},
+
+		['ammo-shotgun'] = {
+			label = 'Caliber 12',
+			weight = 8,
 		},
 
 	}
