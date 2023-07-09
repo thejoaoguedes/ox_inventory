@@ -70,7 +70,15 @@ return {
 			label = 'Uzi',
 			weight = 4000,
 			durability = 0.06,
-			ammoname = 'ammo-45',
+			ammoname = 'ammo-9',
+			caliber = '9x19mm Parabellum',
+		},
+
+		['WEAPON_COMPACTRIFLE'] = {
+			label = 'AK Compact',
+			weight = 4000,
+			durability = 0.06,
+			ammoname = 'ammo-9',
 			caliber = '9x19mm Parabellum',
 		},
 
