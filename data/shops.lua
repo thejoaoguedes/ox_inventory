@@ -126,4 +126,22 @@ return {
 		{ loc = vec3(137.97848510742, 2294.3767089844, 94.080696105957), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
+
+	PoliceTier = {
+		name = 'Loja da Polícia - Hight',
+		groups = {
+			['police'] = 2
+		},
+		inventory = {
+			{ name = 'WEAPON_COMBATPDW', price = 999999, metadata = { registered = true, serial = 'POL' } },
+			{ name = 'WEAPON_PUMPSHOTGUN', price = 999999, metadata = { registered = true, serial = 'POL' } },
+			{ name = 'ammo-shotgun', price = 999999, },
+		}, locations = {
+			vec3(605.90863037109,6.5631675720215,87.914665222168),
+			vec3(1835.9019775391,3687.005859375,34.575241088867)
+		}, targets = {
+			{ loc = vec3(605.90863037109,6.5631675720215,87.914665222168), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
+			{ loc = vec3(1835.9019775391,3687.005859375,34.575241088867), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+		}
+	},
 }
