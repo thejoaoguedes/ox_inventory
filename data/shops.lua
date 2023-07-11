@@ -15,7 +15,7 @@ return {
 		name = 'Loja da Polícia',
 		groups = shared.police,
 		inventory = {
-			{ name = 'ammo-9', price = 5, },
+			{ name = 'ammo-9', price = 75, },
 			{ name = 'screwdriverset', price = 300, },
 			{ name = 'radio', price = 1500, },
 			-- { name = 'ammo-44', price = 5, },
@@ -133,7 +133,7 @@ return {
 			['police'] = 2
 		},
 		inventory = {
-			{ name = 'WEAPON_COMBATPDW', price = 999999, metadata = { registered = true, serial = 'POL' } },
+			{ name = 'WEAPON_COMBATPDW', price = 18000, metadata = { registered = true, serial = 'POL' } },
 			{ name = 'WEAPON_PUMPSHOTGUN', price = 999999, metadata = { registered = true, serial = 'POL' } },
 			{ name = 'ammo-shotgun', price = 999999, },
 		}, locations = {

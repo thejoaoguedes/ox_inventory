@@ -1667,38 +1667,38 @@ return {
             },
         },
     },
-    {
-        items = { -- Muni Demon
-            {
-                name = 'ammo-9',
-                ingredients = {
-                    ['aluminionaval'] = 1,
-                    ['titanio'] = 1,
-                    ['polietileno'] = 1,
-                    ['cobalto'] = 1,
-                    ['borrachafluorada'] = 1,
-                    ['vidrotemperado'] = 1,
-                    ['steel'] = 1,
-                },
-                duration = 60000,
-                count = 100,
-            },
-        },
-        groups = {
-            ['demon'] = 0,
-        },
-        points = {
-            vec3(255.78866577148,6668.044921875,29.763313293457),
-        },
-        zones = {
-            {
-                coords = vec3(255.78866577148,6668.044921875,29.763313293457),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-        },
-    },
+    -- {
+    --     items = { -- Muni Demon
+    --         {
+    --             name = 'ammo-9',
+    --             ingredients = {
+    --                 ['aluminionaval'] = 1,
+    --                 ['titanio'] = 1,
+    --                 ['polietileno'] = 1,
+    --                 ['cobalto'] = 1,
+    --                 ['borrachafluorada'] = 1,
+    --                 ['vidrotemperado'] = 1,
+    --                 ['steel'] = 1,
+    --             },
+    --             duration = 60000,
+    --             count = 100,
+    --         },
+    --     },
+    --     groups = {
+    --         ['demon'] = 0,
+    --     },
+    --     points = {
+    --         vec3(255.78866577148,6668.044921875,29.763313293457),
+    --     },
+    --     zones = {
+    --         {
+    --             coords = vec3(255.78866577148,6668.044921875,29.763313293457),
+    --             size = vec3(2.8, 1.05, 1.0),
+    --             distance = 1.5,
+    --             rotation = 358.0,
+    --         },
+    --     },
+    -- },
     {
         items = { -- Muni Angels
             {
