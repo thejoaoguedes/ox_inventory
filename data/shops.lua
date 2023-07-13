@@ -15,7 +15,7 @@ return {
 		name = 'Loja da Polícia',
 		groups = shared.police,
 		inventory = {
-			{ name = 'ammo-9', price = 75, },
+			{ name = 'ammo-9', price = 25, },
 			{ name = 'screwdriverset', price = 300, },
 			{ name = 'radio', price = 1500, },
 			-- { name = 'ammo-44', price = 5, },
