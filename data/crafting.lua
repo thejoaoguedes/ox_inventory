@@ -1667,40 +1667,8 @@ return {
             },
         },
     },
-    -- {
-    --     items = { -- Muni Demon
-    --         {
-    --             name = 'ammo-9',
-    --             ingredients = {
-    --                 ['aluminionaval'] = 1,
-    --                 ['titanio'] = 1,
-    --                 ['polietileno'] = 1,
-    --                 ['cobalto'] = 1,
-    --                 ['borrachafluorada'] = 1,
-    --                 ['vidrotemperado'] = 1,
-    --                 ['steel'] = 1,
-    --             },
-    --             duration = 60000,
-    --             count = 100,
-    --         },
-    --     },
-    --     groups = {
-    --         ['demon'] = 0,
-    --     },
-    --     points = {
-    --         vec3(255.78866577148,6668.044921875,29.763313293457),
-    --     },
-    --     zones = {
-    --         {
-    --             coords = vec3(255.78866577148,6668.044921875,29.763313293457),
-    --             size = vec3(2.8, 1.05, 1.0),
-    --             distance = 1.5,
-    --             rotation = 358.0,
-    --         },
-    --     },
-    -- },
     {
-        items = { -- Muni Angels
+        items = { -- Muni Cartel
             {
                 name = 'ammo-9',
                 ingredients = {
@@ -1717,14 +1685,46 @@ return {
             },
         },
         groups = {
-            ['angels'] = 0,
+            ['cartel'] = 0,
         },
         points = {
-            vec3(2001.1345214844,3041.6735839844,46.94063949585),
+            vec3(1404.9376220703,1107.0910644531,114.87906646729),
         },
         zones = {
             {
-                coords = vec3(2001.1345214844,3041.6735839844,46.94063949585),
+                coords = vec3(1404.9376220703,1107.0910644531,114.87906646729),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Muni Blake
+            {
+                name = 'ammo-9',
+                ingredients = {
+                    ['aluminionaval'] = 1,
+                    ['titanio'] = 1,
+                    ['polietileno'] = 1,
+                    ['cobalto'] = 1,
+                    ['borrachafluorada'] = 1,
+                    ['vidrotemperado'] = 1,
+                    ['steel'] = 1,
+                },
+                duration = 60000,
+                count = 100,
+            },
+        },
+        groups = {
+            ['blake'] = 0,
+        },
+        points = {
+            vec3(3306.240234375,5187.08203125,16.01714515686),
+        },
+        zones = {
+            {
+                coords = vec3(3306.240234375,5187.08203125,16.01714515686),
                 size = vec3(2.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 358.0,
