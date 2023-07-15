@@ -3260,4 +3260,81 @@ return {
 			image = "driftecu.png",
 		}
 	},
+
+	["blueprintmp5"] = {
+		label = "Blueprint Mp5",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol_mk2.png",
+		}
+	},
+
+	["blueprintakc"] = {
+		label = "Blueprint AK Compact",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol_mk2.png",
+		}
+	},
+
+	["blueprintm12"] = {
+		label = "Blueprint Calibre 12",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-ammo-9-box.png",
+		}
+	},
+
+	["blueprint12"] = {
+		label = "Blueprint 12",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol_mk2.png",
+		}
+	},
+
+	["blueprintrevolver"] = {
+		label = "Blueprint Revolver",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol_mk2.png",
+		}
+	},
+
+	["blueprintuzzi"] = {
+		label = "Blueprint Uzzi",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-pistol_mk2.png",
+		}
+	},
+
+	["blueprint44"] = {
+		label = "Blueprint .44",
+		weight = 10,
+		stack = true,
+		close = false,
+		description = "",
+		client = {
+			image = "bp-ammo-9-box.png",
+		}
+	},
 }

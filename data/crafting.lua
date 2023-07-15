@@ -1244,13 +1244,13 @@ return {
             {
                 name = 'WEAPON_PISTOL',
                 ingredients = {
-                    ['aluminionaval'] = 10,
-                    ['titanio'] = 15,
-                    ['polietileno'] = 30,
-                    ['cobalto'] = 20,
-                    ['borrachafluorada'] = 20,
-                    ['vidrotemperado'] = 20,
-                    ['steel'] = 45,
+                    ['aluminionaval'] = 8,
+                    ['titanio'] = 7,
+                    ['polietileno'] = 10,
+                    ['cobalto'] = 5,
+                    ['borrachafluorada'] = 10,
+                    ['vidrotemperado'] = 5,
+                    ['steel'] = 10,
                     ['blueprintbereta'] = 1
                 },
                 duration = 120000,
@@ -1259,14 +1259,59 @@ return {
             {
                 name = 'WEAPON_PISTOL_MK2',
                 ingredients = {
-                    ['aluminionaval'] = 10,
-                    ['titanio'] = 15,
-                    ['polietileno'] = 30,
+                    ['aluminionaval'] = 8,
+                    ['titanio'] = 7,
+                    ['polietileno'] = 10,
+                    ['cobalto'] = 5,
+                    ['borrachafluorada'] = 10,
+                    ['vidrotemperado'] = 5,
+                    ['steel'] = 10,
+                    ['blueprintamerican'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_SMG_MK2',
+                ingredients = {
+                    ['aluminionaval'] = 23,
+                    ['titanio'] = 23,
+                    ['polietileno'] = 23,
+                    ['cobalto'] = 23,
+                    ['borrachafluorada'] = 23,
+                    ['vidrotemperado'] = 23,
+                    ['steel'] = 23,
+                    ['blueprintmp5'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_COMPACTRIFLE',
+                ingredients = {
+                    ['aluminionaval'] = 20,
+                    ['titanio'] = 20,
+                    ['polietileno'] = 20,
                     ['cobalto'] = 20,
                     ['borrachafluorada'] = 20,
                     ['vidrotemperado'] = 20,
-                    ['steel'] = 45,
-                    ['blueprintamerican'] = 1
+                    ['steel'] = 20,
+                    ['blueprintakc'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_MICROSMG',
+                ingredients = {
+                    ['aluminionaval'] = 15,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 15,
+                    ['cobalto'] = 15,
+                    ['borrachafluorada'] = 15,
+                    ['vidrotemperado'] = 15,
+                    ['steel'] = 15,
+                    ['blueprintuzzi'] = 1
                 },
                 duration = 120000,
                 count = 1,
@@ -1621,69 +1666,53 @@ return {
         },
     },
     {
-        items = { -- IMPORTS
-            {
-                name = 'WEAPON_REVOLVER',
-                ingredients = {
-                    ['aluminionaval'] = 10,
-                    ['titanio'] = 15,
-                    ['polietileno'] = 30,
-                    ['cobalto'] = 20,
-                    ['borrachafluorada'] = 20,
-                    ['vidrotemperado'] = 20,
-                    ['steel'] = 45,
-                    ['blueprintamerican'] = 1
-                },
-                duration = 120000,
-                count = 1,
+        items = { -- Muni Cartel
+        {
+            name = 'ammo-9',
+            ingredients = {
+                ['aluminionaval'] = 1,
+                ['titanio'] = 1,
+                ['polietileno'] = 1,
+                ['cobalto'] = 1,
+                ['borrachafluorada'] = 1,
+                ['vidrotemperado'] = 1,
+                ['steel'] = 1,
+                ['blueprint9mm'] = 1,
             },
-            {
-                name = 'ammo-44',
-                ingredients = {
-                    ['aluminionaval'] = 1,
-                    ['titanio'] = 1,
-                    ['polietileno'] = 1,
-                    ['cobalto'] = 1,
-                    ['borrachafluorada'] = 1,
-                    ['vidrotemperado'] = 1,
-                    ['steel'] = 1,
-                },
-                duration = 60000,
-                count = 100,
+            duration = 60000,
+            count = 100,
+        },
+        {
+            name = 'ammo-44',
+            ingredients = {
+                ['aluminionaval'] = 1,
+                ['titanio'] = 1,
+                ['polietileno'] = 1,
+                ['cobalto'] = 1,
+                ['borrachafluorada'] = 1,
+                ['vidrotemperado'] = 1,
+                ['steel'] = 1,
+                ['blueprint44'] = 1,
             },
+            duration = 60000,
+            count = 100,
         },
-        groups = {
-            ['bikers'] = 2,
-        },
-        points = {
-            vec3(1975.8450927734,3817.7238769531,33.466110229492)
-        },
-        zones = {
-            {
-                coords = vec3(1975.8450927734,3817.7238769531,33.466110229492),
-                size = vec3(3.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 315.0,
+        {
+            name = 'ammo-shotgun',
+            ingredients = {
+                ['aluminionaval'] = 1,
+                ['titanio'] = 1,
+                ['polietileno'] = 1,
+                ['cobalto'] = 1,
+                ['borrachafluorada'] = 1,
+                ['vidrotemperado'] = 1,
+                ['steel'] = 1,
+                ['blueprintm12'] = 1,
             },
+            duration = 60000,
+            count = 100,
         },
     },
-    {
-        items = { -- Muni Cartel
-            {
-                name = 'ammo-9',
-                ingredients = {
-                    ['aluminionaval'] = 1,
-                    ['titanio'] = 1,
-                    ['polietileno'] = 1,
-                    ['cobalto'] = 1,
-                    ['borrachafluorada'] = 1,
-                    ['vidrotemperado'] = 1,
-                    ['steel'] = 1,
-                },
-                duration = 60000,
-                count = 100,
-            },
-        },
         groups = {
             ['cartel'] = 0,
         },
@@ -1711,6 +1740,37 @@ return {
                     ['borrachafluorada'] = 1,
                     ['vidrotemperado'] = 1,
                     ['steel'] = 1,
+                    ['blueprint9mm'] = 1,
+                },
+                duration = 60000,
+                count = 100,
+            },
+            {
+                name = 'ammo-44',
+                ingredients = {
+                    ['aluminionaval'] = 1,
+                    ['titanio'] = 1,
+                    ['polietileno'] = 1,
+                    ['cobalto'] = 1,
+                    ['borrachafluorada'] = 1,
+                    ['vidrotemperado'] = 1,
+                    ['steel'] = 1,
+                    ['blueprint44'] = 1,
+                },
+                duration = 60000,
+                count = 100,
+            },
+            {
+                name = 'ammo-shotgun',
+                ingredients = {
+                    ['aluminionaval'] = 1,
+                    ['titanio'] = 1,
+                    ['polietileno'] = 1,
+                    ['cobalto'] = 1,
+                    ['borrachafluorada'] = 1,
+                    ['vidrotemperado'] = 1,
+                    ['steel'] = 1,
+                    ['blueprintm12'] = 1,
                 },
                 duration = 60000,
                 count = 100,
@@ -1725,6 +1785,54 @@ return {
         zones = {
             {
                 coords = vec3(3306.240234375,5187.08203125,16.01714515686),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- 12 Oneil
+            {
+                name = 'WEAPON_SAWNOFFSHOTGUN',
+                ingredients = {
+                    ['aluminionaval'] = 20,
+                    ['titanio'] = 20,
+                    ['polietileno'] = 20,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 20,
+                    ['blueprint12'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_REVOLVER',
+                ingredients = {
+                    ['aluminionaval'] = 7,
+                    ['titanio'] = 7,
+                    ['polietileno'] = 10,
+                    ['cobalto'] = 5,
+                    ['borrachafluorada'] = 10,
+                    ['vidrotemperado'] = 7,
+                    ['steel'] = 10,
+                    ['blueprintrevolver'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['oneil'] = 0,
+        },
+        points = {
+            vec3(2432.0090332031,4964.0771484375,42.152084350586),  ----             vec3(2432.0090332031,4964.0771484375,42.152084350586),
+        },
+        zones = {
+            {
+                coords = vec3(2432.0090332031,4964.0771484375,42.152084350586),
                 size = vec3(2.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 358.0,

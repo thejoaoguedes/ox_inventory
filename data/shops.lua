@@ -35,15 +35,8 @@ return {
 			{ name = 'gsrtestkit', price = 20, },
 			{ name = 'nikon', price = 400, },
 			{ name = 'empty_evidence_bag', price = 5, },
-			{ name = 'WEAPON_STUNGUN', price = 800, metadata = { registered = true, serial = 'POL'} },
-			{ name = 'WEAPON_COMBATPISTOL', price = 1500, metadata = { registered = true, serial = 'POL' } },
-			-- { name = 'WEAPON_REVOLVER', price = 1000, metadata = { registered = true, serial = 'POL' } },
-			-- { name = 'WEAPON_SMG_MK2', price = 1000, metadata = { registered = true, serial = 'POL' } },
-			-- { name = 'WEAPON_COMBATPDW', price = 1000, metadata = { registered = true, serial = 'POL' } },
-			-- { name = 'WEAPON_CARBINERIFLE', price = 1000, metadata = { registered = true, serial = 'POL' } },
-			-- { name = 'WEAPON_HEAVYRIFLE', price = 1000, metadata = { registered = true, serial = 'POL' } },
-			-- { name = 'WEAPON_TACTICALRIFLE', price = 1000, metadata = { registered = true, serial = 'POL' } },
-
+			{ name = 'WEAPON_STUNGUN', price = 4500, metadata = { registered = true, serial = 'POL'} },
+			{ name = 'WEAPON_COMBATPISTOL', price = 7000, metadata = { registered = true, serial = 'POL' } },
 		}, locations = {
 			vec3(609.18, 1.80, 87.87),
 			vec3(1839.04, 3686.73, 33.97)
@@ -134,8 +127,8 @@ return {
 		},
 		inventory = {
 			{ name = 'WEAPON_COMBATPDW', price = 18000, metadata = { registered = true, serial = 'POL' } },
-			{ name = 'WEAPON_PUMPSHOTGUN', price = 999999, metadata = { registered = true, serial = 'POL' } },
-			{ name = 'ammo-shotgun', price = 999999, },
+			{ name = 'WEAPON_PUMPSHOTGUN', price = 20000, metadata = { registered = true, serial = 'POL' } },
+			{ name = 'ammo-shotgun', price = 25, },
 		}, locations = {
 			vec3(605.90863037109,6.5631675720215,87.914665222168),
 			vec3(1835.9019775391,3687.005859375,34.575241088867)
