@@ -188,11 +188,9 @@ function client.openInventory(inv, data)
 				return lib.notify({ id = 'cannot_perform', type = 'error', description = locale('cannot_perform') })
 			end
 
-			left = lib.callback.await('ox_inventory:openCraftingBench', 200, data.id, data.index)
+			left, right = lib.callback.await('ox_inventory:openCraftingBench', 200, data.id, data.index)
 
-			if left then
-				right = CraftingBenches[data.id]
-
+			if left and right then
 				if not right?.items then return end
 
 				local coords, distance
@@ -1707,9 +1705,7 @@ RegisterNUICallback('exit', function(_, cb)
 	cb(1)
 end)
 
-lib.callback.register('ox_inventory:startCrafting', function(id, recipe)
-	recipe = CraftingBenches[id].items[recipe]
-
+lib.callback.register('ox_inventory:startCrafting', function(recipe)
 	return lib.progressCircle({
 		label = locale('crafting_item', recipe.metadata?.label or Items[recipe.name].label),
 		duration = recipe.duration or 3000,
