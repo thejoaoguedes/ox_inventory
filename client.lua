@@ -399,7 +399,7 @@ local function useItem(data, cb)
 	local label = slotData.metadata.label or data.label --[[@as string]]
 
 	if durability and durability <= 100 then
-		if durability <= 0 then
+		if durability <= 0 and not data.name == 'WEAPON_PETROLCAN' then
 			return lib.notify({ type = 'error', description = locale('no_durability', label) })
 		end
 	end
