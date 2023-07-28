@@ -58,17 +58,6 @@ return {
                 count = 20,
             },
         },
-        points = {
-            vec3(-355.61437988281,-1555.5629882813,25.403263092041)
-        },
-        zones = {
-            {
-                coords = vec3(-355.61437988281,-1555.5629882813,25.403263092041),
-                size = vec3(3.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 315.0,
-            },
-        },
     },
     {
         items = { -- REFINARIA RECICLAGEM - Sem Grupo especifico - Local: vector4(1085.0533447266, -2002.58984375, 31.382532119751, 236.29452514648)
@@ -129,43 +118,32 @@ return {
                 count = 5,
             },
         },
-        points = {
-            vector3(1084.84, -2002.67, 31.38),
-        },
-        zones = {
-            {
-                coords = vec3(1084.84, -2002.67, 31.38),
-                size = vec3(3.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 315.0,
-            },
-        },
     },
     {
         items = { -- PEIXARIA
             {
                 name = 'sliced_fish',
                 ingredients = {
-                    ['fishing-carp'] = 2,
+                    ['fishing-carp'] = 1,
                 },
                 duration = 5000,
-                count = 1,
+                count = 2,
             },
             {
                 name = 'sliced_fish',
                 ingredients = {
-                    ['fishing-sockeye-salmon'] = 2,
+                    ['fishing-sockeye-salmon'] = 1,
                 },
                 duration = 5000,
-                count = 1,
+                count = 2,
             },
             {
                 name = 'sliced_fish',
                 ingredients = {
-                    ['fishing-cod'] = 2,
+                    ['fishing-cod'] = 1,
                 },
                 duration = 5000,
-                count = 1,
+                count = 2,
             },
         },
         points = {
@@ -185,12 +163,12 @@ return {
             {
                 name = 'phone',
                 ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 10,
-                    ['plastic'] = 15,
-                    ['copper'] = 10,
+                    ['aluminum'] = 8,
+                    ['metal'] = 8,
+                    ['plastic'] = 10,
+                    ['copper'] = 8,
                     ['rubber'] = 5,
-                    ['glass'] = 10,
+                    ['glass'] = 8,
                     ['iron'] = 5
                 },
                 duration = 20000,
@@ -199,12 +177,12 @@ return {
             {
                 name = 'radio',
                 ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 10,
-                    ['plastic'] = 15,
+                    ['aluminum'] = 7,
+                    ['metal'] = 7,
+                    ['plastic'] = 12,
                     ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
+                    ['rubber'] = 5,
+                    ['glass'] = 8,
                     ['iron'] = 5
                 },
                 duration = 20000,
@@ -213,13 +191,13 @@ return {
             {
                 name = 'tablet',
                 ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 10,
-                    ['plastic'] = 10,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 15,
-                    ['iron'] = 10
+                    ['aluminum'] = 8,
+                    ['metal'] = 7,
+                    ['plastic'] = 7,
+                    ['copper'] = 8,
+                    ['rubber'] = 6,
+                    ['glass'] = 10,
+                    ['iron'] = 4
                 },
                 duration = 20000,
                 count = 1,
@@ -227,13 +205,13 @@ return {
             {
                 name = 'vpn',
                 ingredients = {
-                    ['aluminum'] = 15,
-                    ['metal'] = 10,
-                    ['plastic'] = 10,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 10
+                    ['aluminum'] = 10,
+                    ['metal'] = 8,
+                    ['plastic'] = 6,
+                    ['copper'] = 6,
+                    ['rubber'] = 8,
+                    ['glass'] = 7,
+                    ['iron'] = 7
                 },
                 duration = 20000,
                 count = 1,
@@ -241,13 +219,13 @@ return {
             {
                 name = 'vpnadvanced',
                 ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 15,
-                    ['plastic'] = 15,
-                    ['copper'] = 15,
-                    ['rubber'] = 15,
-                    ['glass'] = 15,
-                    ['iron'] = 15
+                    ['aluminum'] = 11,
+                    ['metal'] = 13,
+                    ['plastic'] = 7,
+                    ['copper'] = 12,
+                    ['rubber'] = 16,
+                    ['glass'] = 8,
+                    ['iron'] = 14
                 },
                 duration = 20000,
                 count = 1,
@@ -255,13 +233,13 @@ return {
             {
                 name = 'dongle',
                 ingredients = {
-                    ['aluminum'] = 2,
-                    ['metal'] = 10,
-                    ['plastic'] = 5,
+                    ['aluminum'] = 10,
+                    ['metal'] = 12,
+                    ['plastic'] = 10,
                     ['copper'] = 10,
                     ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 5
+                    ['glass'] = 12,
+                    ['iron'] = 6
                 },
                 duration = 20000,
                 count = 1,
@@ -270,12 +248,12 @@ return {
                 name = 'laptop',
                 ingredients = {
                     ['aluminum'] = 15,
-                    ['metal'] = 15,
-                    ['plastic'] = 15,
-                    ['copper'] = 15,
-                    ['rubber'] = 15,
-                    ['glass'] = 20,
-                    ['iron'] = 15
+                    ['metal'] = 14,
+                    ['plastic'] = 12,
+                    ['copper'] = 13,
+                    ['rubber'] = 13,
+                    ['glass'] = 18,
+                    ['iron'] = 14
                 },
                 duration = 20000,
                 count = 1,
@@ -283,13 +261,13 @@ return {
             {
                 name = 'hacking_device',
                 ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 5,
-                    ['plastic'] = 5,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 5
+                    ['aluminum'] = 8,
+                    ['metal'] = 6,
+                    ['plastic'] = 7,
+                    ['copper'] = 7,
+                    ['rubber'] = 7,
+                    ['glass'] = 8,
+                    ['iron'] = 6
                 },
                 duration = 20000,
                 count = 1,
@@ -297,13 +275,13 @@ return {
             {
                 name = 'transponder',
                 ingredients = {
-                    ['aluminum'] = 5,
+                    ['aluminum'] = 3,
                     ['metal'] = 5,
-                    ['plastic'] = 2,
-                    ['copper'] = 5,
-                    ['rubber'] = 2,
-                    ['glass'] = 5,
-                    ['iron'] = 2
+                    ['plastic'] = 4,
+                    ['copper'] = 6,
+                    ['rubber'] = 5,
+                    ['glass'] = 6,
+                    ['iron'] = 4
                 },
                 duration = 20000,
                 count = 1,
@@ -536,8 +514,8 @@ return {
             },
         },
         groups = {
-            ['harmony'] = 0,
-            ['ottos'] = 0,
+            ['mechanic1'] = 0,
+            ['mechanic2'] = 0,
         },
         points = {
             vec3(-1420.3305664063,-455.33004760742,35.994064331055),
@@ -1026,133 +1004,133 @@ return {
     },
     {
         items = { -- PAWNSHOP
-            {
-                name = 'phone',
-                ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 10,
-                    ['plastic'] = 15,
-                    ['copper'] = 10,
-                    ['rubber'] = 5,
-                    ['glass'] = 10,
-                    ['iron'] = 5
-                },
-                duration = 20000,
-                count = 1,
+        {
+            name = 'phone',
+            ingredients = {
+                ['aluminum'] = 8,
+                ['metal'] = 8,
+                ['plastic'] = 10,
+                ['copper'] = 8,
+                ['rubber'] = 5,
+                ['glass'] = 8,
+                ['iron'] = 5
             },
-            {
-                name = 'radio',
-                ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 10,
-                    ['plastic'] = 15,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 5
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'tablet',
-                ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 10,
-                    ['plastic'] = 10,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 15,
-                    ['iron'] = 10
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'vpn',
-                ingredients = {
-                    ['aluminum'] = 15,
-                    ['metal'] = 10,
-                    ['plastic'] = 10,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 10
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'vpnadvanced',
-                ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 15,
-                    ['plastic'] = 15,
-                    ['copper'] = 15,
-                    ['rubber'] = 15,
-                    ['glass'] = 15,
-                    ['iron'] = 15
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'dongle',
-                ingredients = {
-                    ['aluminum'] = 2,
-                    ['metal'] = 10,
-                    ['plastic'] = 5,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 5
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'laptop',
-                ingredients = {
-                    ['aluminum'] = 15,
-                    ['metal'] = 15,
-                    ['plastic'] = 15,
-                    ['copper'] = 15,
-                    ['rubber'] = 15,
-                    ['glass'] = 20,
-                    ['iron'] = 15
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'hacking_device',
-                ingredients = {
-                    ['aluminum'] = 10,
-                    ['metal'] = 5,
-                    ['plastic'] = 5,
-                    ['copper'] = 10,
-                    ['rubber'] = 10,
-                    ['glass'] = 10,
-                    ['iron'] = 5
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'transponder',
-                ingredients = {
-                    ['aluminum'] = 5,
-                    ['metal'] = 5,
-                    ['plastic'] = 2,
-                    ['copper'] = 5,
-                    ['rubber'] = 2,
-                    ['glass'] = 5,
-                    ['iron'] = 2
-                },
-                duration = 20000,
-                count = 1,
-            },
+            duration = 20000,
+            count = 1,
         },
+        {
+            name = 'radio',
+            ingredients = {
+                ['aluminum'] = 7,
+                ['metal'] = 7,
+                ['plastic'] = 12,
+                ['copper'] = 10,
+                ['rubber'] = 5,
+                ['glass'] = 8,
+                ['iron'] = 5
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'tablet',
+            ingredients = {
+                ['aluminum'] = 8,
+                ['metal'] = 7,
+                ['plastic'] = 7,
+                ['copper'] = 8,
+                ['rubber'] = 6,
+                ['glass'] = 10,
+                ['iron'] = 4
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'vpn',
+            ingredients = {
+                ['aluminum'] = 10,
+                ['metal'] = 8,
+                ['plastic'] = 6,
+                ['copper'] = 6,
+                ['rubber'] = 8,
+                ['glass'] = 7,
+                ['iron'] = 7
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'vpnadvanced',
+            ingredients = {
+                ['aluminum'] = 11,
+                ['metal'] = 13,
+                ['plastic'] = 7,
+                ['copper'] = 12,
+                ['rubber'] = 16,
+                ['glass'] = 8,
+                ['iron'] = 14
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'dongle',
+            ingredients = {
+                ['aluminum'] = 10,
+                ['metal'] = 12,
+                ['plastic'] = 10,
+                ['copper'] = 10,
+                ['rubber'] = 10,
+                ['glass'] = 12,
+                ['iron'] = 6
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'laptop',
+            ingredients = {
+                ['aluminum'] = 15,
+                ['metal'] = 14,
+                ['plastic'] = 12,
+                ['copper'] = 13,
+                ['rubber'] = 13,
+                ['glass'] = 18,
+                ['iron'] = 14
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'hacking_device',
+            ingredients = {
+                ['aluminum'] = 8,
+                ['metal'] = 6,
+                ['plastic'] = 7,
+                ['copper'] = 7,
+                ['rubber'] = 7,
+                ['glass'] = 8,
+                ['iron'] = 6
+            },
+            duration = 20000,
+            count = 1,
+        },
+        {
+            name = 'transponder',
+            ingredients = {
+                ['aluminum'] = 3,
+                ['metal'] = 5,
+                ['plastic'] = 4,
+                ['copper'] = 6,
+                ['rubber'] = 5,
+                ['glass'] = 6,
+                ['iron'] = 4
+            },
+            duration = 20000,
+            count = 1,
+        },
+    },
         groups = {
             ['pawnshop'] = 0,
         },
@@ -1333,339 +1311,6 @@ return {
         },
     },
     {
-        items = { -- Bebidas Irish
-            {
-                name = 'cerveja',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['wheat'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'whisky',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['tomato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'vodka',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['potato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'saque',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['lettuce'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'gim',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['carrot'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'tequila',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['onion'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-        },
-        groups = {
-            ['irish'] = 0,
-        },
-        points = {
-            vec3(1709.9652099609,4782.7666015625,42.401054382324),
-            vec3(1713.9436035156,4782.7666015625,42.425388336182)
-        },
-        zones = {
-            {
-                coords = vec3(1709.9652099609,4782.7666015625,42.401054382324),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-            {
-                coords = vec3(1713.9436035156,4782.7666015625,42.425388336182),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-        },
-    },
-    {
-        items = { -- Bebidas Demon
-            {
-                name = 'cerveja',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['wheat'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'whisky',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['tomato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'vodka',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['potato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'saque',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['lettuce'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'gim',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['carrot'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'tequila',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['onion'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-        },
-        groups = {
-            ['demon'] = 0,
-        },
-        points = {
-            vec3(255.32391357422,6628.7841796875,30.203075408936),
-            vec3(251.25051879883,6628.7841796875,30.284692764282)
-        },
-        zones = {
-            {
-                coords = vec3(255.32391357422,6628.7841796875,30.203075408936),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-            {
-                coords = vec3(251.25051879883,6628.7841796875,30.284692764282),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-        },
-    },
-    {
-        items = { -- Bebidas Angels
-            {
-                name = 'cerveja',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['wheat'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'whisky',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['tomato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'vodka',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['potato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'saque',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['lettuce'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'gim',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['carrot'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'tequila',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['onion'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-        },
-        groups = {
-            ['angels'] = 0,
-        },
-        points = {
-            vec3(1982.5502929688,3049.5109863281,47.179412841797),
-        },
-        zones = {
-            {
-                coords = vec3(1982.5502929688,3049.5109863281,47.179412841797),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-        },
-    },
-    {
-        items = { -- Bebidas Lost
-            {
-                name = 'cerveja',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['wheat'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'whisky',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['tomato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'vodka',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['potato'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'saque',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['lettuce'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'gim',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['carrot'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-            {
-                name = 'tequila',
-                ingredients = {
-                    ['glass'] = 1,
-                    ['onion'] = 1,
-                    ['water'] = 1,
-                },
-                duration = 20000,
-                count = 1,
-            },
-        },
-        groups = {
-            ['thelost'] = 0,
-        },
-        points = {
-            vec3(1451.5460205078,-2610.2282714844,48.918491363525),
-            vec3(1455.4653320313,-2611.1994628906,48.91907119751)
-        },
-        zones = {
-            {
-                coords = vec3(1451.5460205078,-2610.2282714844,48.918491363525),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-            {
-                coords = vec3(1455.4653320313,-2611.1994628906,48.91907119751),
-                size = vec3(2.8, 1.05, 1.0),
-                distance = 1.5,
-                rotation = 358.0,
-            },
-        },
-    },
-    {
         items = { -- Muni Cartel
         {
             name = 'ammo-9',
@@ -1833,6 +1478,226 @@ return {
         zones = {
             {
                 coords = vec3(2432.0090332031,4964.0771484375,42.152084350586),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Caixa de Carnes e Caixa de Peixes
+            {
+                name = 'meat_box',
+                ingredients = {
+                    ['redmeat'] = 20,
+                },
+                duration = 12000,
+                count = 1,
+            },
+            {
+                name = 'fish_box',
+                ingredients = {
+                    ['sliced_fish'] = 20,
+                },
+                duration = 12000,
+                count = 1,
+            },
+        },
+        points = {
+            vec3(-68.79, 6266.32, 31.19),  ----             vec3(2432.0090332031,4964.0771484375,42.152084350586),
+        },
+        zones = {
+            {
+                coords = vec3(-68.79, 6266.32, 31.19),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Caixa de Frutas e Caixa de Legumes
+            {
+                name = 'fruit_box',
+                ingredients = {
+                    ['tomato'] = 3,
+                    ['wheat'] = 4,
+                    ['potato'] = 3,
+                    ['onion'] = 4,
+                    ['lettuce'] = 3,
+                    ['carrot'] = 6,
+                },
+                duration = 12000,
+                count = 1,
+            },
+            {
+                name = 'vegetal_box',
+                ingredients = {
+                    ['tomato'] = 4,
+                    ['wheat'] = 3,
+                    ['potato'] = 4,
+                    ['onion'] = 3,
+                    ['lettuce'] = 4,
+                    ['garlic'] = 5,
+                },
+                duration = 12000,
+                count = 1,
+            },
+        },
+        points = {
+            vec3(408.27, 6498.36, 27.74),  ----             vec3(2432.0090332031,4964.0771484375,42.152084350586),
+        },
+        zones = {
+            {
+                coords = vec3(408.27, 6498.36, 27.74),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Menkai
+            {
+                name = 'vpnadvanced',
+                ingredients = {
+                    ['aluminum'] = 11,
+                    ['metal'] = 13,
+                    ['plastic'] = 7,
+                    ['copper'] = 12,
+                    ['rubber'] = 16,
+                    ['glass'] = 8,
+                    ['iron'] = 14
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'dongle',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 12,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 12,
+                    ['iron'] = 6
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'hacking_device',
+                ingredients = {
+                    ['aluminum'] = 8,
+                    ['metal'] = 6,
+                    ['plastic'] = 7,
+                    ['copper'] = 7,
+                    ['rubber'] = 7,
+                    ['glass'] = 8,
+                    ['iron'] = 6
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'transponder',
+                ingredients = {
+                    ['aluminum'] = 3,
+                    ['metal'] = 5,
+                    ['plastic'] = 4,
+                    ['copper'] = 6,
+                    ['rubber'] = 5,
+                    ['glass'] = 6,
+                    ['iron'] = 4
+                },
+                duration = 20000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['meikai'] = 0,
+        },
+        points = {
+            vec3(946.33538818359,-1744.6064453125,21.015434265137)
+        },
+        zones = {
+            {
+                coords = vec3(946.33538818359,-1744.6064453125,21.015434265137),
+                size = vec3(2.8, 1.05, 1.0),
+                distance = 1.5,
+                rotation = 358.0,
+            },
+        },
+    },
+    {
+        items = { -- Underground
+            {
+                name = 'vpnadvanced',
+                ingredients = {
+                    ['aluminum'] = 11,
+                    ['metal'] = 13,
+                    ['plastic'] = 7,
+                    ['copper'] = 12,
+                    ['rubber'] = 16,
+                    ['glass'] = 8,
+                    ['iron'] = 14
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'dongle',
+                ingredients = {
+                    ['aluminum'] = 10,
+                    ['metal'] = 12,
+                    ['plastic'] = 10,
+                    ['copper'] = 10,
+                    ['rubber'] = 10,
+                    ['glass'] = 12,
+                    ['iron'] = 6
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'hacking_device',
+                ingredients = {
+                    ['aluminum'] = 8,
+                    ['metal'] = 6,
+                    ['plastic'] = 7,
+                    ['copper'] = 7,
+                    ['rubber'] = 7,
+                    ['glass'] = 8,
+                    ['iron'] = 6
+                },
+                duration = 20000,
+                count = 1,
+            },
+            {
+                name = 'transponder',
+                ingredients = {
+                    ['aluminum'] = 3,
+                    ['metal'] = 5,
+                    ['plastic'] = 4,
+                    ['copper'] = 6,
+                    ['rubber'] = 5,
+                    ['glass'] = 6,
+                    ['iron'] = 4
+                },
+                duration = 20000,
+                count = 1,
+            },
+        },
+        groups = {
+            ['underground'] = 0,
+        },
+        points = {
+            vec3(1070.7366943359,2212.3002929688,21.994163513184)
+        },
+        zones = {
+            {
+                coords = vec3(1070.7366943359,2212.3002929688,21.994163513184),
                 size = vec3(2.8, 1.05, 1.0),
                 distance = 1.5,
                 rotation = 358.0,

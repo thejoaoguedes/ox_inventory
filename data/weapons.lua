@@ -10,8 +10,20 @@ return {
 		},
 
 		['WEAPON_BAT'] = {
-			label = 'Bat',
-			weight = 1134,
+			label = 'Taco de Baisebol',
+			weight = 2000,
+			durability = 0.1,
+		},
+
+		['WEAPON_GOLFCLUB'] = {
+			label = 'Taco de Golf',
+			weight = 2000,
+			durability = 0.1,
+		},
+
+		['WEAPON_POOLCUE'] = {
+			label = 'Taco de Sinuca',
+			weight = 2000,
 			durability = 0.1,
 		},
 
@@ -54,15 +66,15 @@ return {
 
 		['WEAPON_COMBATPISTOL'] = {
 			label = 'Glock 19',
-			weight = 970,
+			weight = 900,
 			durability = 0.06,
 			ammoname = 'ammo-9',
 			caliber = '9x19mm Parabellum',
 		},
 
 		['WEAPON_FLASHLIGHT'] = {
-			label = 'Flashlight',
-			weight = 125,
+			label = 'Lanterna',
+			weight = 500,
 			durability = 0.1,
 		},
 
@@ -97,8 +109,8 @@ return {
 		},
 
 		['WEAPON_NIGHTSTICK'] = {
-			label = 'Nightstick',
-			weight = 1000,
+			label = 'Cacetete',
+			weight = 2000,
 			durability = 0.1,
 		},
 
@@ -165,7 +177,7 @@ return {
 
 		['WEAPON_STUNGUN'] = {
 			label = 'Taser',
-			weight = 227,
+			weight = 900,
 			durability = 0.1,
 		},
 	},
@@ -595,32 +607,32 @@ return {
 	Ammo = {
 		['ammo-44'] = {
 			label = '.44 Magnum',
-			weight = 16,
+			weight = 50,
 		},
 
 		['ammo-9'] = {
 			label = '9mm',
-			weight = 8,
+			weight = 50,
 		},
 
 		['ammo-rifle'] = {
 			label = '5.56',
-			weight = 4,
+			weight = 50,
 		},
 
 		['ammo-rifle2'] = {
 			label = '7.62',
-			weight = 8,
+			weight = 50,
 		},
 
 		['ammo-sniper'] = {
 			label = '7.62 NATO',
-			weight = 11,
+			weight = 50,
 		},
 
 		['ammo-shotgun'] = {
 			label = 'Caliber 12',
-			weight = 8,
+			weight = 80,
 		},
 
 	}

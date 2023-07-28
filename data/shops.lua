@@ -17,7 +17,7 @@ return {
 		inventory = {
 			{ name = 'ammo-9', price = 25, },
 			{ name = 'screwdriverset', price = 300, },
-			{ name = 'radio', price = 1500, },
+			{ name = 'radio', price = 1200, },
 			-- { name = 'ammo-44', price = 5, },
 			-- { name = 'ammo-rifle', price = 5, },
 			-- { name = 'handcuffs', price = 200, },
@@ -39,10 +39,10 @@ return {
 			{ name = 'WEAPON_COMBATPISTOL', price = 7000, metadata = { registered = true, serial = 'POL' } },
 		}, locations = {
 			vec3(609.18, 1.80, 87.87),
-			vec3(1839.04, 3686.73, 33.97)
+			vec3(1833.7041015625,3696.6853027344,34.954120635986)
 		}, targets = {
 			{ loc = vec3(609.18,1.80,87.87), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
-			{ loc = vec3(1839.04, 3686.73, 33.97), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 35.0, distance = 6 }
+			{ loc = vec3(1833.7041015625,3696.6853027344,34.954120635986), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 35.0, distance = 6 }
 		}
 	},
 
@@ -121,7 +121,7 @@ return {
 	},
 
 	PoliceTier = {
-		name = 'Loja da Polícia - Hight',
+		name = 'Loja da Polícia - Tier 2',
 		groups = {
 			['police'] = 2
 		},
@@ -131,10 +131,10 @@ return {
 			{ name = 'ammo-shotgun', price = 25, },
 		}, locations = {
 			vec3(605.90863037109,6.5631675720215,87.914665222168),
-			vec3(1835.9019775391,3687.005859375,34.575241088867)
+			vec3(1832.2159423828,3696.1081542969,34.594997406006)
 		}, targets = {
 			{ loc = vec3(605.90863037109,6.5631675720215,87.914665222168), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 },
-			{ loc = vec3(1835.9019775391,3687.005859375,34.575241088867), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ loc = vec3(1832.2159423828,3696.1081542969,34.594997406006) , length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
 }

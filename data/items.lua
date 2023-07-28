@@ -79,7 +79,7 @@ return {
     ['fingerprintreader'] = {
         consume = 0.0,
         label = 'Pro Tech XFR8001',
-        weight = 200,
+        weight = 600,
         stack = false,
 		degrade = 7200,
         close = true,
@@ -90,7 +90,7 @@ return {
     ['accesstool'] = {
         consume = 0.0,
         label = 'Ferramenta de Acesso',
-        weight = 200,
+        weight = 160,
         stack = false,
 		degrade = 7200,
         description = '',
@@ -177,7 +177,7 @@ return {
 
 	['phone'] = {
 		label = 'Celular',
-		weight = 190,
+		weight = 800,
 		stack = true,
 		degrade = 10080,
 		consume = 0
@@ -185,6 +185,7 @@ return {
 
 	['money'] = {
 		label = 'Dinheiro',
+		weight = 1,
 	},
 
 	['water'] = {
@@ -197,7 +198,7 @@ return {
 
 	['radio'] = {
 		label = 'Rádio',
-		weight = 1000,
+		weight = 800,
 		stack = true,
 		degrade = 10080,
 		allowArmed = true
@@ -222,6 +223,7 @@ return {
 		description = "Ferramenta perfeita para o bisbilhoteiro.",
 		client = {
 			image = "binoculars.png",
+			export = 'qb-smallresources.ToggleBinoculars'
 		}
 	},
 
@@ -260,7 +262,7 @@ return {
 
 	["atmpanel"] = {
 		label = "Painel de ATM",
-		weight = 5000,
+		weight = 7000,
 		stack = true,
 		close = true,
 		description = "",
@@ -271,7 +273,7 @@ return {
 
 	["atmmotherboard"] = {
 		label = "Placa Mãe de ATM",
-		weight = 2000,
+		weight = 4000,
 		stack = true,
 		close = true,
 		description = "",
@@ -293,7 +295,7 @@ return {
 
 	["rollingpaper"] = {
 		label = "Seda",
-		weight = 2,
+		weight = 10,
 		stack = true,
 		close = true,
 		description = "Material essencial para enrolar seu baseado!",
@@ -304,7 +306,7 @@ return {
 
 	["plastic"] = {
 		label = "Plástico",
-		weight = 10,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -315,7 +317,7 @@ return {
 
 	["lettuce_seed"] = {
 		label = "Sementes de Alface",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de alface.",
@@ -372,7 +374,7 @@ return {
 
 	["qualityscales"] = {
 		label = "Balança XT2000",
-		weight = 250,
+		weight = 5500,
 		stack = true,
 		degrade = 10080,
 		close = false,
@@ -417,7 +419,7 @@ return {
 
 	["weedbaggie"] = {
 		label = "Pacotinho de Marijuana",
-		weight = 20,
+		weight = 300,
 		stack = false,
 		degrade = 21600,
 		close = false,
@@ -429,7 +431,7 @@ return {
 
 	["laptop"] = {
 		label = "Laptop",
-		weight = 1500,
+		weight = 1700,
 		stack = true,
 		degrade = 20160,
 		close = true,
@@ -461,20 +463,9 @@ return {
 		}
 	},
 
-	["milk"] = {
-		label = "Leite",
-		weight = 1000,
-		stack = true,
-		close = false,
-		description = "",
-		client = {
-			image = "milk.png",
-		}
-	},
-
 	["redmeat"] = {
 		label = "Carne Vermelha",
-		weight = 250,
+		weight = 2000,
 		stack = true,
 		close = false,
 		description = "",
@@ -552,7 +543,7 @@ return {
 
 	["nylonrope"] = {
 		label = "Corda de Nylon",
-		weight = 500,
+		weight = 1500,
 		stack = true,
 		degrade = 14400,
 		close = true,
@@ -656,7 +647,7 @@ return {
 
 	["rubber"] = {
 		label = "Borracha",
-		weight = 10,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -669,7 +660,7 @@ return {
 		label = "Saco de Adubo",
 		weight = 1000,
 		stack = true,
-		degrade = 14400,
+		degrade = 10080,
 		close = false,
 		description = "Adubo para dar saúde para suas plantinhas.",
 		client = {
@@ -690,7 +681,7 @@ return {
 
 	["huntingbait"] = {
 		label = "Isca de Caça",
-		weight = 15,
+		weight = 500,
 		stack = true,
 		close = true,
 		description = "",
@@ -745,7 +736,7 @@ return {
 
 	["wheat_seed"] = {
 		label = "Sementes de Trigo",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de trigo.",
@@ -767,7 +758,7 @@ return {
 
 	["hacking_device"] = {
 		label = "Hacking Device",
-		weight = 200,
+		weight = 800,
 		stack = true,
 		degrade = 10080,
 		close = true,
@@ -779,7 +770,7 @@ return {
 
 	["tomato_seed"] = {
 		label = "Sementes de Tomate",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de tomates.",
@@ -801,9 +792,9 @@ return {
 
 	["blowtorch"] = {
 		label = "Maçarico",
-		weight = 1000,
+		weight = 1500,
 		stack = true,
-		degrade = 5760,
+		degrade = 7200,
 		close = true,
 		description = "",
 		client = {
@@ -847,7 +838,7 @@ return {
 
 	["potato_seed"] = {
 		label = "Sementes de Batata",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de batata.",
@@ -880,7 +871,7 @@ return {
 
 	["aluminum"] = {
 		label = "Alumínio",
-		weight = 100,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -925,7 +916,7 @@ return {
 
 	["smallbud"] = {
 		label = "Flor de Marijuana",
-		weight = 20,
+		weight = 600,
 		stack = false,
 		degrade = 28800,
 		close = false,
@@ -948,7 +939,7 @@ return {
 
 	["tablet"] = {
 		label = "Tablet",
-		weight = 700,
+		weight = 1200,
 		stack = true,
 		degrade = 20160,
 		close = false,
@@ -971,7 +962,7 @@ return {
 
 	["vpn"] = {
 		label = "VPN",
-		weight = 200,
+		weight = 500,
 		stack = true,
 		degrade = 10080,
 		close = false,
@@ -1005,7 +996,7 @@ return {
 
 	["maleseed"] = {
 		label = "Semente de Marijuana",
-		weight = 2,
+		weight = 100,
 		stack = false,
 		degrade = 21600,
 		close = false,
@@ -1040,7 +1031,7 @@ return {
 
 	["copper"] = {
 		label = "Cobre",
-		weight = 100,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -1073,7 +1064,7 @@ return {
 
 	["steel"] = {
 		label = "Aço",
-		weight = 100,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -1142,7 +1133,7 @@ return {
 		label = "Chaves de Fenda",
 		weight = 1000,
 		stack = true,
-		degrade = 5760,
+		degrade = 7200,
 		close = false,
 		description = "Conjunto de chaves de fenda.",
 		client = {
@@ -1199,7 +1190,7 @@ return {
 
 	["garlic_seed"] = {
 		label = "Sementes de Alho",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de alho.",
@@ -1210,7 +1201,7 @@ return {
 
 	["weedpackage"] = {
 		label = "Pacote Suspeito",
-		weight = 100,
+		weight = 3000,
 		stack = false,
 		degrade = 14400,
 		close = false,
@@ -1267,7 +1258,7 @@ return {
 
 	["fishing-rod"] = {
 		label = "Vara de Pesca",
-		weight = 1000,
+		weight = 3250,
 		stack = true,
 		degrade = 10080,
 		close = false,
@@ -1301,7 +1292,7 @@ return {
 
 	["transponder"] = {
 		label = "Transponder",
-		weight = 200,
+		weight = 800,
 		stack = true,
 		degrade = 10080,
 		close = true,
@@ -1313,7 +1304,7 @@ return {
 
 	["atmcables"] = {
 		label = "Cabos de ATM",
-		weight = 2000,
+		weight = 3000,
 		stack = true,
 		close = true,
 		description = "",
@@ -1324,7 +1315,7 @@ return {
 
 	["iron"] = {
 		label = "Ferro",
-		weight = 100,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -1380,7 +1371,7 @@ return {
 
 	["glass"] = {
 		label = "Vidro",
-		weight = 10,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -1594,7 +1585,7 @@ return {
 
 	["sliced_fish"] = {
 		label = "Filé de Peixe",
-		weight = 250,
+		weight = 1000,
 		stack = true,
 		close = false,
 		description = "",
@@ -1605,14 +1596,14 @@ return {
 
 	["kq_angle_grinder"] = {
 		label = "Esmerilhadeira",
-		weight = 1000,
+		weight = 1500,
 		stack = true,
-		degrade = 5760,
+		degrade = 7200,
 		close = false,
 		description = "Usado para cortar metal.",
 		client = {
 			image = "kq_angle_grinder.png",
-			export = 'guedes-scrapyard.BreakNearDoor'
+			export = 'chopshop.BreakNearDoor'
 		}
 	},
 
@@ -1620,7 +1611,7 @@ return {
 		label = "Spray",
 		weight = 500,
 		stack = true,
-		degrade = 4320,
+		degrade = 180,
 		close = true,
 		description = "",
 		client = {
@@ -1630,7 +1621,7 @@ return {
 
 	["wetbud"] = {
 		label = "Galho (úmido)",
-		weight = 100,
+		weight = 2000,
 		stack = false,
 		degrade = 10080,
 		close = false,
@@ -1735,7 +1726,7 @@ return {
 
 	["carrot_seed"] = {
 		label = "Sementes de Cenoura",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de cenoura.",
@@ -1768,7 +1759,7 @@ return {
 
 	["recyclablematerial"] = {
 		label = "Material Reciclável",
-		weight = 100,
+		weight = 50,
 		stack = true,
 		close = true,
 		description = "Pode ser reciclado.",
@@ -1805,7 +1796,7 @@ return {
 
 	["femaleseed"] = {
 		label = "Semente de Marijuana",
-		weight = 2,
+		weight = 100,
 		stack = false,
 		degrade = 21600,
 		close = false,
@@ -1828,7 +1819,7 @@ return {
 
 	["driedbud"] = {
 		label = "Galho (seco)",
-		weight = 100,
+		weight = 1500,
 		stack = true,
 		degrade = 21600,
 		close = false,
@@ -1840,9 +1831,9 @@ return {
 
 	["smallscales"] = {
 		label = "Balança Xong-Xing",
-		weight = 250,
+		weight = 4000,
 		stack = true,
-		degrade = 10080,
+		degrade = 14400,
 		close = false,
 		description = "Balança de Baixa Precisão.",
 		client = {
@@ -1852,9 +1843,9 @@ return {
 
 	["laserdrill"] = {
 		label = "Furadeira Laser",
-		weight = 1000,
+		weight = 3000,
 		stack = true,
-		degrade = 5760,
+		degrade = 7200,
 		close = false,
 		description = "",
 		client = {
@@ -1875,7 +1866,7 @@ return {
 
 	["onion_seed"] = {
 		label = "Sementes de Cebola",
-		weight = 20,
+		weight = 150,
 		stack = true,
 		close = true,
 		description = "Pacote com sementes de cebola.",
@@ -1898,7 +1889,7 @@ return {
 
 	["metal"] = {
 		label = "Metal",
-		weight = 10,
+		weight = 20,
 		stack = true,
 		close = false,
 		description = "",
@@ -1909,7 +1900,7 @@ return {
 
 	["cobalto"] = {
 		label = "Cobalto",
-		weight = 10,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -1920,7 +1911,7 @@ return {
 
 	["aluminionaval"] = {
 		label = "Alumínio Naval",
-		weight = 10,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -1931,7 +1922,7 @@ return {
 
 	["borrachafluorada"] = {
 		label = "Borracha Fluorada",
-		weight = 10,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -1942,7 +1933,7 @@ return {
 
 	["titanio"] = {
 		label = "Titânio",
-		weight = 10,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -1953,7 +1944,7 @@ return {
 
 	["polietileno"] = {
 		label = "Polietileno",
-		weight = 10,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -1964,7 +1955,7 @@ return {
 
 	["vidrotemperado"] = {
 		label = "Vidro Temperado",
-		weight = 10,
+		weight = 80,
 		stack = true,
 		close = false,
 		description = "",
@@ -2001,6 +1992,7 @@ return {
 		label = "Spanka-Pulmão",
 		weight = 100,
 		stack = true,
+		degrade = 1440,
 		close = true,
 		description = "",
 		client = {
@@ -2032,7 +2024,7 @@ return {
 
 	["bracelete"] = {
 		label = "Bracelete",
-		weight = 200,
+		weight = 500,
 		stack = true,
 		close = true,
 		description = "",
@@ -2469,7 +2461,7 @@ return {
 		description = "Chave de Boca e umas coisitas mais...",
 		client = {
 			image = "mechanic_tools.png",
-			export = 'guedes-scrapyard.BreakNearWheel'
+			export = 'chopshop.BreakNearWheel'
 		}
 	},
 
@@ -2727,11 +2719,11 @@ return {
 	},
 
 	["flight_painting2"] = {
-		label = "Quadro",
-		weight = 25000,
+		label = "Quadro Moderno",
+		weight = 8000,
 		stack = false,
 		close = true,
-		description = "Just a work of art,",
+		description = "",
 		client = {
 			image = "flightpainting2.png",
 		}
@@ -2739,10 +2731,10 @@ return {
 
 	["flight_guitar"] = {
 		label = "Guitarra",
-		weight = 25000,
+		weight = 15000,
 		stack = false,
 		close = true,
-		description = "Music Equipment",
+		description = "",
 		client = {
 			image = "flightguitar.png",
 		}
@@ -2750,10 +2742,10 @@ return {
 
 	["microwave"] = {
 		label = "Microondas",
-		weight = 25000,
+		weight = 10000,
 		stack = false,
 		close = true,
-		description = "Heats things up",
+		description = "",
 		client = {
 			image = "flightmicrowave.png",
 		}
@@ -2761,32 +2753,32 @@ return {
 
 	["flight_television"] = {
 		label = "TV",
-		weight = 25000,
+		weight = 28000,
 		stack = false,
 		close = true,
-		description = "Flat Screen TV",
+		description = "",
 		client = {
 			image = "flighttelevision.png",
 		}
 	},
 
 	["flight_artpiece"] = {
-		label = "Art",
-		weight = 25000,
+		label = "Obra de Arte",
+		weight = 15000,
 		stack = false,
 		close = true,
-		description = "Some fancy Art",
+		description = "",
 		client = {
 			image = "flightartpiece.png",
 		}
 	},
 
 	["musicequipment"] = {
-		label = "Music Equipment",
+		label = "Equipamento de Música",
 		weight = 25000,
 		stack = false,
 		close = true,
-		description = "Music Equipment",
+		description = "",
 		client = {
 			image = "musicequipment.png",
 		}
@@ -2794,10 +2786,10 @@ return {
 
 	["flight_painting"] = {
 		label = "Quadro",
-		weight = 25000,
+		weight = 7000,
 		stack = false,
 		close = true,
-		description = "Just a work of art,",
+		description = "",
 		client = {
 			image = "flightpainting.png",
 		}
@@ -2805,10 +2797,10 @@ return {
 
 	["flight_suitcase"] = {
 		label = "Maleta",
-		weight = 25000,
+		weight = 6000,
 		stack = false,
 		close = true,
-		description = "Work Suitcase",
+		description = "",
 		client = {
 			image = "flightsuitcase.png",
 		}
@@ -2816,90 +2808,18 @@ return {
 
 	["coffeemaker"] = {
 		label = "Maquina de Café",
-		weight = 25000,
+		weight = 8000,
 		stack = false,
 		close = true,
-		description = "Makes a delicious expresso",
+		description = "",
 		client = {
 			image = "coffeemaker.png",
 		}
 	},
 
-	["tequila"] = {
-		label = "Tequila",
-		weight = 200,
-		stack = false,
-		degrade = 4320,
-		close = true,
-		description = "",
-		client = {
-			image = "tequila.png",
-		}
-	},
-
-	["cerveja"] = {
-		label = "Cerveja",
-		weight = 200,
-		stack = false,
-		degrade = 4320,
-		close = true,
-		description = "",
-		client = {
-			image = "cerveja.png",
-		}
-	},
-
-	["whisky"] = {
-		label = "Whisky",
-		weight = 200,
-		stack = false,
-		degrade = 4320,
-		close = true,
-		description = "",
-		client = {
-			image = "whisky.png",
-		}
-	},
-
-	["gim"] = {
-		label = "Gim",
-		weight = 200,
-		stack = false,
-		degrade = 4320,
-		close = true,
-		description = "",
-		client = {
-			image = "gim.png",
-		}
-	},
-
-	["saque"] = {
-		label = "Saque",
-		weight = 200,
-		stack = false,
-		degrade = 4320,
-		close = true,
-		description = "",
-		client = {
-			image = "saque.png",
-		}
-	},
-
-	["vodka"] = {
-		label = "Vodka",
-		weight = 200,
-		stack = false,
-		degrade = 4320,
-		close = true,
-		description = "",
-		client = {
-			image = "vodka.png",
-		}
-	},
-
 	["carteira"] = {
 		label = "Carteira",
-		weight = 100,
+		weight = 600,
 		stack = true,
 		close = true,
 		description = "",
@@ -2910,7 +2830,7 @@ return {
 
 	["goldchain"] = {
 		label = "Corrente de Ouro",
-		weight = 100,
+		weight = 300,
 		stack = true,
 		close = true,
 		description = "",
@@ -2932,7 +2852,7 @@ return {
 
 	["rolex"] = {
 		label = "Rolex",
-		weight = 100,
+		weight = 800,
 		stack = true,
 		close = true,
 		description = "",
@@ -2954,7 +2874,7 @@ return {
 
 	["celularxingling"] = {
 		label = "Celular Xing Ling",
-		weight = 100,
+		weight = 700,
 		stack = true,
 		close = true,
 		description = "",
@@ -2965,7 +2885,7 @@ return {
 
 	["colar"] = {
 		label = "Colar",
-		weight = 100,
+		weight = 300,
 		stack = true,
 		close = true,
 		description = "",
@@ -2987,7 +2907,7 @@ return {
 
 	["tabletxingling"] = {
 		label = "Tablet Xing Ling",
-		weight = 100,
+		weight = 800,
 		stack = true,
 		close = true,
 		description = "",
@@ -2998,7 +2918,7 @@ return {
 
 	["relogio"] = {
 		label = "Relógio",
-		weight = 100,
+		weight = 600,
 		stack = true,
 		close = true,
 		description = "",
@@ -3008,22 +2928,22 @@ return {
 	},
 
 	["Equipamento de Música"] = {
-		label = "Music Equipment",
+		label = "Equipamento de Música",
 		weight = 25000,
 		stack = false,
 		close = true,
-		description = "Music Equipment",
+		description = "",
 		client = {
 			image = "musicequipment.png",
 		}
 	},
 
 	["Desktop"] = {
-		label = "Computer Equipment",
-		weight = 25000,
+		label = "Computador",
+		weight = 20000,
 		stack = false,
 		close = true,
-		description = "Computer Equipment",
+		description = "",
 		client = {
 			image = "flightpcequipment.png",
 		}
@@ -3335,6 +3255,1710 @@ return {
 		description = "",
 		client = {
 			image = "bp-ammo-9-box.png",
+		}
+	},
+
+	-- Restaurantes
+
+	['business_tempitem'] = {
+		label = "how did you get this?",
+		weight = 0,
+		degrade = 1440,
+		stack = true,
+		close = true,
+		consume = 0,
+		server = {
+			export = 'Renewed-Businesses.useItem',
+		}
+	},
+
+	['kitchenknife'] = {
+		label = 'Faca de Cozinha',
+		weight = 50,
+		shopType = 'general',
+		price = 10,
+	},
+
+	['blender'] = {
+		label = 'Mixer',
+		weight = 50,
+		degrade = 10080,
+		shopType = 'general',
+		price = 10,
+	},
+
+	['condensedmilk'] = {
+		label = 'Leite Condensado',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 5,
+			thirst = -10,
+			stress = 10,
+			carbs = 5,
+			protein = 5,
+			sugar = 13,
+			fat = 10,
+		}
+	},
+
+	['chocolatecandies'] = {
+		label = 'Barra de Chocolate',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 8,
+			thirst = -5,
+			stress = 15,
+			carbs = 5,
+			protein = 5,
+			sugar = 15,
+			fat = 8,
+		}
+	},
+
+	['chocolatesyrup'] = {
+		label = 'Calda de Chocolate',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 3,
+			thirst = -5,
+			stress = 10,
+			carbs = 5,
+			protein = 2,
+			sugar = 15,
+			fat = 8,
+		}
+	},
+
+	['sprinkles'] = {
+		label = 'Granulado de Chocolate',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -5,
+			stress = 10,
+			carbs = 5,
+			protein = 2,
+			sugar = 10,
+			fat = 8,
+		}
+	},
+
+	['sugar'] = {
+		label = 'Açúcar',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = -10,
+			stress = 15,
+			carbs = 10,
+			healthy = 10,
+			sugar = 15,
+		}
+	},
+
+	['brownsugar'] = {
+		label = 'Açúcar Mascavo',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = -5,
+			stress = 10,
+			carbs = 5,
+			healthy = 5,
+			sugar = 5,
+		}
+	},
+
+	['eggs'] = {
+		label = 'Ovos',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 10,
+			stress = 5,
+			healthy = 15,
+			protein = 7,
+			fat = 5,
+		}
+	},
+
+	['icecream'] = {
+		label = 'Massa de Sorvete',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 5,
+			thirst = -10,
+			stress = 15,
+			carbs = 10,
+			protein = 5,
+			sugar = 10,
+			fat = 7,
+		}
+	},
+
+	['milk'] = {
+		label = 'Leite',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 8,
+			thirst = 5,
+			stress = 10,
+			healthy = 15,
+			protein = 4,
+			sugar = 5,
+			fat = 9,
+		}
+	},
+
+	['yogurt'] = {
+		label = 'Iogurte',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 9,
+			thirst = -5,
+			stress = 5,
+			carbs = 5,
+			healthy = 10,
+			protein = 5,
+			fat = 8,
+		}
+	},
+
+	['butter'] = {
+		label = 'Manteiga',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			stress = 10,
+			salt = 5,
+			fat = 12,
+		}
+	},
+
+	['coffeebean'] = {
+		label = 'Café',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = 10,
+			stress = 10,
+			healthy = 5,
+		}
+	},
+
+	['bbqsauce'] = {
+		label = 'Molho BBQ',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			thirst = -5,
+			stress = 5,
+			salt = 10,
+			sugar = 5,
+		}
+	},
+
+	['mustard'] = {
+		label = 'Mostarda',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			thirst = -5,
+			stress = 5,
+			salt = 10,
+		}
+	},
+
+	['ketchup'] = {
+		label = 'Ketchup',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			thirst = -5,
+			stress = 5,
+			salt = 10,
+		}
+	},
+
+	['pickle'] = {
+		label = 'Picles',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 10,
+			stress = 5,
+			salt = 5,
+			protein = 5,
+		}
+	},
+
+	['lemonpepper'] = {
+		label = 'Lemon Pepper',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			thirst = -10,
+			salt = 10,
+		}
+	},
+
+	['sauce'] = {
+		label = 'Molho Inglês',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			thirst = -5,
+			stress = 5,
+			salt = 10,
+		}
+	},
+
+	['venison'] = {
+		label = 'Carne de Cervo',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 21,
+			salt = 10,
+			healthy = 10,
+			protein = 12,
+			fat = 8,
+		}
+	},
+
+	['bacon'] = {
+		label = 'Bacon',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 19,
+			salt = 10,
+			healthy = 10,
+			protein = 14,
+			fat = 9,
+		}
+	},
+
+	['beefpatty'] = {
+		label = 'Hambúrguer Bovino',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 24,
+			salt = 10,
+			healthy = 10,
+			protein = 11,
+			fat = 5,
+		}
+	},
+
+	['chicken'] = {
+		label = 'Filé de Frango',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 24,
+			salt = 10,
+			healthy = 15,
+			protein = 11,
+			fat = 9,
+		}
+	},
+
+	['nuggets'] = {
+		label = 'Nuggets',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 18,
+			salt = 10,
+			healthy = 10,
+			protein = 15,
+			fat = 6,
+		}
+	},
+
+	['chickenwings'] = {
+		label = 'Asa de Frango',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 15,
+			salt = 10,
+			healthy = 15,
+			protein = 15,
+			fat = 8,
+		}
+	},
+
+	['pepperoni'] = {
+		label = 'Calabresa',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 17,
+			salt = 10,
+			healthy = 10,
+			protein = 15,
+			fat = 5,
+		}
+	},
+
+	['ribs'] = {
+		label = 'Costela de Porco',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 25,
+			salt = 10,
+			healthy = 15,
+			protein = 10,
+			fat = 9,
+		}
+	},
+
+	['roastbeef'] = {
+		label = 'Rosbife',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 21,
+			salt = 10,
+			healthy = 5,
+			protein = 14,
+			fat = 8,
+		}
+	},
+
+	['filet'] = {
+		label = 'Filé Mignon',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 30,
+			salt = 10,
+			healthy = 15,
+			protein = 10,
+			fat = 7,
+		}
+	},
+
+	['nystrip'] = {
+		label = 'Contra Filé',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 30,
+			salt = 10,
+			healthy = 15,
+			protein = 10,
+			fat = 5,
+		}
+	},
+
+	['wholeham'] = {
+		label = 'Peça de Presunto',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 27,
+			salt = 10,
+			healthy = 10,
+			protein = 12,
+			fat = 6,
+		}
+	},
+
+	['burgerbuns'] = {
+		label = 'Pão de Hambúrguer',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 15,
+			thirst = -5,
+			salt = 5,
+			carbs = 15,
+			healthy = 10,
+			sugar = 5,
+			fat = 13,
+		}
+	},
+
+	['flatbread'] = {
+		label = 'Pão Sírio',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 13,
+			thirst = -5,
+			salt = 5,
+			carbs = 15,
+			healthy = 10,
+			sugar = 5,
+			fat = 13,
+		}
+	},
+
+	['bagel'] = {
+		label = 'Rosquinha',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 7,
+			thirst = -3,
+			carbs = 10,
+			healthy = 5,
+			sugar = 10,
+			fat = 10,
+		}
+	},
+
+	['sandwichbread'] = {
+		label = 'Pão de Forma',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -5,
+			salt = 5,
+			carbs = 13,
+			healthy = 10,
+			sugar = 5,
+			fat = 13,
+		}
+	},
+
+	['fettuccine'] = {
+		label = 'Fettuccine ',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 16,
+			thirst = -3,
+			salt = 10,
+			carbs = 15,
+			healthy = 5,
+			fat = 10,
+		}
+	},
+
+	['spaghetti'] = {
+		label = 'Spaghetti',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 16,
+			thirst = -3,
+			salt = 10,
+			carbs = 15,
+			healthy = 5,
+			fat = 10,
+		}
+	},
+
+	['ramen'] = {
+		label = 'Lámen',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 17,
+			thirst = -3,
+			salt = 10,
+			carbs = 15,
+			healthy = 5,
+			fat = 11,
+		}
+	},
+
+	['rice'] = {
+		label = 'Arroz',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			salt = 5,
+			carbs = 15,
+			healthy = 10,
+			fat = 12,
+		}
+	},
+
+	['pizzadough'] = {
+		label = 'Massa de Pizza',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 20,
+			thirst = -3,
+			salt = 10,
+			carbs = 15,
+			healthy = 5,
+			fat = 13,
+		}
+	},
+
+	['linguine'] = {
+		label = 'Linguine',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 16,
+			thirst = -3,
+			salt = 10,
+			carbs = 15,
+			healthy = 5,
+			fat = 13,
+		}
+	},
+
+	['salomfilet'] = {
+		label = 'Filé de Salmão',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 28,
+			salt = 10,
+			healthy = 15,
+			protein = 15,
+			fat = 9,
+		}
+	},
+
+	['redfishfilet'] = {
+		label = 'Filé de Cantarilho',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 30,
+			salt = 10,
+			healthy = 15,
+			protein = 13,
+			fat = 8,
+		}
+	},
+
+	['catfishfilet'] = {
+		label = 'Filé de Bagre',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 28,
+			salt = 10,
+			healthy = 15,
+			protein = 12,
+			fat = 7,
+		}
+	},
+
+	['stripedbassfilet'] = {
+		label = 'Filé de Robalo',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 30,
+			salt = 10,
+			healthy = 15,
+			protein = 14,
+			fat = 8,
+		}
+	},
+
+	['rawsquid'] = {
+		label = 'Lula',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 22,
+			salt = 10,
+			healthy = 10,
+			protein = 11,
+			fat = 5,
+		}
+	},
+
+	['tunafilet'] = {
+		label = 'Filé de Atum',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 28,
+			salt = 10,
+			healthy = 10,
+			protein = 13,
+			fat = 6,
+		}
+	},
+
+	['swiss'] = {
+		label = 'Queijo Suíço',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 15,
+			healthy = 5,
+			protein = 9,
+			fat = 13,
+		}
+	},
+
+	['cheddar'] = {
+		label = 'Queijo Cheddar',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 12,
+			healthy = 7,
+			protein = 8,
+			fat = 12,
+		}
+	},
+
+	['mozzarella'] = {
+		label = 'Queijo Muçarela',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 15,
+			healthy = 7,
+			protein = 9,
+			fat = 14,
+		}
+	},
+
+	['ricotta'] = {
+		label = 'Queijo Ricota',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 13,
+			healthy = 5,
+			protein = 5,
+			fat = 13,
+		}
+	},
+
+	['creamcheese'] = {
+		label = 'Requeijão',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 12,
+			healthy = 5,
+			protein = 6,
+			fat = 15,
+		}
+	},
+
+	['provolone'] = {
+		label = 'Queijo Provolone',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 13,
+			healthy = 8,
+			protein = 7,
+			fat = 10,
+		}
+	},
+
+	['parmesan'] = {
+		label = 'Queijo Parmesão',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 12,
+			healthy = 8,
+			protein = 6,
+			fat = 13,
+		}
+	},
+
+	['gouda'] = {
+		label = 'Queijo Gouda',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 15,
+			healthy = 5,
+			protein = 8,
+			fat = 15,
+		}
+	},
+
+	['cottagecheese'] = {
+		label = 'Queijo Cottage',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 12,
+			thirst = -4,
+			salt = 12,
+			carbs = 13,
+			healthy = 7,
+			protein = 7,
+			fat = 12,
+		}
+	},
+
+	['celery'] = {
+		label = 'Salsão',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 6,
+			healthy = 10,
+			protein = 2,
+		}
+	},
+
+	['greenpeppers'] = {
+		label = 'Pimentão Verde',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 7,
+			thirst = -5,
+			salt = 10,
+			carbs = 5,
+			healthy = 5,
+			protein = 3,
+			sugar = 2,
+		}
+	},
+
+	['hotpepper'] = {
+		label = 'Pimenta Jalapeño',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 7,
+			thirst = -5,
+			salt = 10,
+			carbs = 5,
+			healthy = 5,
+			protein = 2,
+			sugar = 2,
+		}
+	},
+
+	['broccoli'] = {
+		label = 'Brócolis',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 8,
+			carbs = 5,
+			healthy = 10,
+			protein = 4,
+			sugar = 3,
+		}
+	},
+
+	['carrots'] = {
+		label = 'Cenoura',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 8,
+			carbs = 10,
+			healthy = 10,
+			protein = 3,
+			sugar = 3,
+		}
+	},
+
+	['peas'] = {
+		label = 'Ervilhas',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 6,
+			carbs = 10,
+			healthy = 5,
+			protein = 2,
+		}
+	},
+
+	['squash'] = {
+		label = 'Abóbora',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 8,
+			carbs = 10,
+			healthy = 7,
+			protein = 4,
+			sugar = 3,
+		}
+	},
+
+	['redpeppers'] = {
+		label = 'Pimentão Vermelho',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 7,
+			thirst = -5,
+			salt = 10,
+			carbs = 5,
+			healthy = 5,
+			protein = 3,
+		}
+	},
+
+	['potatoes'] = {
+		label = 'Batata',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 10,
+			carbs = 15,
+			healthy = 15,
+			protein = 2,
+			sugar = 3,
+		}
+	},
+
+	['lettuce_r'] = {
+		label = 'Alface',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 8,
+			healthy = 10,
+			protein = 4,
+		}
+	},
+
+	['corn'] = {
+		label = 'Milho',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 6,
+			carbs = 10,
+			healthy = 5,
+			protein = 3,
+			sugar = 3,
+		}
+	},
+
+	['cucumbers'] = {
+		label = 'Pepino',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 7,
+			carbs = 5,
+			healthy = 10,
+			protein = 2,
+		}
+	},
+
+	['spinach'] = {
+		label = 'Espinafre',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 6,
+			healthy = 15,
+			protein = 2,
+		}
+	},
+
+	['chilipowder'] = {
+		label = 'Pimenta em pó',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 1,
+			thirst = -10,
+			salt = 15,
+			carbs = 6,
+			healthy = 6,
+			protein = 8,
+			sugar = 5,
+			fat = 8,
+		}
+	},
+
+	['paprika'] = {
+		label = 'Páprica',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -7,
+			salt = 15,
+			carbs = 5,
+			healthy = 7,
+			protein = 7,
+			sugar = 6,
+			fat = 7,
+		}
+	},
+
+	['cinnamon'] = {
+		label = 'Canela',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 2,
+			thirst = -8,
+			salt = 5,
+			carbs = 7,
+			healthy = 5,
+			protein = 5,
+			sugar = 5,
+			fat = 6,
+		}
+	},
+
+	['curry'] = {
+		label = 'Curry',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -7,
+			salt = 15,
+			carbs = 5,
+			healthy = 4,
+			protein = 5,
+			sugar = 8,
+			fat = 5,
+		}
+	},
+
+	['mint'] = {
+		label = 'Menta',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 1,
+			thirst = -10,
+			salt = 15,
+			carbs = 8,
+			healthy = 5,
+			protein = 6,
+			sugar = 7,
+			fat = 4,
+		}
+	},
+
+	['oregano'] = {
+		label = 'Orégano',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -7,
+			salt = 15,
+			carbs = 6,
+			healthy = 5,
+			protein = 7,
+			sugar = 5,
+			fat = 6,
+		}
+	},
+
+	['basil'] = {
+		label = 'Manjericão',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 2,
+			thirst = -6,
+			salt = 15,
+			carbs = 5,
+			healthy = 6,
+			protein = 8,
+			sugar = 6,
+			fat = 8,
+		}
+	},
+
+	['nutmeg'] = {
+		label = 'Noz-moscada',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			hunger = 3,
+			thirst = -7,
+			salt = 5,
+			carbs = 7,
+			healthy = 7,
+			protein = 6,
+			sugar = 5,
+			fat = 7,
+		}
+	},
+
+	['garlicpowder'] = {
+		label = 'Alho em pó',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 1,
+			thirst = -10,
+			salt = 15,
+			carbs = 5,
+			healthy = 5,
+			protein = 8,
+			sugar = 8,
+			fat = 5,
+		}
+	},
+
+	['salt'] = {
+		label = 'Sal',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -10,
+			salt = 15,
+			carbs = 6,
+			healthy = 8,
+			protein = 7,
+			sugar = 7,
+			fat = 6,
+		}
+	},
+
+	['pepper'] = {
+		label = 'Pimenta',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -10,
+			salt = 15,
+			carbs = 8,
+			healthy = 4,
+			protein = 8,
+			sugar = 5,
+			fat = 7,
+		}
+	},
+
+	['pepperflakes'] = {
+		label = 'Pimenta Vermelha',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			thirst = -10,
+			salt = 15,
+			carbs = 5,
+			healthy = 6,
+			protein = 6,
+			sugar = 6,
+			fat = 5,
+		}
+	},
+
+	['onionpowder'] = {
+		label = 'Cebola em Pó',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 2,
+			thirst = -9,
+			salt = 15,
+			carbs = 7,
+			healthy = 5,
+			protein = 8,
+			sugar = 8,
+			fat = 6,
+		}
+	},
+
+	['olives'] = {
+		label = 'Azeitonas',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 5,
+			thirst = -6,
+			salt = 5,
+			carbs = 8,
+			healthy = 7,
+			protein = 5,
+			sugar = 5,
+			fat = 8,
+		}
+	},
+
+	['thyme'] = {
+		label = 'Tomilho',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 2,
+			thirst = -7,
+			salt = 5,
+			carbs = 6,
+			healthy = 5,
+			protein = 6,
+			sugar = 7,
+			fat = 5,
+		}
+	},
+
+	['cognac'] = {
+		label = 'Conhaque',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = 8,
+			stress = 15,
+			alcohol = 34,
+		}
+	},
+
+	['vodka'] = {
+		label = 'Vodka',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = 10,
+			stress = 15,
+			alcohol = 53,
+		}
+	},
+
+	['whiskey'] = {
+		label = 'Whiskey',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = 14,
+			stress = 20,
+			alcohol = 45,
+		}
+	},
+
+	['gin'] = {
+		label = 'Gin',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = 13,
+			stress = 15,
+			alcohol = 40,
+		}
+	},
+
+	['carbonatedwater'] = {
+		label = 'Água com Gás',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 15,
+			stress = 10,
+		}
+	},
+
+	['rum'] = {
+		label = 'Rum',
+		weight = 50,
+		foodType = {'food', 'drink'},
+		nutrition = {
+			thirst = 10,
+			stress = 15,
+			alcohol = 32,
+		}
+	},
+
+	['tonic'] = {
+		label = 'Água Tônica',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 13,
+			stress = 10,
+		}
+	},
+
+	['water_r'] = {
+		label = 'Água',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 40,
+		}
+	},
+
+	['barley'] = {
+		label = 'Cevada Maltada',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 14,
+			stress = 15,
+			alcohol = 11,
+		}
+	},
+
+	['hop'] = {
+		label = 'Lúpulo',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 13,
+			stress = 10,
+			alcohol = 9,
+		}
+	},
+
+	['taurine'] = {
+		label = 'Taurina',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 15,
+			stress = 20,
+		}
+	},
+
+	['yeast'] = {
+		label = 'Levedura',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 10,
+			stress = 15,
+			alcohol = 7,
+		}
+	},
+
+	['apple'] = {
+		label = 'Maça',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 8,
+			stress = 5,
+			carbs = 5,
+			healthy = 15,
+			sugar = 8,
+		}
+	},
+
+	['banana'] = {
+		label = 'Banana',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 9,
+			stress = 5,
+			carbs = 10,
+			healthy = 15,
+			sugar = 8,
+		}
+	},
+
+	['blueberry'] = {
+		label = 'Blueberry',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 7,
+			stress = 5,
+			healthy = 10,
+			sugar = 8,
+		}
+	},
+
+	['grapes'] = {
+		label = 'Uvas',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 6,
+			stress = 5,
+			healthy = 10,
+			sugar = 8,
+		}
+	},
+
+	['pineapple'] = {
+		label = 'Abacaxi',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 9,
+			stress = 5,
+			carbs = 5,
+			healthy = 15,
+			sugar = 9,
+		}
+	},
+
+	['orange'] = {
+		label = 'Laranja',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 9,
+			stress = 5,
+			carbs = 10,
+			healthy = 13,
+			sugar = 8,
+		}
+	},
+
+	['cherry'] = {
+		label = 'Cereja',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			stress = 5,
+			carbs = 5,
+			healthy = 10,
+			sugar = 8,
+		}
+	},
+
+	['kiwi'] = {
+		label = 'Kiwi',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 3,
+			stress = 5,
+			carbs = 10,
+			healthy = 11,
+			sugar = 8,
+		}
+	},
+
+	['strawberry'] = {
+		label = 'Morango',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 2,
+			stress = 5,
+			carbs = 10,
+			healthy = 12,
+			sugar = 8,
+		}
+	},
+
+	['lime'] = {
+		label = 'Limão',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 1,
+			stress = 5,
+			healthy = 14,
+			sugar = 3,
+		}
+	},
+
+	['tomato_r'] = {
+		label = 'Tomate',
+		weight = 50,
+		foodType = {'food'},
+		nutrition = {
+			hunger = 2,
+			stress = 5,
+			carbs = 5,
+			healthy = 13,
+		}
+	},
+
+	['applejuice'] = {
+		label = 'Polpa de Maça',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 20,
+			stress = 5,
+			carbs = 5,
+			healthy = 15,
+			sugar = 8,
+		}
+	},
+
+	['bananajuice'] = {
+		label = 'Polpa de Banana',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 15,
+			stress = 5,
+			carbs = 10,
+			healthy = 15,
+			sugar = 8,
+		}
+	},
+
+	['blueberryjuice'] = {
+		label = 'Polpa de Blueberry',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 25,
+			stress = 5,
+			healthy = 10,
+			sugar = 8,
+		}
+	},
+
+	['grapejuice'] = {
+		label = 'Polpa de Uva',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 20,
+			stress = 5,
+			healthy = 10,
+			sugar = 8,
+		}
+	},
+
+	['pineapplejuice'] = {
+		label = 'Polpa de Abacaxi',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 25,
+			stress = 5,
+			carbs = 5,
+			healthy = 15,
+			sugar = 9,
+		}
+	},
+
+	['orangejuice'] = {
+		label = 'Polpa de Laranja',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 27,
+			stress = 5,
+			carbs = 10,
+			healthy = 13,
+			sugar = 8,
+		}
+	},
+
+	['cherryjuice'] = {
+		label = 'Polpa de Cereja',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 18,
+			stress = 5,
+			carbs = 5,
+			healthy = 10,
+			sugar = 8,
+		}
+	},
+
+	['kiwijuice'] = {
+		label = 'Polpa de Kiwi',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 16,
+			stress = 5,
+			carbs = 10,
+			healthy = 11,
+			sugar = 8,
+		}
+	},
+
+	['strawberryjuice'] = {
+		label = 'Polpa de Morango',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 18,
+			stress = 5,
+			carbs = 10,
+			healthy = 12,
+			sugar = 8,
+		}
+	},
+
+	['limejuice'] = {
+		label = 'Polpa de Limão',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 25,
+			stress = 5,
+			healthy = 14,
+			sugar = 3,
+		}
+	},
+
+	['tomatojuice'] = {
+		label = 'Polpa de Tomate',
+		weight = 50,
+		foodType = {'drink'},
+		nutrition = {
+			thirst = 10,
+			stress = 5,
+			carbs = 5,
+			healthy = 13,
+		}
+	},
+
+	['general_box'] = {
+		label = 'Caixa Geral',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['meat_box'] = {
+		label = 'Caixa de Carnes',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['bakery_box'] = {
+		label = 'Caixa de Massas',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['fish_box'] = {
+		label = 'Caixa de Peixes',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['dairy_box'] = {
+		label = 'Caixa de Laticínios',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['vegetal_box'] = {
+		label = 'Caixa de Vegetais',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['sauce_box'] = {
+		label = 'Caixa de Temperos',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['drink_box'] = {
+		label = 'Caixa de Bebidas',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	['fruit_box'] = {
+		label = 'Caixa de Frutas',
+		weight = 4000,
+		degrade = 7200,
+	},
+
+	["watertank"] = {
+		label = "Tanque de Água",
+		weight = 4000,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "watertank.png",
+		}
+	},
+
+	["gim"] = {
+		label = "Gim",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "gim.png",
+		}
+	},
+
+	["whisky"] = {
+		label = "Whisky",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "whisky.png",
+		}
+	},
+
+	["saque"] = {
+		label = "Saque",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "saque.png",
+		}
+	},
+
+	["cerveja"] = {
+		label = "Cerveja",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "cerveja.png",
+		}
+	},
+
+	["tequila"] = {
+		label = "Tequila",
+		weight = 200,
+		stack = true,
+		close = true,
+		description = "",
+		client = {
+			image = "tequila.png",
 		}
 	},
 }

@@ -669,6 +669,28 @@ end
 
 exports('UpdateVehicle', Inventory.UpdateVehicle)
 
+AddEventHandler('entityRemoved', function(entity)
+    if GetEntityType(entity) == 2 then
+		local plate = GetVehicleNumberPlateText(entity)
+		if not exports['guedes-garages']:CheckVehicleIsOwned(plate) then return end
+
+		local trunk = Inventory(('trunk%s'):format(plate))
+		local glove = Inventory(('glove%s'):format(plate))
+
+		if trunk then
+			Inventory.CloseAll(trunk)
+			Inventory.Save(trunk)
+			Inventories[trunk.id] = nil
+		end
+
+		if glove then
+			Inventory.CloseAll(glove)
+			Inventory.Save(glove)
+			Inventories[glove.id] = nil
+		end
+    end
+end)
+
 function Inventory.Save(inv)
 	inv = Inventory(inv) --[[@as OxInventory]]
 
@@ -2235,7 +2257,7 @@ local function prepareInventorySave(inv, buffer, time)
 
     if not shouldSave then return end
 
-    local data = next(buffer) and json.encode(buffer) or nil
+    local data = json.encode(buffer)
     inv.changed = false
     table.wipe(buffer)
 
