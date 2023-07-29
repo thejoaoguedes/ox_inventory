@@ -1005,34 +1005,6 @@ return {
             count = 1,
         },
         {
-            name = 'vpnadvanced',
-            ingredients = {
-                ['aluminum'] = 11,
-                ['metal'] = 13,
-                ['plastic'] = 7,
-                ['copper'] = 12,
-                ['rubber'] = 16,
-                ['glass'] = 8,
-                ['iron'] = 14
-            },
-            duration = 20000,
-            count = 1,
-        },
-        {
-            name = 'dongle',
-            ingredients = {
-                ['aluminum'] = 10,
-                ['metal'] = 12,
-                ['plastic'] = 10,
-                ['copper'] = 10,
-                ['rubber'] = 10,
-                ['glass'] = 12,
-                ['iron'] = 6
-            },
-            duration = 20000,
-            count = 1,
-        },
-        {
             name = 'laptop',
             ingredients = {
                 ['aluminum'] = 15,
@@ -1042,34 +1014,6 @@ return {
                 ['rubber'] = 13,
                 ['glass'] = 18,
                 ['iron'] = 14
-            },
-            duration = 20000,
-            count = 1,
-        },
-        {
-            name = 'hacking_device',
-            ingredients = {
-                ['aluminum'] = 8,
-                ['metal'] = 6,
-                ['plastic'] = 7,
-                ['copper'] = 7,
-                ['rubber'] = 7,
-                ['glass'] = 8,
-                ['iron'] = 6
-            },
-            duration = 20000,
-            count = 1,
-        },
-        {
-            name = 'transponder',
-            ingredients = {
-                ['aluminum'] = 3,
-                ['metal'] = 5,
-                ['plastic'] = 4,
-                ['copper'] = 6,
-                ['rubber'] = 5,
-                ['glass'] = 6,
-                ['iron'] = 4
             },
             duration = 20000,
             count = 1,

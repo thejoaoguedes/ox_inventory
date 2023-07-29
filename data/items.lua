@@ -659,7 +659,7 @@ return {
 	["compost"] = {
 		label = "Saco de Adubo",
 		weight = 1000,
-		stack = true,
+		stack = false,
 		degrade = 10080,
 		close = false,
 		description = "Adubo para dar saúde para suas plantinhas.",
@@ -4486,7 +4486,7 @@ return {
 		weight = 50,
 		foodType = {'drink'},
 		nutrition = {
-			thirst = 15,
+			thirst = 40,
 			stress = 10,
 		}
 	},
@@ -4507,7 +4507,7 @@ return {
 		weight = 50,
 		foodType = {'drink'},
 		nutrition = {
-			thirst = 13,
+			thirst = 40,
 			stress = 10,
 		}
 	},

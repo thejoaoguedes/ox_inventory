@@ -85,7 +85,7 @@ return {
 				{ name = 'garlic_seed', price = 150, metadata = {seedQuantity = 10} },
 				{ name = 'carrot_seed', price = 150, metadata = {seedQuantity = 10} },
 				{ name = 'wateringcan', price = 600, metadata = {water = 100} },
-				{ name = 'compost', price = 200, metadata = {compostQuantity = 100} },
+				{ name = 'compost', price = 200, metadata = {compostQuantity = 300} },
 			}, locations = {
 				vec3(2029.6459960938, 4980.5771484375, 42.098327636719)
 			}, targets = {
