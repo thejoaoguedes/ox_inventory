@@ -3406,9 +3406,9 @@ return {
 		weight = 50,
 		foodType = {'food', 'drink'},
 		nutrition = {
-			hunger = 8,
-			thirst = 5,
-			stress = 10,
+			hunger = 10,
+			thirst = 35,
+			stress = 20,
 			healthy = 15,
 			protein = 4,
 			sugar = 5,
