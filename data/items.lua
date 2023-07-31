@@ -3294,7 +3294,7 @@ return {
 		nutrition = {
 			hunger = 5,
 			thirst = -10,
-			stress = 10,
+			stress = 25,
 			carbs = 5,
 			protein = 5,
 			sugar = 13,
@@ -3353,7 +3353,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = -10,
-			stress = 15,
+			stress = 30,
 			carbs = 10,
 			healthy = 10,
 			sugar = 15,
@@ -3448,7 +3448,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = 10,
-			stress = 10,
+			stress = 25,
 			healthy = 5,
 		}
 	},
@@ -4241,6 +4241,7 @@ return {
 			healthy = 5,
 			protein = 5,
 			sugar = 5,
+			stress = 10,
 			fat = 6,
 		}
 	},
@@ -4269,6 +4270,7 @@ return {
 			hunger = 1,
 			thirst = -10,
 			salt = 15,
+			stress = 25,
 			carbs = 8,
 			healthy = 5,
 			protein = 6,
@@ -4443,7 +4445,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = 8,
-			stress = 15,
+			stress = 35,
 			alcohol = 34,
 		}
 	},
@@ -4454,7 +4456,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = 10,
-			stress = 15,
+			stress = 40,
 			alcohol = 53,
 		}
 	},
@@ -4465,7 +4467,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = 14,
-			stress = 20,
+			stress = 45,
 			alcohol = 45,
 		}
 	},
@@ -4476,7 +4478,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = 13,
-			stress = 15,
+			stress = 30,
 			alcohol = 40,
 		}
 	},
@@ -4497,7 +4499,7 @@ return {
 		foodType = {'food', 'drink'},
 		nutrition = {
 			thirst = 10,
-			stress = 15,
+			stress = 25,
 			alcohol = 32,
 		}
 	},
@@ -4538,7 +4540,7 @@ return {
 		foodType = {'drink'},
 		nutrition = {
 			thirst = 13,
-			stress = 10,
+			stress = 15,
 			alcohol = 9,
 		}
 	},
@@ -4559,7 +4561,7 @@ return {
 		foodType = {'drink'},
 		nutrition = {
 			thirst = 10,
-			stress = 15,
+			stress = 20,
 			alcohol = 7,
 		}
 	},
@@ -4570,7 +4572,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 8,
-			stress = 5,
+			stress = 15,
 			carbs = 5,
 			healthy = 15,
 			sugar = 8,
@@ -4583,7 +4585,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 9,
-			stress = 5,
+			stress = 15,
 			carbs = 10,
 			healthy = 15,
 			sugar = 8,
@@ -4596,7 +4598,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 7,
-			stress = 5,
+			stress = 15,
 			healthy = 10,
 			sugar = 8,
 		}
@@ -4633,7 +4635,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 9,
-			stress = 5,
+			stress = 15,
 			carbs = 10,
 			healthy = 13,
 			sugar = 8,
@@ -4646,7 +4648,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 3,
-			stress = 5,
+			stress = 15,
 			carbs = 5,
 			healthy = 10,
 			sugar = 8,
@@ -4659,7 +4661,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 3,
-			stress = 5,
+			stress = 15,
 			carbs = 10,
 			healthy = 11,
 			sugar = 8,
@@ -4685,7 +4687,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 1,
-			stress = 5,
+			stress = 15,
 			healthy = 14,
 			sugar = 3,
 		}
@@ -4697,7 +4699,7 @@ return {
 		foodType = {'food'},
 		nutrition = {
 			hunger = 2,
-			stress = 5,
+			stress = 15,
 			carbs = 5,
 			healthy = 13,
 		}
