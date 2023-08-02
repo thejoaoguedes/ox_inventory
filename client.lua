@@ -1673,8 +1673,8 @@ RegisterNUICallback('giveItem', function(data, cb)
             local entity = Utils.Raycast(1|2|4|8|16, option.coords + vec3(0, 0, 0.5), 0.2)
 
 			if entity == option.ped and IsEntityVisible(option.ped) then
-				local playerName = GetPlayerName(option.id)
 				option.id = GetPlayerServerId(option.id)
+				local playerName = lib.callback.await('guedes-resources:server:getName', false, option.id)
 				option.label = ('[%s] %s'):format(option.id, playerName)
 				n += 1
 				giveList[n] = option
@@ -1685,7 +1685,7 @@ RegisterNUICallback('giveItem', function(data, cb)
 
 		lib.registerMenu({
 			id = 'ox_inventory:givePlayerList',
-			title = 'Give item',
+			title = 'Dar item',
 			options = giveList,
 		}, function(selected)
             giveItemToTarget(giveList[selected].id, data.slot, data.count)
