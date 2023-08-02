@@ -1636,10 +1636,11 @@ return {
 		weight = 100,
 		stack = true,
 		degrade = 4320,
+		allowArmed = false,
 		close = true,
-		description = "Para a dor que faz você perder o chão, tome para ficar bemzão.",
+		description = 'Para a dor que faz você perder o chão, tome para ficar bemzão.',
 		client = {
-			image = "painkillers.png",
+			export = 'qb-ambulancejob.painkillers',
 		}
 	},
 
@@ -1985,18 +1986,6 @@ return {
 		description = "",
 		client = {
 			image = "chocolate.png",
-		}
-	},
-
-	["cigarette"] = {
-		label = "Spanka-Pulmão",
-		weight = 100,
-		stack = true,
-		degrade = 1440,
-		close = true,
-		description = "",
-		client = {
-			image = "CIGARETTE.png",
 		}
 	},
 
@@ -3551,7 +3540,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 24,
+			hunger = 35,
 			salt = 10,
 			healthy = 10,
 			protein = 11,
@@ -3642,7 +3631,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 30,
+			hunger = 40,
 			salt = 10,
 			healthy = 15,
 			protein = 10,
@@ -3655,7 +3644,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 30,
+			hunger = 38,
 			salt = 10,
 			healthy = 15,
 			protein = 10,
@@ -3681,7 +3670,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 15,
+			hunger = 20,
 			thirst = -5,
 			salt = 5,
 			carbs = 15,
@@ -3696,7 +3685,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 13,
+			hunger = 15,
 			thirst = -5,
 			salt = 5,
 			carbs = 15,
@@ -3901,7 +3890,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 15,
@@ -3916,7 +3905,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 12,
@@ -3931,7 +3920,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 15,
@@ -3946,7 +3935,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 13,
@@ -3961,7 +3950,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 12,
@@ -3976,7 +3965,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 13,
@@ -3991,7 +3980,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 12,
@@ -4006,7 +3995,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 15,
@@ -4021,7 +4010,7 @@ return {
 		weight = 50,
 		foodType = {'food'},
 		nutrition = {
-			hunger = 12,
+			hunger = 15,
 			thirst = -4,
 			salt = 12,
 			carbs = 13,
@@ -4961,6 +4950,18 @@ return {
 		description = "",
 		client = {
 			image = "tequila.png",
+		}
+	},
+
+	["cigarette"] = {
+		label = "Cigarro",
+		weight = 100,
+		stack = false,
+		degrade = 2880,
+		close = true,
+		description = "Fumar faz mal a saúde",
+		client = {
+			image = "cigarette.png",
 		}
 	},
 }
