@@ -1,15 +1,17 @@
 if not lib then return end
 
+fakeColumn = false
+
 local Query = {
     SELECT_STASH = 'SELECT 1 AS `exists`, data FROM ox_inventory WHERE owner = ? AND name = ?',
     UPDATE_STASH = 'UPDATE ox_inventory SET data = ? WHERE owner = ? AND name = ?',
     UPSERT_STASH = 'INSERT INTO ox_inventory (owner, name, data) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE data = VALUES(data)',
     INSERT_STASH = 'INSERT INTO ox_inventory (owner, name) VALUES (?, ?)',
-    SELECT_GLOVEBOX = 'SELECT plate, glovebox FROM `{vehicle_table}` WHERE `{vehicle_column}` = ? OR fakeplate = ?',
-    SELECT_TRUNK = 'SELECT plate, trunk FROM `{vehicle_table}` WHERE `{vehicle_column}` = ? OR fakeplate = ?',
+    SELECT_GLOVEBOX = 'SELECT plate, glovebox FROM `{vehicle_table}` WHERE `{vehicle_column}` = ?',
+    SELECT_TRUNK = 'SELECT plate, trunk FROM `{vehicle_table}` WHERE `{vehicle_column}` = ?',
     SELECT_PLAYER = 'SELECT inventory FROM `{user_table}` WHERE `{user_column}` = ?',
-    UPDATE_TRUNK = 'UPDATE `{vehicle_table}` SET trunk = ? WHERE `{vehicle_column}` = ? OR fakeplate = ?',
-    UPDATE_GLOVEBOX = 'UPDATE `{vehicle_table}` SET glovebox = ? WHERE `{vehicle_column}` = ? OR fakeplate = ?',
+    UPDATE_TRUNK = 'UPDATE `{vehicle_table}` SET trunk = ? WHERE `{vehicle_column}` = ?',
+    UPDATE_GLOVEBOX = 'UPDATE `{vehicle_table}` SET glovebox = ? WHERE `{vehicle_column}` = ?',
     UPDATE_PLAYER = 'UPDATE `{user_table}` SET inventory = ? WHERE `{user_column}` = ?',
 }
 
@@ -21,26 +23,29 @@ Citizen.CreateThreadNow(function()
         playerColumn = 'charid'
         vehicleTable = 'vehicles'
         vehicleColumn = 'id'
+        fakeColumn = 'fakeplate'
     elseif shared.framework == 'esx' then
         playerTable = 'users'
         playerColumn = 'identifier'
         vehicleTable = 'owned_vehicles'
         vehicleColumn = 'plate'
+        fakeColumn = 'fakeplate'
     elseif shared.framework == 'qb' then
         playerTable = 'players'
         playerColumn = 'citizenid'
         vehicleTable = 'player_vehicles'
         vehicleColumn = 'plate'
+        fakeColumn = 'fakeplate'
     elseif shared.framework == 'nd' then
         playerTable = 'characters'
         playerColumn = 'character_id'
         vehicleTable = 'vehicles'
         vehicleColumn = 'id'
+        fakeColumn = 'fakeplate'
     end
 
     for k, v in pairs(Query) do
-        Query[k] = v:gsub('{user_table}', playerTable):gsub('{user_column}', playerColumn):gsub('{vehicle_table}',
-            vehicleTable):gsub('{vehicle_column}', vehicleColumn)
+        Query[k] = v:gsub('{user_table}', playerTable):gsub('{user_column}', playerColumn):gsub('{vehicle_table}', vehicleTable):gsub('`{vehicle_column}`', vehicleColumn and (fakeColumn and '`'..vehicleColumn..'` = ? OR `'..fakeColumn..'` = ?' or '`'..vehicleColumn..'` = ?') or '`'..vehicleColumn..'` = ?')
     end
 
     Wait(0)
@@ -144,19 +149,32 @@ function db.loadStash(owner, name)
 end
 
 function db.saveGlovebox(id, inventory)
-    return MySQL.prepare(Query.UPDATE_GLOVEBOX, { inventory, id, id })
+    return MySQL.prepare(Query.UPDATE_GLOVEBOX, fakeColumn and { inventory,  id, id } or { inventory, id })
 end
 
 function db.loadGlovebox(id)
-    return MySQL.prepare.await(Query.SELECT_GLOVEBOX, { id, id })
+    return MySQL.prepare.await(Query.SELECT_GLOVEBOX, fakeColumn and { id, id } or { id })
 end
 
 function db.saveTrunk(id, inventory)
-    return MySQL.prepare(Query.UPDATE_TRUNK, { inventory, id, id })
+    return MySQL.prepare(Query.UPDATE_TRUNK, fakeColumn and { inventory,  id, id } or { inventory, id })
 end
 
 function db.loadTrunk(id)
-    return MySQL.prepare.await(Query.SELECT_TRUNK, { id, id })
+    return MySQL.prepare.await(Query.SELECT_TRUNK, fakeColumn and { id, id } or { id })
+end
+
+local function countRows(rows)
+    if type(rows) ~= 'table' then return rows end
+
+    local n = 0
+
+    for i = 1, #rows do
+        print(json.encode(rows[i]))
+        if rows[i] == 1 then n += 1 end
+    end
+
+    return n
 end
 
 function db.saveInventories(players, trunks, gloveboxes, stashes)
@@ -173,8 +191,8 @@ function db.saveInventories(players, trunks, gloveboxes, stashes)
         local p = promise.new()
         promises[#promises + 1] = p
 
-        MySQL.prepare(Query.UPDATE_PLAYER, players, function(affectedRows)
-            shared.info(('Saved %s/%s players'):format(affectedRows, numPlayer))
+        MySQL.prepare(Query.UPDATE_PLAYER, players, function(resp)
+            shared.info(('Saved %s/%s players'):format(countRows(resp), numPlayer))
             p:resolve()
         end)
     end
@@ -183,8 +201,8 @@ function db.saveInventories(players, trunks, gloveboxes, stashes)
         local p = promise.new()
         promises[#promises + 1] = p
 
-        MySQL.prepare(Query.UPDATE_TRUNK, trunks, function(affectedRows)
-            shared.info(('Saved %s/%s trunks'):format(affectedRows, numTrunk))
+        MySQL.prepare(Query.UPDATE_TRUNK, trunks, function(resp)
+            shared.info(('Saved %s/%s trunks'):format(countRows(resp), numTrunk))
             p:resolve()
         end)
     end
@@ -193,8 +211,8 @@ function db.saveInventories(players, trunks, gloveboxes, stashes)
         local p = promise.new()
         promises[#promises + 1] = p
 
-        MySQL.prepare(Query.UPDATE_GLOVEBOX, gloveboxes, function(affectedRows)
-            shared.info(('Saved %s/%s gloveboxes'):format(affectedRows, numGlove))
+        MySQL.prepare(Query.UPDATE_GLOVEBOX, gloveboxes, function(resp)
+            shared.info(('Saved %s/%s gloveboxes'):format(countRows(resp), numGlove))
             p:resolve()
         end)
     end
@@ -203,8 +221,8 @@ function db.saveInventories(players, trunks, gloveboxes, stashes)
         local p = promise.new()
         promises[#promises + 1] = p
 
-        MySQL.prepare(Query.UPDATE_STASH, stashes, function(affectedRows)
-            shared.info(('Saved %s/%s stashes'):format(affectedRows, numStash))
+        MySQL.prepare(Query.UPDATE_STASH, stashes, function(resp)
+            shared.info(('Saved %s/%s stashes'):format(countRows(resp), numStash))
             p:resolve()
         end)
     end
