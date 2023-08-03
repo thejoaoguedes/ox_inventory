@@ -1089,6 +1089,51 @@ return {
                 duration = 120000,
                 count = 1,
             },
+            {
+                name = 'WEAPON_SMG_MK2',
+                ingredients = {
+                    ['aluminionaval'] = 23,
+                    ['titanio'] = 23,
+                    ['polietileno'] = 23,
+                    ['cobalto'] = 23,
+                    ['borrachafluorada'] = 23,
+                    ['vidrotemperado'] = 23,
+                    ['steel'] = 23,
+                    ['blueprintmp5'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_COMPACTRIFLE',
+                ingredients = {
+                    ['aluminionaval'] = 20,
+                    ['titanio'] = 20,
+                    ['polietileno'] = 20,
+                    ['cobalto'] = 20,
+                    ['borrachafluorada'] = 20,
+                    ['vidrotemperado'] = 20,
+                    ['steel'] = 20,
+                    ['blueprintakc'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
+            {
+                name = 'WEAPON_MICROSMG',
+                ingredients = {
+                    ['aluminionaval'] = 15,
+                    ['titanio'] = 15,
+                    ['polietileno'] = 15,
+                    ['cobalto'] = 15,
+                    ['borrachafluorada'] = 15,
+                    ['vidrotemperado'] = 15,
+                    ['steel'] = 15,
+                    ['blueprintuzzi'] = 1
+                },
+                duration = 120000,
+                count = 1,
+            },
         },
         groups = {
             ['thelost'] = 0,
