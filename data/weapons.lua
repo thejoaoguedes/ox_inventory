@@ -72,6 +72,14 @@ return {
 			caliber = '9x19mm Parabellum',
 		},
 
+		['WEAPON_VINTAGEPISTOL'] = {
+			label = 'Pistola Vintage',
+			weight = 900,
+			durability = 0.06,
+			ammoname = 'ammo-9',
+			caliber = '9x19mm Parabellum',
+		},
+
 		['WEAPON_FLASHLIGHT'] = {
 			label = 'Lanterna',
 			weight = 500,

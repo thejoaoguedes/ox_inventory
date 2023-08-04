@@ -25,6 +25,7 @@ return {
 			{ name = 'empty_evidence_bag', price = 5, },
 			{ name = 'WEAPON_STUNGUN', price = 4500, metadata = { registered = true, serial = 'POL'} },
 			{ name = 'WEAPON_COMBATPISTOL', price = 7000, metadata = { registered = true, serial = 'POL' } },
+			{ name = 'WEAPON_VINTAGEPISTOL', price = 12000, },
 		}, locations = {
 			vec3(609.18, 1.80, 87.87),
 			vec3(1833.7041015625,3696.6853027344,34.954120635986)
@@ -35,12 +36,13 @@ return {
 	},
 
 	Medicine = {
-		name = 'Farmácia',
+		name = 'Loja',
 		groups = {
 			['ambulance'] = 0
 		},
 		inventory = {
-			{ name = 'painkillers', price = 100 }
+			{ name = 'painkillers', price = 100 },
+			{ name = 'watertank', 	price = 50 },
 		}, locations = {
 			vec3(-820.15, -1242.57, 7.34)
 		}, targets = {
