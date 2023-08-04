@@ -25,7 +25,6 @@ return {
 			{ name = 'empty_evidence_bag', price = 5, },
 			{ name = 'WEAPON_STUNGUN', price = 4500, metadata = { registered = true, serial = 'POL'} },
 			{ name = 'WEAPON_COMBATPISTOL', price = 7000, metadata = { registered = true, serial = 'POL' } },
-			{ name = 'WEAPON_VINTAGEPISTOL', price = 12000, },
 		}, locations = {
 			vec3(609.18, 1.80, 87.87),
 			vec3(1833.7041015625,3696.6853027344,34.954120635986)
@@ -106,6 +105,7 @@ return {
 			{ name = 'WEAPON_COMBATPDW', price = 18000, metadata = { registered = true, serial = 'POL' } },
 			{ name = 'WEAPON_PUMPSHOTGUN', price = 20000, metadata = { registered = true, serial = 'POL' } },
 			{ name = 'ammo-shotgun', price = 25, },
+			{ name = 'WEAPON_VINTAGEPISTOL', price = 12000, },
 		}, locations = {
 			vec3(605.90863037109,6.5631675720215,87.914665222168),
 			vec3(1832.2159423828,3696.1081542969,34.594997406006)
