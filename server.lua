@@ -136,7 +136,7 @@ local function openInventory(source, invType, data, ignoreSecurityChecks)
 				end
 			end
 		elseif invType == 'container' then
-			left.containerSlot = data
+			left.containerSlot = data --[[@as number]]
 			data = left.items[data]
 
 			if data then
@@ -682,7 +682,7 @@ lib.addCommand('saveinv', {
 	},
 	restricted = 'group.admin',
 }, function(source, args)
-	Inventory.SaveInventories(args.lock == 'true')
+	Inventory.SaveInventories(args.lock == 'true', false)
 end)
 
 lib.addCommand('viewinv', {
