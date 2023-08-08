@@ -2259,8 +2259,11 @@ local function saveInventories(manual)
 
     for _, inv in pairs(Inventories) do
         if not inv.open and not inv.player then
-            -- clear inventory from memory if unused for 10 minutes, or invalid entity
-            if time - inv.time >= 600 or (inv.netid and NetworkGetEntityFromNetworkId(inv.netid) == 0) then
+			if inv.netid and (inv.type == 'trunk' or inv.type == 'glovebox') then
+				if NetworkGetEntityFromNetworkId(inv.netid) == 0 then
+					Inventory.Remove(inv)
+				end
+			elseif time - inv.time >= 1200 then
                 Inventory.Remove(inv)
             end
         end
