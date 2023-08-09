@@ -1505,11 +1505,6 @@ local TriggerEventHooks = require 'modules.hooks.server'
 local function dropItem(source, playerInventory, fromData, data)
     if not fromData then return end
 
-    if server.wantedTimer(source) > 0 then
-        TriggerClientEvent('ox_lib:notify', source, { type = 'error', description = 'Você está procurado!' })
-        return
-    end
-
 	local toData = table.clone(fromData)
 	toData.slot = data.toSlot
 	toData.count = data.count
