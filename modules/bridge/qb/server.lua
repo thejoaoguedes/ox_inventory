@@ -221,6 +221,12 @@ function server.isPlayerBoss(playerId)
 	return Player.PlayerData.job.isboss or Player.PlayerData.gang.isboss
 end
 
+function server.wantedTimer(playerId)
+	local Player = QBCore.Functions.GetPlayer(playerId)
+
+	return Player.PlayerData.metadata["wantedTimer"] or 0
+end
+
 -- taken from qbox-core (https://github.com/Qbox-project/qb-core/blob/f4174f311aae8157181a48fa2e2bd30c8d13edb1/client/functions.lua#L25)
 -- copied from client-side implementation and completely untested (have fun)
 local function hasItem(source, items, amount)
