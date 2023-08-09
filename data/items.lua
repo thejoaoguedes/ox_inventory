@@ -4964,4 +4964,16 @@ return {
 			image = "cigarette.png",
 		}
 	},
+
+	["lighter"] = {
+		label = "Isqueiro",
+		weight = 200,
+		stack = false,
+		degrade = 7200,
+		close = true,
+		description = "",
+		client = {
+			image = "lighter.png",
+		}
+	},
 }
